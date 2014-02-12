@@ -3,3 +3,4 @@ description = A core module for the High Country Craft Food and Beverage Festiva
 core = 7.x
 version = 7.x-1.x
 package = HCBF
+dependencies[] = hcbf_breweries
