@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the HCBF Volunteers feature.
+ */
+
+include_once 'hcbf_volunteers.features.inc';
