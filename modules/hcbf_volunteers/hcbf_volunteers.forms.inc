@@ -5,6 +5,23 @@
  */
 
 /**
+ * After build function for the Date of Birth field.
+ */
+function hcbf_format_dob($form_element, &$form_state) {
+  unset($form_element['year']['#options']);
+
+  $max_age = date('Y') - 100;
+  $min_age = date('Y') - 21;
+  $form_element['year']['#options'] = array();
+  $form_element['year']['#options']['year'] = '-Year';
+  foreach (range($min_age, $max_age) as $year){
+    $form_element['year']['#options'][$year] = $year;
+  }
+
+  return $form_element;
+}
+
+/**
  * Volunteer form
  */
 function hcbf_volunteer_form($form, &$form_state) {
@@ -26,12 +43,14 @@ function hcbf_volunteer_form($form, &$form_state) {
     $form['name'] = array(
       '#type' => 'textfield',
       '#title' => t('Your name'),
+      '#description' => t('Enter your full name.'),
       '#required' => TRUE
     );
 
     $form['email'] = array(
       '#type' => 'textfield',
       '#title' => t('Email address'),
+      '#description' => t('Enter your email address.'),
       '#required' => TRUE,
       '#rules' => array('email')
     );
@@ -39,15 +58,18 @@ function hcbf_volunteer_form($form, &$form_state) {
     $form['date_of_birth'] = array(
       '#type' => 'date_select',
       '#title' => t('Date of birth'),
+      '#description' => t('Enter your date, you must be 21 or older to volunteer.'),
       '#required' => TRUE,
       '#date_format' => 'm/d/Y',
       '#date_label_position' => 'within',
-      '#date_timezone' => 'America/New_York'
+      '#date_timezone' => 'America/New_York',
+      '#after_build' => array('hcbf_format_dob'),
     );
 
     $form['shirt_size'] = array(
       '#type' => 'select',
       '#title' => t('T-shirt size'),
+      '#description' => t('Select your t-shirt size.'),
       '#required' => TRUE,
       '#options' => array(
         'small' => t('Small'),
@@ -82,6 +104,12 @@ function hcbf_volunteer_form($form, &$form_state) {
     $form['comments'] = array(
       '#type' => 'textarea',
       '#title' => t('Comments')
+    );
+
+    $form['terms'] = array(
+      '#markup' => variable_get('hcbf_volunteer_terms', 'By submitting this form you are agreeing to terms that will be expanded on.'),
+      '#prefix' => '<p>',
+      '#suffix' => '</p>',
     );
 
     $form['submit'] = array(
