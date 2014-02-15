@@ -32,13 +32,17 @@ function hcbf_volunteer_form($form, &$form_state) {
     $form['email'] = array(
       '#type' => 'textfield',
       '#title' => t('Email address'),
-      '#required' => TRUE
+      '#required' => TRUE,
+      '#rules' => array('email')
     );
 
     $form['date_of_birth'] = array(
-      '#type' => 'textfield',
+      '#type' => 'date_select',
       '#title' => t('Date of birth'),
-      '#required' => TRUE
+      '#required' => TRUE,
+      '#date_format' => 'm/d/Y',
+      '#date_label_position' => 'within',
+      '#date_timezone' => 'America/New_York'
     );
 
     $form['shirt_size'] = array(
@@ -82,7 +86,7 @@ function hcbf_volunteer_form($form, &$form_state) {
 
     $form['submit'] = array(
       '#type' => 'submit',
-      '#value' => t('Volunteer')
+      '#value' => t('Sign me up')
     );
   }
   else {
@@ -94,7 +98,23 @@ function hcbf_volunteer_form($form, &$form_state) {
     );
   }
 
-
   return $form;
+}
+
+/**
+ * Validation for the volunteer form
+ */
+function hcbf_volunteer_form_validate($form, &$form_state) {
+  // Validate that the person attempting to volunteer is 21 or older.
+  // See: http://drupalcode.org/project/validateage.git/blob/refs/heads/6.x-1.x:/validateage.module#l540
+}
+
+/**
+ * Submit function for the volunteer form
+ */
+function hcbf_volunteer_form_submit($form, &$form_state) {
+  // Sanatize the input
+  // Create a volunteer node
+  // Notify the responsable role a volunteer has volunteered
 }
 

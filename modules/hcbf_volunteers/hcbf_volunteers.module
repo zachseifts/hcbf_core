@@ -21,7 +21,7 @@ function hcbf_volunteers_menu() {
     'file' => 'hcbf_volunteers.forms.inc'
   );
 
-  $items['admin/config/hcbf_volunteers'] = array(
+  $items['admin/config/hcbf/volunteers'] = array(
     'title' => t('HCBF Volunteer settings'),
     'descrption' => t('Settings for the volunteer section of the site.'),
     'page callback' => 'drupal_get_form',
