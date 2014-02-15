@@ -18,7 +18,7 @@ function hcbf_volunteer_form($form, &$form_state) {
   if (variable_get('hcbf_volunteer_active', 0) == 1) {
     // The form is open for submission
     $form['info'] = array(
-      '#markup' => 'A short description of what we\'re looing for in volunteers and the responsibilities associated with volunteering.',
+      '#markup' => variable_get('hcbf_volunteer_intro', 'Fill out this form to volunteer for the High Country Craft Food and Beverage Festival.'),
       '#prefix' => '<p>',
       '#suffix' => '</p>',
     );
