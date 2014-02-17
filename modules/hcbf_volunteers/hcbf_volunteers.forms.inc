@@ -55,10 +55,16 @@ function hcbf_volunteer_form($form, &$form_state) {
       '#rules' => array('email')
     );
 
-    $form['date_of_birth'] = array(
+    $form['phone'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Phone number'),
+      '#description' => t('Enter your phone number.'),
+      '#required' => TRUE,
+    );
+
+    $form['dob'] = array(
       '#type' => 'date_select',
       '#title' => t('Date of birth'),
-      '#description' => t('Enter your date, you must be 21 or older to volunteer.'),
       '#required' => TRUE,
       '#date_format' => 'm/d/Y',
       '#date_label_position' => 'within',
@@ -66,7 +72,7 @@ function hcbf_volunteer_form($form, &$form_state) {
       '#after_build' => array('hcbf_format_dob'),
     );
 
-    $form['shirt_size'] = array(
+    $form['shirt'] = array(
       '#type' => 'select',
       '#title' => t('T-shirt size'),
       '#description' => t('Select your t-shirt size.'),
@@ -91,19 +97,9 @@ function hcbf_volunteer_form($form, &$form_state) {
       '#default_value' => 'no',
     );
 
-    $form['background'] = array(
-      '#type' => 'checkboxes',
-      '#title' => t('What is your background?'),
-      '#required' => FALSE,
-      '#options' => array(
-        'brewer' => t('Brewer'),
-        'enthusiast' => t('Enthusiast'),
-      ),
-    );
-
     $form['comments'] = array(
       '#type' => 'textarea',
-      '#title' => t('Comments')
+      '#title' => t('Other comments')
     );
 
     $form['terms'] = array(
@@ -141,8 +137,19 @@ function hcbf_volunteer_form_validate($form, &$form_state) {
  * Submit function for the volunteer form
  */
 function hcbf_volunteer_form_submit($form, &$form_state) {
-  // Sanatize the input
   // Create a volunteer node
+  $volunteer = entity_create('node', array('type' => 'hcbf_volunteer'));
+  $volunteer_entity = entity_metadata_wrapper('node',$volunteer);
+  $volunteer_entity->field_hcbf_volunteer_name = check_plain($form_state['values']['name']);
+  $volunteer_entity->field_hcbf_volunteer_email = check_plain($form_state['values']['email']);
+  $volunteer_entity->field_hcbf_volunteer_phone = check_plain($form_state['values']['phone']);
+  $volunteer_entity->field_hcbf_volunteer_dob = check_plain($form_state['values']['dob']);
+  $volunteer_entity->field_hcbf_volunteer_shirt = check_plain($form_state['values']['shirt']);
+  $volunteer_entity->field_hcbf_volunteer_volunteer = check_plain($form_state['values']['previous_volunteer']);
+  $volunteer_entity->field_hcbf_volunteer_comments = check_plain($form_state['values']['comments']);
+  $volunteer_entity->save();
+
   // Notify the responsable role a volunteer has volunteered
+  drupal_set_message(t('Thank you for volunteering, you will recieve an email soon with more information.'));
 }
 
