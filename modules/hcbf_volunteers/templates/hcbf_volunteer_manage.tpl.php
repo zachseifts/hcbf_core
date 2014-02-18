@@ -6,6 +6,7 @@
           <th>Name</th>
           <th>Phone</th>
           <th>Accepted?</th>
+          <th>Shift</th>
           <th>Job</th>
         </tr>
       </thead>
@@ -15,7 +16,8 @@
             <td><?php print render($volunteer['name']); ?> (<?php print render($volunteer['email']); ?>)</td>
             <td><?php print render($volunteer['phone']); ?></td>
             <td>Yes</td>
-            <td>No</td>
+            <td>Early</td>
+            <td>Something something</td>
           </tr>
         <?php }; ?>
       </tbody>

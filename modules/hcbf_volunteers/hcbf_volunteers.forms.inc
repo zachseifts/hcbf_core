@@ -42,15 +42,13 @@ function hcbf_volunteer_form($form, &$form_state) {
 
     $form['name'] = array(
       '#type' => 'textfield',
-      '#title' => t('Your name'),
-      '#description' => t('Enter your full name.'),
+      '#title' => t('Your full name'),
       '#required' => TRUE
     );
 
     $form['email'] = array(
       '#type' => 'textfield',
-      '#title' => t('Email address'),
-      '#description' => t('Enter your email address.'),
+      '#title' => t('Your email address'),
       '#required' => TRUE,
       '#rules' => array('email')
     );
@@ -62,6 +60,14 @@ function hcbf_volunteer_form($form, &$form_state) {
       '#required' => TRUE,
     );
 
+    $form['reference'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Referenced by'),
+      '#description' => t('Who refered you to be a volunteer?'),
+    );
+
+    // TODO: Fix this, it's throwing an "Undefined index: #default_value" when
+    // there isn't a #default_value key specified.
     $form['dob'] = array(
       '#type' => 'date_select',
       '#title' => t('Date of birth'),
