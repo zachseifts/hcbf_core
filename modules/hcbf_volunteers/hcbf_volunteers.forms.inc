@@ -33,56 +33,65 @@ function hcbf_volunteer_form($form, &$form_state) {
   $form['#attributes'] = array('role' => array('form'));
 
   if (variable_get('hcbf_volunteer_active', 0) == 1) {
-    // The form is open for submission
     $form['info'] = array(
       '#markup' => variable_get('hcbf_volunteer_intro', 'Fill out this form to volunteer for the High Country Craft Food and Beverage Festival.'),
       '#prefix' => '<p>',
       '#suffix' => '</p>',
     );
 
-    $form['name'] = array(
+    // The form is open for submission
+    $form['personal_info'] = array(
+      '#type' => 'fieldset',
+      '#title' => t('Personal Information')
+    );
+
+    $form['personal_info']['name'] = array(
       '#type' => 'textfield',
       '#title' => t('Your full name'),
-      '#required' => TRUE
+      '#description' => t('Enter your full name.'),
+      '#required' => TRUE,
+      '#attributes' => array('placeholder' => array('Your Name')),
     );
 
-    $form['email'] = array(
+    $form['personal_info']['email'] = array(
       '#type' => 'textfield',
       '#title' => t('Your email address'),
+      '#description' => t('Enter an email address that we can contact you at.'),
       '#required' => TRUE,
-      '#rules' => array('email')
+      '#rules' => array('email'),
+      '#attributes' => array('placeholder' => array('you@domain.com')),
     );
 
-    $form['phone'] = array(
+    $form['personal_info']['phone'] = array(
       '#type' => 'textfield',
-      '#title' => t('Phone number'),
-      '#description' => t('Enter your phone number.'),
+      '#title' => t('Your phone number'),
+      '#description' => t('Enter a phone number where we can contact you.'),
       '#required' => TRUE,
+      '#attributes' => array('placeholder' => array('(555) 555-5555')),
     );
 
-    $form['reference'] = array(
+    $form['personal_info']['dob'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Your birthday'),
+      '#description' => t('Enter your date of birth. You must 21 or older to volunteer.'),
+      '#required' => TRUE,
+      '#attributes' => array('placeholder' => array('6/19/1985')),
+    );
+
+    $form['other_info'] = array(
+      '#type' => 'fieldset',
+      '#title' => t('Other Information')
+    );
+
+    $form['other_info']['reference'] = array(
       '#type' => 'textfield',
       '#title' => t('Referenced by'),
       '#description' => t('Who refered you to be a volunteer?'),
     );
 
-    // TODO: Fix this, it's throwing an "Undefined index: #default_value" when
-    // there isn't a #default_value key specified.
-    $form['dob'] = array(
-      '#type' => 'date_select',
-      '#title' => t('Date of birth'),
-      '#required' => TRUE,
-      '#date_format' => 'm/d/Y',
-      '#date_label_position' => 'within',
-      '#date_timezone' => 'America/New_York',
-      '#after_build' => array('hcbf_format_dob'),
-    );
-
-    $form['shirt'] = array(
-      '#type' => 'select',
-      '#title' => t('T-shirt size'),
-      '#description' => t('Select your t-shirt size.'),
-      '#required' => TRUE,
+    $form['other_info']['shirt'] = array(
+      '#type' => 'radios',
+      '#title' => t('Your shirt size'),
       '#options' => array(
         'small' => t('Small'),
         'medium' => t('Medium'),
@@ -92,18 +101,16 @@ function hcbf_volunteer_form($form, &$form_state) {
       ),
     );
 
-    $form['previous_volunteer'] = array(
+    $form['other_info']['previous_volunteer'] = array(
       '#type' => 'radios',
       '#title' => t('Have you volunteered before?'),
-      '#required' => TRUE,
       '#options' => array(
         'no' => t('No'),
         'yes' => t('Yes'),
       ),
-      '#default_value' => 'no',
     );
 
-    $form['comments'] = array(
+    $form['other_info']['comments'] = array(
       '#type' => 'textarea',
       '#title' => t('Other comments')
     );
@@ -116,13 +123,16 @@ function hcbf_volunteer_form($form, &$form_state) {
 
     $form['submit'] = array(
       '#type' => 'submit',
-      '#value' => t('Sign me up')
+      '#value' => t('Sign me up'),
+      '#attributes' => array('class' => array('btn-success')),
     );
   }
   else {
     // Message about volunteer registeration being closed
+    $contact_link = l('contact us', 'contact');
+    $message = 'We\'re sorry but volunteer registration is closed. If you have any questions please ' . $contact_link . '.';
     $form['info'] = array(
-      '#markup' => 'We\'re sorry but volunteer registration is closed.',
+      '#markup' => $message,
       '#prefix' => '<p>',
       '#suffix' => '</p>',
     );
@@ -153,6 +163,7 @@ function hcbf_volunteer_form_submit($form, &$form_state) {
   $volunteer_entity->field_hcbf_volunteer_shirt = check_plain($form_state['values']['shirt']);
   $volunteer_entity->field_hcbf_volunteer_volunteer = check_plain($form_state['values']['previous_volunteer']);
   $volunteer_entity->field_hcbf_volunteer_comments = check_plain($form_state['values']['comments']);
+  $volunteer_entity->field_hcbf_volunteer_accepted = 'no';
   $volunteer_entity->save();
 
   // Notify the responsable role a volunteer has volunteered

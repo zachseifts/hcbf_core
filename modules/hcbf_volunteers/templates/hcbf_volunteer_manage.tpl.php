@@ -1,23 +1,29 @@
 <div class="row">
   <div class="col-sm-12">
-    <table class="table table-responsive table-striped">
+    <table class="table table-responsive">
       <thead>
         <tr>
           <th>Name</th>
           <th>Phone</th>
-          <th>Accepted?</th>
+          <th>Accepted</th>
           <th>Shift</th>
           <th>Job</th>
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
         </tr>
       </thead>
       <tbody>
         <?php foreach ($volunteers as $volunteer) { ?>
-          <tr>
-            <td><?php print render($volunteer['name']); ?> (<?php print render($volunteer['email']); ?>)</td>
+          <tr class="<?php print $volunteer['row_class']; ?>">
+            <td><?php print render($volunteer['name']); ?></td>
             <td><?php print render($volunteer['phone']); ?></td>
-            <td>Yes</td>
+            <td><?php print render($volunteer['approved']); ?></td>
             <td>Early</td>
             <td>Something something</td>
+            <td><?php print render($volunteer['view']); ?></td>
+            <td><?php print render($volunteer['edit']); ?></td>
+            <td><?php print render($volunteer['delete']); ?></td>
           </tr>
         <?php }; ?>
       </tbody>

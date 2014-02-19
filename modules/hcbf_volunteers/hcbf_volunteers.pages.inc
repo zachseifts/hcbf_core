@@ -23,18 +23,25 @@ function hcbf_volunteer_manage() {
     $name_field = field_get_items('node', $volunteer, 'field_hcbf_volunteer_name');
     $name_value = field_view_value('node', $volunteer, 'field_hcbf_volunteer_name', $name_field[0]);
     $email_field = field_get_items('node', $volunteer, 'field_hcbf_volunteer_email');
-    $email_value = field_view_value('node', $volunteer, 'field_hcbf_volunteer_email', $email_field[0]);
     $phone_field = field_get_items('node', $volunteer, 'field_hcbf_volunteer_phone');
     $phone_value = field_view_value('node', $volunteer, 'field_hcbf_volunteer_phone', $phone_field[0]);
+
+    $name = l(render($name_value), 'mailto:' . $email_field[0]['email'], array('absolute' => TRUE));
+
+    $approved = array(
+      '#type' => 'markup',
+      '#markup' => 'Accepted',
+    );
+    $row_class = 'success';
+    if ($volunteer->field_hcbf_volunteer_accepted['und'][0]['value'] == 'no') {
+      $approved['#markup'] = 'Not accepted';
+      $row_class = 'danger';
+    }
 
     $volunteers[] = array(
       'name' => array(
         '#type' => 'markup',
-        '#markup' => render($name_value),
-      ),
-      'email' => array(
-        '#type' => 'markup',
-        '#markup' => render($email_value),
+        '#markup' => $name,
       ),
       'phone' => array(
         '#type' => 'markup',
@@ -42,6 +49,20 @@ function hcbf_volunteer_manage() {
         '#prefix' => '<a href="tel:' . render($phone_value) . '">',
         '#suffix' => '</a>'
       ),
+      'approved' => $approved,
+      'view' => array(
+        '#type' => 'markup',
+        '#markup' => l(t('View'), 'node/' . $volunteer->nid),
+      ),
+      'edit' => array(
+        '#type' => 'markup',
+        '#markup' => l(t('Edit'), 'node/' . $volunteer->nid . '/edit', array('query' => array('destination' => 'volunteer/manage'))),
+      ),
+      'delete' => array(
+        '#type' => 'markup',
+        '#markup' => l(t('Delete'), 'node/' . $volunteer->nid . '/delete', array('query' => array('destination' => 'volunteer/manage'))),
+      ),
+      'row_class' => $row_class,
     );
   }
 
