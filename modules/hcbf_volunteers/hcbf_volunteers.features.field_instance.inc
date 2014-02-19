@@ -166,6 +166,43 @@ function hcbf_volunteers_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-hcbf_volunteer-field_hcbf_volunteer_job'
+  $field_instances['node-hcbf_volunteer-field_hcbf_volunteer_job'] = array(
+    'bundle' => 'hcbf_volunteer',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Select this volunteer\'s job.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 9,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_hcbf_volunteer_job',
+    'label' => 'Job',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 5,
+    ),
+  );
+
   // Exported field_instance: 'node-hcbf_volunteer-field_hcbf_volunteer_name'
   $field_instances['node-hcbf_volunteer-field_hcbf_volunteer_name'] = array(
     'bundle' => 'hcbf_volunteer',
@@ -374,10 +411,12 @@ function hcbf_volunteers_field_default_field_instances() {
   t('Date of birth');
   t('Email');
   t('Have you volunteered before?');
+  t('Job');
   t('Name');
   t('Phone');
   t('Select if the volunteer is selected for the festival.');
   t('Select the shift this volunteer will be part of.');
+  t('Select this volunteer\'s job.');
   t('Shift');
   t('Shirt Size');
   t('The name of the volunteer.');

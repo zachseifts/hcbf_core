@@ -120,6 +120,36 @@ function hcbf_volunteers_field_default_field_bases() {
     'type' => 'email',
   );
 
+  // Exported field_base: 'field_hcbf_volunteer_job'
+  $field_bases['field_hcbf_volunteer_job'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_hcbf_volunteer_job',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'foreign keys' => array(),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => 'Setup',
+        1 => 'Pourer',
+        2 => 'Other',
+      ),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_integer',
+  );
+
   // Exported field_base: 'field_hcbf_volunteer_name'
   $field_bases['field_hcbf_volunteer_name'] = array(
     'active' => 1,
