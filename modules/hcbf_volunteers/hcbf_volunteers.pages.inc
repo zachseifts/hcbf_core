@@ -26,7 +26,11 @@ function hcbf_volunteer_manage() {
     $phone_field = field_get_items('node', $volunteer, 'field_hcbf_volunteer_phone');
     $phone_value = field_view_value('node', $volunteer, 'field_hcbf_volunteer_phone', $phone_field[0]);
 
-    $name = l(render($name_value), 'mailto:' . $email_field[0]['email'], array('absolute' => TRUE));
+    $job_field = field_get_items('node', $volunteer, 'field_hcbf_volunteer_job');
+    $job_value = field_view_value('node', $volunteer, 'field_hcbf_volunteer_job', $job_field[0]);
+
+    $shift_field = field_get_items('node', $volunteer, 'field_hcbf_volunteer_shift');
+    $shift_value = field_view_value('node', $volunteer, 'field_hcbf_volunteer_shift', $shift_field[0]);
 
     $approved = array(
       '#type' => 'markup',
@@ -41,7 +45,7 @@ function hcbf_volunteer_manage() {
     $volunteers[] = array(
       'name' => array(
         '#type' => 'markup',
-        '#markup' => $name,
+        '#markup' => render($name_value),
       ),
       'phone' => array(
         '#type' => 'markup',
@@ -49,18 +53,34 @@ function hcbf_volunteer_manage() {
         '#prefix' => '<a href="tel:' . render($phone_value) . '">',
         '#suffix' => '</a>'
       ),
+      'job' => array(
+        '#type' => 'markup',
+        '#markup' => render($job_value),
+      ),
+      'shift' => array(
+        '#type' => 'markup',
+        '#markup' => render($shift_value),
+      ),
       'approved' => $approved,
+      'email' => array(
+        '#type' => 'markup',
+        '#markup' => l(t('Email'), 'mailto:' . $email_field[0]['email'], array('absolute' => TRUE)),
+        '#prefix' => '<span class="glyphicon glyphicon-inbox"></span> ',
+      ),
       'view' => array(
         '#type' => 'markup',
         '#markup' => l(t('View'), 'node/' . $volunteer->nid),
+        '#prefix' => '<span class="glyphicon glyphicon-search"></span> ',
       ),
       'edit' => array(
         '#type' => 'markup',
         '#markup' => l(t('Edit'), 'node/' . $volunteer->nid . '/edit', array('query' => array('destination' => 'volunteer/manage'))),
+        '#prefix' => '<span class="glyphicon glyphicon-pencil"></span> ',
       ),
       'delete' => array(
         '#type' => 'markup',
         '#markup' => l(t('Delete'), 'node/' . $volunteer->nid . '/delete', array('query' => array('destination' => 'volunteer/manage'))),
+        '#prefix' => '<span class="glyphicon glyphicon-trash"></span> ',
       ),
       'row_class' => $row_class,
     );

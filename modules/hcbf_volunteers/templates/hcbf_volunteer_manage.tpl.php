@@ -19,8 +19,9 @@
             <td><?php print render($volunteer['name']); ?></td>
             <td><?php print render($volunteer['phone']); ?></td>
             <td><?php print render($volunteer['approved']); ?></td>
-            <td>Early</td>
-            <td>Something something</td>
+            <td><?php print render($volunteer['shift']); ?></td>
+            <td><?php print render($volunteer['job']); ?></td>
+            <td><?php print render($volunteer['email']); ?></td>
             <td><?php print render($volunteer['view']); ?></td>
             <td><?php print render($volunteer['edit']); ?></td>
             <td><?php print render($volunteer['delete']); ?></td>
