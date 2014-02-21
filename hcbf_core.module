@@ -10,14 +10,6 @@
 function hcbf_core_menu() {
   $items = array();
 
-  $items['home'] = array(
-    'title' => t('Home'),
-    'page callback' => 'hcbf_home',
-    'access arguments' => array('access content'),
-    'type' => MENU_CALLBACK,
-    'file' => 'hcbf_core.pages.inc'
-  );
-
   $items['about'] = array(
     'title' => t('About'),
     'page callback' => 'hcbf_about',
@@ -34,11 +26,6 @@ function hcbf_core_menu() {
  */
 function hcbf_core_theme() {
   $themes = array();
-
-  $themes['hcbf_home'] = array(
-    'variables' => array(),
-    'template' => 'templates/hcbf_home',
-  );
 
   $themes['hcbf_about'] = array(
     'variables' => array(),
