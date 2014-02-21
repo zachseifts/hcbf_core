@@ -112,7 +112,8 @@ function hcbf_volunteer_form($form, &$form_state) {
 
     $form['other_info']['comments'] = array(
       '#type' => 'textarea',
-      '#title' => t('Other comments')
+      '#title' => t('Additional information'),
+      '#description' => t('Please describe your previous experience with other festivals, time limitations due to other responsibilities, and any additional information.'),
     );
 
     $form['terms'] = array(
