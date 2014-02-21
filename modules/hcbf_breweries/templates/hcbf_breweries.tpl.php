@@ -1,8 +1,16 @@
-<div class="row">
-  <div class="col-sm-6">
-    <p>This is left side of the breweries page</p>
+<?php
+/**
+ * A page that displays listings of all products
+ */
+?>
+
+<?php foreach ($breweries as $breweries_row) { ?>
+  <div class="row">
+    <?php foreach ($breweries_row as $brewery) { ?>
+      <div class="col-sm-4">
+        <?php print render($brewery['title']); ?>
+      </div>
+    <?php }; ?>
   </div>
-  <div class="col-sm-6">
-    <p>This is the right side of the breweries page</p>
-  </div>
-</div>
+<?php }; ?>
+

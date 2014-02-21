@@ -30,7 +30,7 @@ function hcbf_breweries_theme() {
   $themes = array();
 
   $themes['hcbf_breweries'] = array(
-    'variables' => array(),
+    'variables' => array('breweries' => NULL),
     'template' => 'templates/hcbf_breweries',
   );
 
