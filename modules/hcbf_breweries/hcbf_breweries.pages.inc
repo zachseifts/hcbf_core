@@ -21,12 +21,31 @@ function hcbf_breweries() {
 
   $breweries = array();
   foreach ($breweries_nodes as $brewery) {
+
+    $location_field = field_get_items('node', $brewery, 'field_hcbf_brewery_location');
+    $location_value = field_view_value('node', $brewery, 'field_hcbf_brewery_location', $location_field[0]);
+
+    $website_field = field_get_items('node', $brewery, 'field_hcbf_brewery_website');
+    $website_value = field_view_value('node', $brewery, 'field_hcbf_brewery_website', $website_field[0]);
+
     $breweries[] = array(
       'title' => array(
         '#type' => 'markup',
         '#markup' => $brewery->title,
         '#prefix' => '<h2>',
         '#suffix' => '</h2>',
+      ),
+      'location' => array(
+        '#type' => 'markup',
+        '#markup' => render($location_value),
+        '#prefix' => '<p>',
+        '#suffix' => '</p>',
+      ),
+      'website' => array(
+        '#type' => 'markup',
+        '#markup' => render($website_value),
+        '#prefix' => '<p>',
+        '#suffix' => '</p>',
       ),
     );
   }
