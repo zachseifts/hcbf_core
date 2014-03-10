@@ -46,7 +46,7 @@ function hcbf_volunteers_menu() {
     'page callback' => 'drupal_get_form',
     'page arguments' => array('hcbf_volunteer_settings_form'),
     'access arguments' => array('manage volunteers'),
-    'file' => 'hcbf_volunteers.pages.inc'
+    'file' => 'hcbf_volunteers.forms.inc'
   );
 
   return $items;

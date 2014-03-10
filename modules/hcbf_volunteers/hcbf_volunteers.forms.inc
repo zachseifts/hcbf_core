@@ -171,3 +171,29 @@ function hcbf_volunteer_form_submit($form, &$form_state) {
   drupal_set_message(t('Thank you for volunteering, you will recieve an email soon with more information.'));
 }
 
+/**
+ * Callback for the volunteer/settings form.
+ */
+function hcbf_volunteer_settings_form() {
+  $form = array();
+
+  $form['hcbf_volunteer_active'] = array(
+    '#type' => 'radios',
+    '#title' => t('Is volunteer active?'),
+    '#default_value' => variable_get('hcbf_volunteer_active', 0),
+    '#options' => array(
+      0 => t('No'),
+      1 => t('Yes')
+    ),
+  );
+
+  $form['hcbf_volunteer_intro'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Intro message'),
+    '#default_value' => variable_get('hcbf_volunteer_intro', ''),
+    '#description' => t('This message displays on the top of the Volunteer form.')
+  );
+
+  return system_settings_form($form);
+}
+
