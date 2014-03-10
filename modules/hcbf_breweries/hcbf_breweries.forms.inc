@@ -25,7 +25,8 @@ function hcbf_brewery_registration_form($form, &$form_state) {
 
     $form['brewery_info'] = array(
       '#type' => 'fieldset',
-      '#title' => t('About your brewery')
+      '#title' => t('About your brewery'),
+      '#description' => t('Let us know some info about your brewery.'),
     );
 
     $form['brewery_info']['name'] = array(
@@ -36,31 +37,31 @@ function hcbf_brewery_registration_form($form, &$form_state) {
 
     $form['brewery_info']['address_1'] = array(
       '#type' => 'textfield',
-      '#title' => t('Address line 1'),
+      '#title' => t('Brewery address line 1'),
       '#required' => TRUE,
     );
 
     $form['brewery_info']['address_2'] = array(
       '#type' => 'textfield',
-      '#title' => t('Address line 2'),
+      '#title' => t('Brewery address line 2'),
       '#required' => FALSE,
     );
 
     $form['brewery_info']['city'] = array(
       '#type' => 'textfield',
-      '#title' => t('City'),
+      '#title' => t('Brewery city'),
       '#required' => TRUE,
     );
 
     $form['brewery_info']['state'] = array(
       '#type' => 'textfield',
-      '#title' => t('State'),
+      '#title' => t('Brewery state'),
       '#required' => TRUE,
     );
 
     $form['brewery_info']['zip'] = array(
       '#type' => 'textfield',
-      '#title' => t('Zip code'),
+      '#title' => t('Brewery zip code'),
       '#required' => TRUE,
     );
 
@@ -70,27 +71,127 @@ function hcbf_brewery_registration_form($form, &$form_state) {
       '#required' => TRUE,
     );
 
-    $form['contact_info'] = array(
+    $form['primary_contact_info'] = array(
       '#type' => 'fieldset',
-      '#title' => t('Contact Information')
+      '#title' => t('Primary contact person')
     );
     
-    $form['contact_info']['contact_name'] = array(
+    $form['primary_contact_info']['primary_contact_name'] = array(
       '#type' => 'textfield',
       '#title' => t('Contact name'),
       '#required' => TRUE,
     );
 
-    $form['contact_info']['primary_contact_phone'] = array(
+    $form['primary_contact_info']['primary_main_contact_phone'] = array(
       '#type' => 'textfield',
-      '#title' => t('Primary phone number'),
+      '#title' => t('Main phone number'),
       '#required' => TRUE,
     );
 
-    $form['contact_info']['secondary_contact_phone'] = array(
+    $form['primary_contact_info']['additional_primary_contact_phone'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Additional phone number'),
+      '#required' => TRUE,
+    );
+
+    $form['primary_contact_info']['primary_email_address'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Email address'),
+      '#required' => TRUE,
+    );
+
+    $form['secondary_contact_info'] = array(
+      '#type' => 'fieldset',
+      '#title' => t('Secondary contact person')
+    );
+    
+    $form['secondary_contact_info']['secondary_contact_name'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Contact name'),
+      '#required' => TRUE,
+    );
+
+    $form['secondary_contact_info']['secondary_main_contact_phone'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Main phone number'),
+      '#required' => TRUE,
+    );
+
+    $form['secondary_contact_info']['secondary_additional_contact_phone'] = array(
       '#type' => 'textfield',
       '#title' => t('Secondary phone number'),
       '#required' => TRUE,
+    );
+
+    $form['secondary_contact_info']['secondary_email_address'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Email address'),
+      '#required' => TRUE,
+    );
+
+    $form['product_info'] = array(
+      '#type' => 'fieldset',
+      '#title' => t('Product &amp; brewery information')
+    );
+
+    $form['product_info']['product_delivery'] = array(
+      '#type' => 'radios',
+      '#title' => t('Who will deliver your product?'),
+      '#required' => TRUE,
+      '#options' => array(
+        'brewery' => t('Brewery'),
+        'distributor' => t('Distributor')
+      ),
+      '#default_value' => 'brewery',
+    );
+
+    $form['product_info']['distributor_name'] = array(
+      '#type' => 'textfield',
+      '#title' => t('The name of your distributor'),
+      '#required' => FALSE,
+    );
+
+    $form['product_info']['brewery_logo'] = array(
+      '#type' => 'file',
+      '#title' => t('The logo of your brewery'),
+      '#required' => FALSE,
+      '#description' => t('Upload the logo for your brewery.'),
+    );
+
+    $form['product_info']['brewery_beers_bringing'] = array(
+      '#type' => 'textarea',
+      '#title' => t('What beers do you plan to bring?'),
+      '#required' => FALSE,
+    );
+
+    $form['product_info']['staff'] = array(
+      '#type' => 'radios',
+      '#title' => t('Are you bringing your own staff to pour?'),
+      '#description' => t('If you check "yes", we will contact you for additional information.'),
+      '#required' => TRUE,
+      '#options' => array(
+        0 => t('No'),
+        1 => t('Yes')
+      ),
+      '#default_value' => 0,
+    );
+
+    $form['product_info']['hotel'] = array(
+      '#type' => 'radios',
+      '#title' => t('Do you need a hotel room?'),
+      '#description' => t('If you check "yes", we will contact you for additional information.'),
+      '#required' => TRUE,
+      '#options' => array(
+        0 => t('No'),
+        1 => t('Yes')
+      ),
+      '#default_value' => 0,
+    );
+
+    $form['comments'] = array(
+      '#type' => 'textarea',
+      '#title' => t('Additional comments/requests'),
+      '#required' => FALSE,
     );
 
     $form['submit'] = array(
