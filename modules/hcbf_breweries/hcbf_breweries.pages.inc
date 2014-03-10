@@ -7,6 +7,16 @@
 /**
  * Page callback for the breweries page.
  */
+function hcbf_breweries_manage() {
+  $breweries = array();
+
+  return theme('hcbf_breweries_manage', array('breweries' => $breweries));
+}
+
+
+/**
+ * Page callback for the breweries page.
+ */
 function hcbf_breweries() {
   // Get all of the published breweries.
   $query = new EntityFieldQuery();

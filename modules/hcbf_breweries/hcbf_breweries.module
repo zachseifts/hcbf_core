@@ -41,6 +41,13 @@ function hcbf_breweries_menu() {
     'file' => 'hcbf_breweries.forms.inc'
   );
 
+  $items['breweries/manage'] = array(
+    'title' => t('Manage breweries'),
+    'page callback' => 'hcbf_breweries_manage',
+    'access arguments' => array('manage breweries'),
+    'file' => 'hcbf_breweries.pages.inc'
+  );
+
   $items['breweries/settings'] = array(
     'title' => t('Breweries settings'),
     'descrption' => t('Settings for the breweries section of the site.'),
@@ -62,6 +69,11 @@ function hcbf_breweries_theme() {
   $themes['hcbf_breweries'] = array(
     'variables' => array('breweries' => NULL),
     'template' => 'templates/hcbf_breweries',
+  );
+
+  $themes['hcbf_breweries_manage'] = array(
+    'variables' => array('breweries' => NULL),
+    'template' => 'templates/hcbf_breweries_manage',
   );
 
   return $themes;
