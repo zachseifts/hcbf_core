@@ -51,29 +51,18 @@ function hcbf_breweries() {
 
   $breweries = array();
   foreach ($breweries_nodes as $brewery) {
-
-    $location_field = field_get_items('node', $brewery, 'field_hcbf_brewery_location');
-    $location_value = field_view_value('node', $brewery, 'field_hcbf_brewery_location', $location_field[0]);
-
-    $website_field = field_get_items('node', $brewery, 'field_hcbf_brewery_website');
-    $website_value = field_view_value('node', $brewery, 'field_hcbf_brewery_website', $website_field[0]);
+    $brewery_entity = entity_metadata_wrapper('node', $brewery);
 
     $breweries[] = array(
       'title' => array(
         '#type' => 'markup',
-        '#markup' => $brewery->title,
+        '#markup' => $brewery_entity->label(),
         '#prefix' => '<h2>',
         '#suffix' => '</h2>',
       ),
-      'location' => array(
-        '#type' => 'markup',
-        '#markup' => render($location_value),
-        '#prefix' => '<p>',
-        '#suffix' => '</p>',
-      ),
       'website' => array(
         '#type' => 'markup',
-        '#markup' => render($website_value),
+        '#markup' => $brewery_entity->field_hcbf_brewery_brewery_url->value(),
         '#prefix' => '<p>',
         '#suffix' => '</p>',
       ),
