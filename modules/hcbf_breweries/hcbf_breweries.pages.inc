@@ -8,7 +8,27 @@
  * Page callback for the breweries page.
  */
 function hcbf_breweries_manage() {
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'hcbf_brewery')
+    ->propertyOrderBy('created', 'DESC');
+
+  $result = $query->execute();
+  $brewery_nids = array_keys($result['node']);
+  $brewery_nodes = node_load_multiple($brewery_nids);
+
   $breweries = array();
+  
+  foreach ($brewery_nodes as $brewery) {
+    $brewery_entity = entity_metadata_wrapper('node', $brewery);
+
+    $breweries[] = array(
+      'name' => array(
+        '#type' => 'markup',
+        '#markup' => $brewery_entity->label(),
+      ),
+    );
+  };
 
   return theme('hcbf_breweries_manage', array('breweries' => $breweries));
 }

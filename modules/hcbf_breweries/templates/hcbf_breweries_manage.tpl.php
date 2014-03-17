@@ -8,8 +8,11 @@
           </tr>
         </thead>
         <tbody>
-          <?php foreach ($volunteers as $volunteer) { ?>
-            <tr class="<?php print $volunteer['row_class']; ?>">
+          <?php foreach ($breweries as $brewery) { ?>
+            <tr>
+              <td>
+                <?php print render($brewery['name']); ?>
+              </td>
             </tr>
           <?php }; ?>
         </tbody>

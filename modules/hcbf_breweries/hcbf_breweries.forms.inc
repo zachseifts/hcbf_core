@@ -26,46 +26,45 @@ function hcbf_brewery_registration_form($form, &$form_state) {
     $form['brewery_info'] = array(
       '#type' => 'fieldset',
       '#title' => t('About your brewery'),
-      '#description' => t('Let us know some info about your brewery.'),
     );
 
-    $form['brewery_info']['name'] = array(
+    $form['brewery_info']['brewery_name'] = array(
       '#type' => 'textfield',
       '#title' => t('Full name of the brewery'),
       '#required' => TRUE,
     );
 
-    $form['brewery_info']['address_1'] = array(
+    $form['brewery_info']['brewery_address_1'] = array(
       '#type' => 'textfield',
       '#title' => t('Brewery address line 1'),
       '#required' => TRUE,
     );
 
-    $form['brewery_info']['address_2'] = array(
+    $form['brewery_info']['brewery_address_2'] = array(
       '#type' => 'textfield',
       '#title' => t('Brewery address line 2'),
       '#required' => FALSE,
     );
 
-    $form['brewery_info']['city'] = array(
+    $form['brewery_info']['brewery_city'] = array(
       '#type' => 'textfield',
       '#title' => t('Brewery city'),
       '#required' => TRUE,
     );
 
-    $form['brewery_info']['state'] = array(
+    $form['brewery_info']['brewery_state'] = array(
       '#type' => 'textfield',
       '#title' => t('Brewery state'),
       '#required' => TRUE,
     );
 
-    $form['brewery_info']['zip'] = array(
+    $form['brewery_info']['brewery_zip'] = array(
       '#type' => 'textfield',
       '#title' => t('Brewery zip code'),
       '#required' => TRUE,
     );
 
-    $form['brewery_info']['website'] = array(
+    $form['brewery_info']['brewery_website'] = array(
       '#type' => 'textfield',
       '#title' => t('Brewery website'),
       '#required' => TRUE,
@@ -131,7 +130,7 @@ function hcbf_brewery_registration_form($form, &$form_state) {
 
     $form['product_info'] = array(
       '#type' => 'fieldset',
-      '#title' => t('Product &amp; brewery information')
+      '#title' => t('Additional product &amp; brewery information')
     );
 
     $form['product_info']['product_delivery'] = array(
@@ -212,6 +211,24 @@ function hcbf_brewery_registration_form($form, &$form_state) {
   }
 
   return $form;
+}
+
+/** 
+ * Submit function for the brewery signup form.
+ */
+function hcbf_brewery_registration_form_submit($form, &$form_state) {
+  $brewery = entity_create('node', array('type' => 'hcbf_brewery'));
+  $brewery_entity = entity_metadata_wrapper('node', $brewery);
+  $brewery_entity->field_hcbf_brewery_name = check_plain($form_state['values']['brewery_name']);
+  $brewery_entity->field_hcbf_brewery_brewery_addy1 = check_plain($form_state['values']['brewery_address_1']);
+  $brewery_entity->field_hcbf_brewery_brewery_addy2 = check_plain($form_state['values']['brewery_address_2']);
+  $brewery_entity->field_hcbf_brewery_brewery_city = check_plain($form_state['values']['brewery_city']);
+  $brewery_entity->field_hcbf_brewery_brewery_state = check_plain($form_state['values']['brewery_state']);
+  $brewery_entity->field_hcbf_brewer_brewery_zip = check_plain($form_state['values']['brewery_zip']);
+  $brewery_entity->field_hcbf_brewery_brewery_url = check_plain($form_state['values']['brewery_website']);
+  $brewery_entity->save();
+
+  drupal_set_message(t('Thank you for registering your brewery for the High Country Beer Festival. We will be in contact with you soon.'));
 }
 
 /**
