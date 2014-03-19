@@ -77,25 +77,19 @@ function hcbf_brewery_registration_form($form, &$form_state) {
     
     $form['primary_contact_info']['primary_contact_name'] = array(
       '#type' => 'textfield',
-      '#title' => t('Contact name'),
+      '#title' => t('Primary contact name'),
       '#required' => TRUE,
     );
 
     $form['primary_contact_info']['primary_main_contact_phone'] = array(
       '#type' => 'textfield',
-      '#title' => t('Main phone number'),
-      '#required' => TRUE,
-    );
-
-    $form['primary_contact_info']['additional_primary_contact_phone'] = array(
-      '#type' => 'textfield',
-      '#title' => t('Additional phone number'),
+      '#title' => t('Primary contact phone number'),
       '#required' => TRUE,
     );
 
     $form['primary_contact_info']['primary_email_address'] = array(
       '#type' => 'textfield',
-      '#title' => t('Email address'),
+      '#title' => t('Primary contact email address'),
       '#required' => TRUE,
     );
 
@@ -113,12 +107,6 @@ function hcbf_brewery_registration_form($form, &$form_state) {
     $form['secondary_contact_info']['secondary_main_contact_phone'] = array(
       '#type' => 'textfield',
       '#title' => t('Main phone number'),
-      '#required' => TRUE,
-    );
-
-    $form['secondary_contact_info']['secondary_additional_contact_phone'] = array(
-      '#type' => 'textfield',
-      '#title' => t('Secondary phone number'),
       '#required' => TRUE,
     );
 
@@ -150,22 +138,15 @@ function hcbf_brewery_registration_form($form, &$form_state) {
       '#required' => FALSE,
     );
 
-    $form['product_info']['brewery_logo'] = array(
-      '#type' => 'file',
-      '#title' => t('The logo of your brewery'),
-      '#required' => FALSE,
-      '#description' => t('Upload the logo for your brewery.'),
-    );
-
     $form['product_info']['brewery_beers_bringing'] = array(
       '#type' => 'textarea',
       '#title' => t('What beers do you plan to bring?'),
       '#required' => FALSE,
     );
 
-    $form['product_info']['staff'] = array(
+    $form['product_info']['brewery_staff'] = array(
       '#type' => 'radios',
-      '#title' => t('Are you bringing your own staff to pour?'),
+      '#title' => t('Are you bringing your own staff to pour beer?'),
       '#description' => t('If you check "yes", we will contact you for additional information.'),
       '#required' => TRUE,
       '#options' => array(
@@ -175,7 +156,7 @@ function hcbf_brewery_registration_form($form, &$form_state) {
       '#default_value' => 0,
     );
 
-    $form['product_info']['hotel'] = array(
+    $form['product_info']['brewery_hotel'] = array(
       '#type' => 'radios',
       '#title' => t('Do you need a hotel room?'),
       '#description' => t('If you check "yes", we will contact you for additional information.'),
@@ -217,15 +198,40 @@ function hcbf_brewery_registration_form($form, &$form_state) {
  * Submit function for the brewery signup form.
  */
 function hcbf_brewery_registration_form_submit($form, &$form_state) {
+  // See: String offset cast notice in field_invoke_method_multiple() (https://drupal.org/node/1824820)
   $brewery = entity_create('node', array('type' => 'hcbf_brewery'));
   $brewery_entity = entity_metadata_wrapper('node', $brewery);
-  $brewery_entity->field_hcbf_brewery_name = check_plain($form_state['values']['brewery_name']);
-  $brewery_entity->field_hcbf_brewery_brewery_addy1 = check_plain($form_state['values']['brewery_address_1']);
-  $brewery_entity->field_hcbf_brewery_brewery_addy2 = check_plain($form_state['values']['brewery_address_2']);
-  $brewery_entity->field_hcbf_brewery_brewery_city = check_plain($form_state['values']['brewery_city']);
-  $brewery_entity->field_hcbf_brewery_brewery_state = check_plain($form_state['values']['brewery_state']);
-  $brewery_entity->field_hcbf_brewer_brewery_zip = check_plain($form_state['values']['brewery_zip']);
-  $brewery_entity->field_hcbf_brewery_brewery_url = check_plain($form_state['values']['brewery_website']);
+
+  // Brewery information
+  $brewery_entity->field_hcbf_brewery_name->set(check_plain($form_state['values']['brewery_name']));
+  $brewery_entity->field_hcbf_brewery_brewery_addy1->set(check_plain($form_state['values']['brewery_address_1']));
+  $brewery_entity->field_hcbf_brewery_brewery_addy2->set(check_plain($form_state['values']['brewery_address_2']));
+  $brewery_entity->field_hcbf_brewery_brewery_city->set(check_plain($form_state['values']['brewery_city']));
+  $brewery_entity->field_hcbf_brewery_brewery_state->set(check_plain($form_state['values']['brewery_state']));
+  $brewery_entity->field_hcbf_brewer_brewery_zip->set(check_plain($form_state['values']['brewery_zip']));
+  $brewery_entity->field_hcbf_brewery_brewery_url->set(check_plain($form_state['values']['brewery_website']));
+
+  // Primary contact information
+  $brewery_entity->field_hcbf_brewery_primary_name->set(check_plain($form_state['values']['primary_contact_name']));
+  $brewery_entity->field_hcbf_brewery_primary_phone->set(check_plain($form_state['values']['primary_main_contact_phone']));
+  $brewery_entity->field_hcbf_brewery_primary_email->set(check_plain($form_state['values']['primary_email_address']));
+
+  // Secondary contact information
+  $brewery_entity->field_hcbf_brewery_second_name->set(check_plain($form_state['values']['secondary_contact_name']));
+  $brewery_entity->field_hcbf_brewery_second_phone->set(check_plain($form_state['values']['secondary_main_contact_phone']));
+  $brewery_entity->field_hcbf_brewery_second_email->set(check_plain($form_state['values']['secondary_email_address']));
+
+  // Product information
+  $brewery_entity->field_hcbf_brewery_deliver->set(check_plain($form_state['values']['product_delivery']));
+  $brewery_entity->field_hcbf_brewery_distributer->set(check_plain($form_state['values']['distributor_name']));
+  $brewery_entity->field_hcbf_brewery_beers->set(check_plain($form_state['values']['brewery_beers_bringing']));
+  $brewery_entity->field_hcbf_brewery_staff->set(check_plain($form_state['values']['brewery_staff']));
+  $brewery_entity->field_hcbf_brewery_hotel->set(check_plain($form_state['values']['brewery_hotel']));
+
+  // Additional comments
+  $brewery_entity->field_hcbf_brewery_comments->set(check_plain($form_state['values']['comments']));
+
+  // Save the entity
   $brewery_entity->save();
 
   drupal_set_message(t('Thank you for registering your brewery for the High Country Beer Festival. We will be in contact with you soon.'));

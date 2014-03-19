@@ -16,10 +16,9 @@ function hcbf_volunteer_manage() {
 
   $result = $query->execute();
   $volunteer_nids = array_keys($result['node']);
-  $volunteer_nodes = node_load_multiple($volunteer_nids);
 
   $volunteers = array();
-  foreach ($volunteer_nodes as $volunteer) {
+  foreach ($volunteer_nids as $volunteer) {
     $volunteer_entity = entity_metadata_wrapper('node', $volunteer);
 
     $approved = array(
@@ -59,7 +58,7 @@ function hcbf_volunteer_manage() {
       ),
       'view' => array(
         '#type' => 'markup',
-        '#markup' => l(t('View'), 'node/' . $volunteer->nid),
+        '#markup' => l(t('View'), 'node/' . $volunteer_entity->nid->value()),
         '#prefix' => '<span class="glyphicon glyphicon-search"></span> ',
       ),
       'edit' => array(

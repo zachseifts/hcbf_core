@@ -15,11 +15,9 @@ function hcbf_breweries_manage() {
 
   $result = $query->execute();
   $brewery_nids = array_keys($result['node']);
-  $brewery_nodes = node_load_multiple($brewery_nids);
 
   $breweries = array();
-  
-  foreach ($brewery_nodes as $brewery) {
+  foreach ($brewery_nids as $brewery) {
     $brewery_entity = entity_metadata_wrapper('node', $brewery);
 
     $breweries[] = array(
@@ -47,10 +45,9 @@ function hcbf_breweries() {
 
   $result = $query->execute();
   $breweries_nids = array_keys($result['node']);
-  $breweries_nodes = node_load_multiple($breweries_nids);
 
   $breweries = array();
-  foreach ($breweries_nodes as $brewery) {
+  foreach ($breweries_nids as $brewery) {
     $brewery_entity = entity_metadata_wrapper('node', $brewery);
 
     $breweries[] = array(
