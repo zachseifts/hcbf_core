@@ -231,6 +231,9 @@ function hcbf_brewery_registration_form_submit($form, &$form_state) {
   // Additional comments
   $brewery_entity->field_hcbf_brewery_comments->set(check_plain($form_state['values']['comments']));
 
+  $brewery_entity->field_hcbf_brewery_accepted->set('no');
+  $brewery_entity->status->set(1);
+
   // Save the entity
   $brewery_entity->save();
 
