@@ -29,7 +29,6 @@ function hcbf_breweries_menu() {
     'title' => t('Breweries'),
     'page callback' => 'hcbf_breweries',
     'access arguments' => array('access content'),
-    'type' => MENU_CALLBACK,
     'file' => 'hcbf_breweries.pages.inc'
   );
 
