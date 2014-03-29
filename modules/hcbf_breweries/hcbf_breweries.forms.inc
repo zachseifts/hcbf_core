@@ -25,23 +25,26 @@ function hcbf_brewery_registration_form($form, &$form_state) {
 
     $form['brewery_info'] = array(
       '#type' => 'fieldset',
-      '#title' => t('About your brewery'),
+      '#title' => t('Information about your brewery'),
     );
 
     $form['brewery_info']['brewery_name'] = array(
       '#type' => 'textfield',
-      '#title' => t('Full name of the brewery'),
+      '#title' => t('Brewery name'),
+      '#description' => t('Enter the name of your brewery.'),
       '#required' => TRUE,
     );
 
     $form['brewery_info']['brewery_address_1'] = array(
       '#type' => 'textfield',
+      '#description' => t('Enter the first line of your brewery\'s address.'),
       '#title' => t('Brewery address line 1'),
       '#required' => TRUE,
     );
 
     $form['brewery_info']['brewery_address_2'] = array(
       '#type' => 'textfield',
+      '#description' => t('Optionally enter the second line of your brewery\'s address.'),
       '#title' => t('Brewery address line 2'),
       '#required' => FALSE,
     );
@@ -49,30 +52,48 @@ function hcbf_brewery_registration_form($form, &$form_state) {
     $form['brewery_info']['brewery_city'] = array(
       '#type' => 'textfield',
       '#title' => t('Brewery city'),
+      '#description' => t('Enter your brewery\'s city.'),
       '#required' => TRUE,
     );
 
     $form['brewery_info']['brewery_state'] = array(
       '#type' => 'textfield',
       '#title' => t('Brewery state'),
+      '#description' => t('Enter your brewery\'s state.'),
       '#required' => TRUE,
     );
 
     $form['brewery_info']['brewery_zip'] = array(
       '#type' => 'textfield',
       '#title' => t('Brewery zip code'),
+      '#description' => t('Enter your brewery\'s zipcode.'),
       '#required' => TRUE,
     );
 
     $form['brewery_info']['brewery_website'] = array(
       '#type' => 'textfield',
       '#title' => t('Brewery website'),
+      '#description' => t('Enter your brewery\'s website.'),
       '#required' => TRUE,
+    );
+
+    $form['contact_wrapper_open'] = array(
+      '#prefix' => '<div class="row">',
+    );
+
+    $form['contact_wrapper_col_1_open'] = array(
+      '#prefix' => '<div class="col-xs-12 col-md-6">',
     );
 
     $form['primary_contact_info'] = array(
       '#type' => 'fieldset',
       '#title' => t('Primary contact person')
+    );
+
+    $form['primary_contact_info']['info'] = array(
+      '#markup' => 'We need some information about the person who will be the primary contact for your brewery.',
+      '#prefix' => '<p>',
+      '#suffix' => '</p>',
     );
     
     $form['primary_contact_info']['primary_contact_name'] = array(
@@ -93,11 +114,25 @@ function hcbf_brewery_registration_form($form, &$form_state) {
       '#required' => TRUE,
     );
 
+    $form['contact_wrapper_col_1_close'] = array(
+      '#suffix' => '</div>',
+    );
+
+    $form['contact_wrapper_col_2_open'] = array(
+      '#prefix' => '<div class="col-xs-12 col-md-6">',
+    );
+
     $form['secondary_contact_info'] = array(
       '#type' => 'fieldset',
       '#title' => t('Secondary contact person')
     );
     
+    $form['secondary_contact_info']['info'] = array(
+      '#markup' => 'We need some information about the person who will be the secondary contact for your brewery.',
+      '#prefix' => '<p>',
+      '#suffix' => '</p>',
+    );
+
     $form['secondary_contact_info']['secondary_contact_name'] = array(
       '#type' => 'textfield',
       '#title' => t('Contact name'),
@@ -114,6 +149,15 @@ function hcbf_brewery_registration_form($form, &$form_state) {
       '#type' => 'textfield',
       '#title' => t('Email address'),
       '#required' => TRUE,
+    );
+
+    $form['contact_wrapper_col_2_close'] = array(
+      '#suffix' => '</div>',
+    );
+
+
+    $form['contact_wrapper_close'] = array(
+      '#suffix' => '</div>',
     );
 
     $form['product_info'] = array(
