@@ -22,6 +22,11 @@ function hcbf_volunteer_form($form, &$form_state) {
       '#suffix' => '</p>',
     );
 
+    $form['volunteer_wrapper_open'] = array(
+      '#prefix' => '<div class="row">',
+      '#suffix' => '<div class="col-xs-12 col-md-6">',
+    );
+
     // The form is open for submission
     $form['personal_info'] = array(
       '#type' => 'fieldset',
@@ -61,6 +66,11 @@ function hcbf_volunteer_form($form, &$form_state) {
       '#attributes' => array('placeholder' => array('6/19/1985')),
     );
 
+    $form['volunteer_wrapper_col_1_close'] = array(
+      '#prefix' => '</div>',
+      '#suffix' => '<div class="col-xs-12 col-md-6">',
+    );
+
     $form['other_info'] = array(
       '#type' => 'fieldset',
       '#title' => t('Other Information')
@@ -97,6 +107,11 @@ function hcbf_volunteer_form($form, &$form_state) {
       '#type' => 'textarea',
       '#title' => t('Additional information'),
       '#description' => t('Please describe your previous experience with other festivals, time limitations due to other responsibilities, and any additional information.'),
+    );
+
+    $form['volunteer_wrapper_col_2_close'] = array(
+      '#prefix' => '</div>',
+      '#suffix' => '</div>',
     );
 
     $form['terms'] = array(

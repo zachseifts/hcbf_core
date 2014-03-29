@@ -79,15 +79,12 @@ function hcbf_brewery_registration_form($form, &$form_state) {
 
     $form['contact_wrapper_open'] = array(
       '#prefix' => '<div class="row">',
-    );
-
-    $form['contact_wrapper_col_1_open'] = array(
-      '#prefix' => '<div class="col-xs-12 col-md-6">',
+      '#suffix' => '<div class="col-xs-12 col-md-6">',
     );
 
     $form['primary_contact_info'] = array(
       '#type' => 'fieldset',
-      '#title' => t('Primary contact person')
+      '#title' => '<span class="glyphicon glyphicon-user"></span> ' . t('Primary contact person')
     );
 
     $form['primary_contact_info']['info'] = array(
@@ -115,16 +112,13 @@ function hcbf_brewery_registration_form($form, &$form_state) {
     );
 
     $form['contact_wrapper_col_1_close'] = array(
-      '#suffix' => '</div>',
-    );
-
-    $form['contact_wrapper_col_2_open'] = array(
-      '#prefix' => '<div class="col-xs-12 col-md-6">',
+      '#prefix' => '</div>',
+      '#suffix' => '<div class="col-xs-12 col-md-6">',
     );
 
     $form['secondary_contact_info'] = array(
       '#type' => 'fieldset',
-      '#title' => t('Secondary contact person')
+      '#title' => '<span class="glyphicon glyphicon-user"></span> ' . t('Secondary contact person')
     );
     
     $form['secondary_contact_info']['info'] = array(
@@ -152,11 +146,7 @@ function hcbf_brewery_registration_form($form, &$form_state) {
     );
 
     $form['contact_wrapper_col_2_close'] = array(
-      '#suffix' => '</div>',
-    );
-
-
-    $form['contact_wrapper_close'] = array(
+      '#prefix' => '</div>',
       '#suffix' => '</div>',
     );
 
