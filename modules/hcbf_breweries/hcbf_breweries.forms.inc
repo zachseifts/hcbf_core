@@ -129,19 +129,19 @@ function hcbf_brewery_registration_form($form, &$form_state) {
 
     $form['secondary_contact_info']['secondary_contact_name'] = array(
       '#type' => 'textfield',
-      '#title' => t('Contact name'),
+      '#title' => t('Secondary contact name'),
       '#required' => TRUE,
     );
 
     $form['secondary_contact_info']['secondary_main_contact_phone'] = array(
       '#type' => 'textfield',
-      '#title' => t('Main phone number'),
+      '#title' => t('Secondary main phone number'),
       '#required' => TRUE,
     );
 
     $form['secondary_contact_info']['secondary_email_address'] = array(
       '#type' => 'textfield',
-      '#title' => t('Email address'),
+      '#title' => t('Secondary contact email address'),
       '#required' => TRUE,
     );
 
