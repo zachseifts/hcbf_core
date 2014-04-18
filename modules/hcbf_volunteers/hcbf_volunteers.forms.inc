@@ -12,8 +12,11 @@ function hcbf_volunteer_form($form, &$form_state) {
   // Protect the form with honeypot
   honeypot_add_form_protection($form, $form_state, array('honeypot', 'time_restriction'));
 
-  $form = array();
-  $form['#attributes'] = array('role' => array('form'));
+  $form = array(
+    '#attributes' => array('role' => array('form')),
+    '#prefix' => '<div id="volunteer-register-wrapper" class="wrapper"><div class="container"><div class="row"><div class="col-xs-12">',
+    '#suffix' => '</div></div></div></div>'
+  );
 
   if (variable_get('hcbf_volunteer_active', 0) == 1) {
     $form['info'] = array(
@@ -173,7 +176,11 @@ function hcbf_volunteer_form_submit($form, &$form_state) {
  * Callback for the volunteer/settings form.
  */
 function hcbf_volunteer_settings_form() {
-  $form = array();
+  $form = array(
+    '#attributes' => array('role' => array('form')),
+    '#prefix' => '<div id="volunteer-register-wrapper" class="wrapper"><div class="container"><div class="row"><div class="col-xs-12">',
+    '#suffix' => '</div></div></div></div>'
+  );
 
   $form['hcbf_volunteer_active'] = array(
     '#type' => 'radios',

@@ -12,8 +12,11 @@ function hcbf_brewery_registration_form($form, &$form_state) {
   // Protect the form with honeypot
   honeypot_add_form_protection($form, $form_state, array('honeypot', 'time_restriction'));
 
-  $form = array();
-  $form['#attributes'] = array('role' => array('form'));
+  $form = array(
+    '#attributes' => array('role' => array('form')),
+    '#prefix' => '<div id="brewery-register-wrapper" class="wrapper"><div class="container"><div class="row"><div class="col-xs-12">',
+    '#suffix' => '</div></div></div></div>'
+  );
 
   if (variable_get('hcbf_breweries_active', 0) == 1) {
 
@@ -278,7 +281,11 @@ function hcbf_brewery_registration_form_submit($form, &$form_state) {
  * Callback for the breweries/settings form.
  */
 function hcbf_breweries_settings_form() {
-  $form = array();
+  $form = array(
+    '#attributes' => array('role' => array('form')),
+    '#prefix' => '<div id="volunteer-register-wrapper" class="wrapper"><div class="container"><div class="row"><div class="col-xs-12">',
+    '#suffix' => '</div></div></div></div>'
+  );
 
   $form['hcbf_breweries_active'] = array(
     '#type' => 'radios',
