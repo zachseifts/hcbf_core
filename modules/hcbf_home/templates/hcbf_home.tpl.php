@@ -9,17 +9,17 @@
         <div class="page-header">
           <h1 class="text-center">Buy Tickets</h1>
         </div>
-        <p>Tickets are available now!</p>
+        <p>Tickets will be available soon!</p>
         <div class="table-responsive">
           <table class="table ticket-table">
             <tbody>
               <tr>
                 <td>General Admission</td>
-                <td><a class="btn btn-primary btn-sm" href="#">$40.00</a></td>
+                <td><a class="btn btn-danger btn-sm" href="#" disabled="disabled"><del>$40.00</del></a></td>
               </tr>
               <tr>
                 <td>Designated Driver</td>
-                <td><a class="btn btn-primary btn-sm" href="#">$10.00</a></td>
+                <td><a class="btn btn-danger btn-sm" href="#" disabled="disabled"><del>$10.00</del></a></td>
               </tr>
             </tbody>
           </table>
