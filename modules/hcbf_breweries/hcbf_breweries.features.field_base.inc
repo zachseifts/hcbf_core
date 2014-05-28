@@ -381,6 +381,61 @@ function hcbf_breweries_field_default_field_bases() {
     'type' => 'list_integer',
   );
 
+  // Exported field_base: 'field_hcbf_brewery_hotel_bed'
+  $field_bases['field_hcbf_brewery_hotel_bed'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_hcbf_brewery_hotel_bed',
+    'foreign keys' => array(),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        'king' => 'King',
+        'double' => 'Double',
+      ),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_text',
+  );
+
+  // Exported field_base: 'field_hcbf_brewery_hotel_night'
+  $field_bases['field_hcbf_brewery_hotel_night'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_hcbf_brewery_hotel_night',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'foreign keys' => array(),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        'friday' => 'Friday',
+        'saturday' => 'Saturday',
+      ),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_text',
+  );
+
   // Exported field_base: 'field_hcbf_brewery_logo'
   $field_bases['field_hcbf_brewery_logo'] = array(
     'active' => 1,
