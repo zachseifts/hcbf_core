@@ -935,6 +935,46 @@ function hcbf_breweries_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-hcbf_brewery-field_hcbf_brewery_staff_members'
+  $field_instances['node-hcbf_brewery-field_hcbf_brewery_staff_members'] = array(
+    'bundle' => 'hcbf_brewery',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 31,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_hcbf_brewery_staff_members',
+    'label' => 'Staff members',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 27,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Accepted');
@@ -957,6 +997,7 @@ function hcbf_breweries_field_default_field_instances() {
   t('Secondary Contact Email');
   t('Secondary Contact Name');
   t('Secondary Contact Phone Number');
+  t('Staff members');
   t('The name of the brewery.');
   t('The name of your distributor');
   t('What beers do you plan to bring?');
