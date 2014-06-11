@@ -83,24 +83,26 @@ function hcbf_breweries() {
   $breweries = array();
   foreach ($breweries_nids as $brewery) {
     $brewery_entity = entity_metadata_wrapper('node', $brewery);
-    $brewery_logo = '<img src=' . image_style_url('medium', $brewery_entity->field_hcbf_brewery_logo->value()['uri']) . ' class="img-responsive" />';
+    $brewery_logo = '<img src=' . image_style_url('medium', $brewery_entity->field_hcbf_brewery_logo->value()['uri']) . ' class="img-responsive center-block" />';
     $brewery_link = l($brewery_entity->label(), $brewery_entity->field_hcbf_brewery_brewery_url->value()); 
 
     $breweries[] = array(
       'logo' => array(
         '#type' => 'markup',
         '#markup' => $brewery_logo,
+        '#prefix' => '<div class="text-center">',
+        '#suffix' => '</div>'
       ),
       'title' => array(
         '#type' => 'markup',
         '#markup' => $brewery_link,
-        '#prefix' => '<h2>',
+        '#prefix' => '<h2 class="text-center">',
         '#suffix' => '</h2>',
       ),
       'location' => array(
         '#type' => 'markup',
         '#markup' => $brewery_entity->field_hcbf_brewery_brewery_city->value() . ', ' . $brewery_entity->field_hcbf_brewery_brewery_state->value(),
-        '#prefix' => '<p>',
+        '#prefix' => '<p class="text-center">',
         '#suffix' => '</p>',
       ),
     );
