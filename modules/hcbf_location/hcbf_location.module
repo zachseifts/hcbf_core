@@ -22,7 +22,7 @@ function hcbf_location_menu() {
     'title' => t('Exit Strategy'),
     'page callback' => 'hcbf_exit',
     'access arguments' => array('access content'),
-    'type' => menu_callback,
+    'type' => MENU_CALLBACK,
     'file' => 'hcbf_location.pages.inc'
   );
 

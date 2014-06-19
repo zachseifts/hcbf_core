@@ -1,0 +1,7 @@
+name = High Country Beer Fest Music
+description = The music pages for the High Country Beer Fest
+core = 7.x
+version = 7.x-1.x
+package = HCBF
+
+
