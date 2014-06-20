@@ -8,6 +8,9 @@
  * Page callback for the music page.
  */
 function hcbf_music() {
+
+  $bands = array();
+
   return theme('hcbf_music');
 }
 
