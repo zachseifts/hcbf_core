@@ -1,8 +1,10 @@
 <?php
 /**
  * @file
- * The music module for the High Country Craft Food and Beverage Festival's website.
+ * Code for the hcbf_music feature.
  */
+
+include_once 'hcbf_music.features.inc';
 
 /**
  * Implements hook_menu()
@@ -28,7 +30,9 @@ function hcbf_music_theme() {
   $themes = array();
 
   $themes['hcbf_music'] = array(
-    'variables' => array(),
+    'variables' => array(
+      'bands' => NULL,
+    ),
     'template' => 'templates/hcbf_music',
   );
 
