@@ -19,9 +19,6 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <div class="text-center">
-          <i class="icon fa fa-map-marker fa-5x"></i>
-        </div>
         <div class="page-header">
           <h1>We have a new location</h1>
         </div>
@@ -29,6 +26,9 @@
     </div>
     <div class="row">
       <div class="col-xs-12 col-sm-4">
+        <div class="text-center">
+          <i class="icon fa fa-map-marker fa-5x"></i>
+        </div>
         <p class="lead">This year we're expanding the Beer Fest and moving to a new location, the High Country Fairgrounds. Get ready for more music, breweries, food, and seminars!</p>
       </div>
       <div class="col-xs-12 col-sm-8">
@@ -51,8 +51,13 @@
         <div class="page-header">
           <h1>What's your exit strategy?</h1>
         </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-5">
         <p class="lead">The High Country Craft Food and Beverage Festival wants to make sure that you have a great time at the Beer Fest, but we also want to make sure you get home safely.</p>
-
+      </div>
+      <div class="col-xs-12 col-sm-7">
         <ul>
           <li>Bill's Garage will tow your vehicle and up to 4 passengers within the Boone City Limits, FOR FREE!</li>
           <li>Tipsy Taxi is providing FREE rides anywhere in Boone.</li>
@@ -103,10 +108,10 @@
           <h2>2011 High Country Beer Fest</h2>
         </div>
         <ul>
-          <li><a href="http://www.highcountrypress.com/weekly/2011/08-25-11/hoppin-for-a-good-time.htm" target="_blank">High Country Press feature</a> on the 2011 Festival</li>
-          <li><a href="http://mountaintimes.com/watauga-news/articles/High-Country-BeerFest-Sept-3-id-019917" target="_blank">Mountain Times feature</a> on the 2011 Festival</li>
-          <li><a href="http://mountaintimes.com/watauga-news/articles/High-Country-Beer-Fest-listed-in-Top-10-Summer-Beer-Festivals--id-021829" target="_blank">Mountain Times article</a> about the festival making it as 1 of the  <a href="/web/20131229005854/http://www.roadtripsforbeer.com/2011/06/top-10-summer-beer-festivals-2011/" target="_blank">Top 10 Summer Beer Festivals of 2011!!</a> by <span style="font-size:.8em"> <a href="/web/20131229005854/http://roadtripsforbeer.com/" target="_blank">Road Trips for Beer</a></span></li>
-          <li><a href="http://www.theappalachianonline.com/lifestyles/7731-high-country-beer-fest-features-music-food-beer-entertainment-education-as-well-as-beer" target="_blank">AppState's student newspaper</a> gets their word in on the 2011 festival</li>
+          <li><a href="http://www.highcountrypress.com/weekly/2011/08-25-11/hoppin-for-a-good-time.htm">High Country Press feature</a> on the 2011 Festival</li>
+          <li><a href="http://mountaintimes.com/watauga-news/articles/High-Country-BeerFest-Sept-3-id-019917">Mountain Times feature</a> on the 2011 Festival</li>
+          <li><a href="http://mountaintimes.com/watauga-news/articles/High-Country-Beer-Fest-listed-in-Top-10-Summer-Beer-Festivals--id-021829">Mountain Times article</a> about the festival making it as 1 of the  <a href="http://www.roadtripsforbeer.com/2011/06/top-10-summer-beer-festivals-2011/">Top 10 Summer Beer Festivals of 2011!!</a> by <a href="http://roadtripsforbeer.com/">Road Trips for Beer</a></li>
+          <li><a href="http://www.theappalachianonline.com/lifestyles/7731-high-country-beer-fest-features-music-food-beer-entertainment-education-as-well-as-beer">AppState's student newspaper</a> gets their word in on the 2011 festival</li>
         </ul>
       </div>
       <div class="col-xs-12 col-sm-6">
@@ -114,13 +119,13 @@
           <h2>2010 High Country Beer Fest</h2>
         </div>
         <ul>
-          <li><a href="http://www.scribd.com/doc/37062784/Beer-Snob-Magazine-a-lifestyle-magazine-for-beer-lovers-Special-Event-Publication" target="_blank">Beer Snob Magazine</a> devotes an entire issue to the 2010 Festival!  Photos by Marie Freeman.</li>
-          <li><a href="http://www.highcountrypress.com/weekly/2010/08-26-10/hoist-a-cup-at-the.htm" target="_blank">High Country Press</a></li>
-          <li><a href="http://mountaintimes.com/community-events/articles/High-Country-Beer-Fest-returns-Sept-4-id-021064" target="_blank">Mountain Times</a></li>
-          <li><a href="http://mountaintimes.mycapture.com/mycapture/folder.asp?event=1070537&amp;CategoryID=35100" target="_blank">Mountain Times Photo Gallery</a> of the 2010 Festival</li>
-          <li><a href="http://blog.greystoneatwidewaters.lincolnapts.com/around-town/high-country-beer-fest-not-a-swish-and-spit-convention/" target="_blank">Greystone at Tidewaters</a> with video</li>
-          <li><a href="http://highcountryhost.com/blog/broyhill-inn/make-your-plans-for-the-2010-high-country-beer-fest.html" target="_blank">High Country Hosts</a></li>
-          <li><a href="http://www.theappalachianonline.com/lifestyles/6399-high-country-beer-fest-satisfies-attendees-yet-again" target="_blank">AppState's student newspaper</a> reviews the 2010 festival</li>
+          <li><a href="http://www.scribd.com/doc/37062784/Beer-Snob-Magazine-a-lifestyle-magazine-for-beer-lovers-Special-Event-Publication">Beer Snob Magazine</a> devotes an entire issue to the 2010 Festival!  Photos by Marie Freeman.</li>
+          <li><a href="http://www.highcountrypress.com/weekly/2010/08-26-10/hoist-a-cup-at-the.htm">High Country Press</a></li>
+          <li><a href="http://mountaintimes.com/community-events/articles/High-Country-Beer-Fest-returns-Sept-4-id-021064">Mountain Times</a></li>
+          <li><a href="http://mountaintimes.mycapture.com/mycapture/folder.asp?event=1070537&CategoryID=35100">Mountain Times Photo Gallery</a> of the 2010 Festival</li>
+          <li><a href="http://blog.greystoneatwidewaters.lincolnapts.com/around-town/high-country-beer-fest-not-a-swish-and-spit-convention/">Greystone at Tidewaters</a> with video</li>
+          <li><a href="http://highcountryhost.com/blog/broyhill-inn/make-your-plans-for-the-2010-high-country-beer-fest.html">High Country Hosts</a></li>
+          <li><a href="http://www.theappalachianonline.com/lifestyles/6399-high-country-beer-fest-satisfies-attendees-yet-again">AppState's student newspaper</a> reviews the 2010 festival</li>
         </ul>
       </div>
     </div>
@@ -131,8 +136,8 @@
           <h2>2009 High Country Beer Fest</h2>
         </div>
         <ul>
-          <li>Ryan Richards and Robin Ward put together this <a href="/web/20131229005854/http://www.youtube.com/watch?v=AA1G4k-Jt7g" target="_blank">great video</a> of the 2nd annual festival.</li>
-          <li><a href="/web/20131229005854/http://www.theappalachianonline.com/community/5264-beerfest-serves-pint-sized-fun" target="_blank">AppState's student newspaper</a> reviews the 2009 festival.</li>
+          <li>Ryan Richards and Robin Ward put together this <a href="http://www.youtube.com/watch?v=AA1G4k-Jt7g">great video</a> of the 2nd annual festival.</li>
+          <li><a href="http://www.theappalachianonline.com/community/5264-beerfest-serves-pint-sized-fun">AppState's student newspaper</a> reviews the 2009 festival.</li>
         </ul>
       </div>
     </div>
