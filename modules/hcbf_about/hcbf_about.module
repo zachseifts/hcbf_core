@@ -18,22 +18,6 @@ function hcbf_about_menu() {
     'file' => 'hcbf_about.pages.inc'
   );
 
-  $items['about/location'] = array(
-    'title' => t('Location'),
-    'page callback' => 'hcbf_about_location',
-    'access arguments' => array('access content'),
-    'type' => MENU_CALLBACK,
-    'file' => 'hcbf_about.pages.inc'
-  );
-
-  $items['about/exit'] = array(
-    'title' => t('Exit Strategy'),
-    'page callback' => 'hcbf_about_exit',
-    'access arguments' => array('access content'),
-    'type' => MENU_CALLBACK,
-    'file' => 'hcbf_about.pages.inc'
-  );
-
   return $items;
 }
 
@@ -46,16 +30,6 @@ function hcbf_about_theme() {
   $themes['hcbf_about'] = array(
     'variables' => array(),
     'template' => 'templates/hcbf_about',
-  );
-
-  $themes['hcbf_about_location'] = array(
-    'variables' => array(),
-    'template' => 'templates/hcbf_about_location',
-  );
-
-  $themes['hcbf_about_exit'] = array(
-    'variables' => array(),
-    'template' => 'templates/hcbf_about_exit',
   );
 
   return $themes;
