@@ -25,4 +25,3 @@ features[variable][] = menu_parent_hcbf_band
 features[variable][] = node_options_hcbf_band
 features[variable][] = node_preview_hcbf_band
 features[variable][] = node_submitted_hcbf_band
-project path = /tmp

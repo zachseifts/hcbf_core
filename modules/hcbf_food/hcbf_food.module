@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Food feature.
+ */
+
+include_once 'hcbf_food.features.inc';
