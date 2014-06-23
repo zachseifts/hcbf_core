@@ -8,7 +8,7 @@
   </div>
 </div>
 
-<div class="wrapper inverse-wrapper">
+<div class="wrapper" id="join-wrapper">
   <div class="container" id="join-container">
     <div class="row">
       <div class="col-xs-12">
@@ -48,7 +48,7 @@
   </div>
 </div>
 
-<div class="wrapper inverse-wrapper">
+<div class="wrapper" id="exit-wrapper">
   <div class="container" id="exit-container">
     <div class="row">
       <div class="col-xs-12">
@@ -63,12 +63,12 @@
       </div>
       <div class="col-xs-12 col-sm-7">
         <ul>
-          <li>Bill's Garage will tow your vehicle and up to 4 passengers within the Boone City Limits, FOR FREE!</li>
-          <li>Tipsy Taxi is providing FREE rides anywhere in Boone.</li>
-          <li>Designated Driver Tickets are only $10</li>
+          <li class="lead">Bill's Garage will tow your vehicle and up to 4 passengers within the Boone City Limits, FOR FREE!</li>
+          <li class="lead">Tipsy Taxi is providing FREE rides anywhere in Boone.</li>
+          <li class="lead">Designated Driver Tickets are only $10</li>
         </ul>
 
-        <p>With so many options there's no excuse for getting behind the wheel when you've enjoyed yourself a little too much.</p>
+        <p class="lead">With so many options there's no excuse for getting behind the wheel when you've enjoyed yourself a little too much.</p>
       </div>
     </div>
   </div>
