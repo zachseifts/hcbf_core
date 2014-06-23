@@ -1,11 +1,15 @@
 <div class="jumbotron">
-  <div class="container">
-    <h1>The High Country Beer Fest is a celebration of craft beer from around the region and the world.</h1>
+  <div class="container" id="about-container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1>The High Country Beer Fest is a celebration of craft beer from around the region and the world.</h1>
+      </div>
+    </div>
   </div>
 </div>
 
 <div class="wrapper inverse-wrapper">
-  <div class="container">
+  <div class="container" id="join-container">
     <div class="row">
       <div class="col-xs-12">
         <h1>Join us for the 7<sup>th</sup> annual High Country Beer Fest at the High Country Fairgrounds. Sample craft beers, craft food, music, and seminars in the high country of North Carolina. Our seminars will cover aspects of beer tasting, brewing, and food pairing.</h1>
@@ -16,7 +20,7 @@
 </div>
 
 <div class="wrapper">
-  <div class="container">
+  <div class="container" id="location-container">
     <div class="row">
       <div class="col-xs-12">
         <div class="page-header">
@@ -45,7 +49,7 @@
 </div>
 
 <div class="wrapper inverse-wrapper">
-  <div class="container">
+  <div class="container" id="exit-container">
     <div class="row">
       <div class="col-xs-12">
         <div class="page-header">

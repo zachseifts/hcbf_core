@@ -1,0 +1,23 @@
+body.page-about h1.page-header {
+  display: none;
+}
+
+body.page-about #about-container {
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+body.page-about #join-container,
+body.page-about #exit-container {
+  padding-top: 10%;
+  padding-bottom: 10%;
+}
+
+body.page-about #join-container h1 {
+  padding-bottom: 50px;
+}
+
+body.page-about #location-container .fa-5x {
+  font-size: 10em;
+}
+
