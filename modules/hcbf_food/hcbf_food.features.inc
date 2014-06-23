@@ -19,7 +19,7 @@ function hcbf_food_ctools_plugin_api($module = NULL, $api = NULL) {
 function hcbf_food_node_info() {
   $items = array(
     'hcbf_food' => array(
-      'name' => t('Food'),
+      'name' => t('Food Vendor'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
