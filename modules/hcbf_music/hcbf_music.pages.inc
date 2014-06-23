@@ -11,7 +11,7 @@ function hcbf_music() {
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
     ->entityCondition('bundle', 'hcbf_band')
-    ->propertyOrderBy('created', 'DESC');
+    ->propertyOrderBy('created', 'ASC');
 
   $result = $query->execute();
   $band_nids = array_keys($result['node']);
@@ -19,7 +19,14 @@ function hcbf_music() {
   $bands = array();
   foreach ($band_nids as $band) {
     $band_entity = entity_metadata_wrapper('node', $band);
+    $band_image = '<img src=' . image_style_url('medium', $band_entity->field_hcbf_band_image->value()['uri']) . ' class="img-responsive center-block" />';
     $new_band = array(
+      'image' => array(
+        '#type' => 'markup',
+        '#markup' => $band_image,
+        '#prefix' => '<div class="text-center">',
+        '#suffix' => '</div>'
+      ),
       'title' => array(
         '#type' => 'markup',
         '#markup' => $band_entity->label(),

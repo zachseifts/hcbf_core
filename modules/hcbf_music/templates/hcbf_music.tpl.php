@@ -8,7 +8,7 @@
     </div>
     <div class="row">
       <div class="col-xs-12 col-sm-3">
-        <img src="http://placehold.it/250x250" />
+        <?php print render($band['image']); ?>
       </div>
       <div class="col-xs-12 col-sm-9">
         <?php print render($band['description']); ?>
