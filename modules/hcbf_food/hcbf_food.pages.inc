@@ -11,7 +11,7 @@ function hcbf_food() {
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
     ->entityCondition('bundle', 'hcbf_food')
-    ->propertyOrderBy('created', 'ASC');
+    ->propertyOrderBy('title', 'ASC');
 
   $result = $query->execute();
   $food_nids = array_keys($result['node']);
