@@ -54,7 +54,7 @@
   </div>
 </div>
     
-<div class="wrapper inverse-wrapper">
+<div id="video-wrapper" class="wrapper inverse-wrapper">
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-8">
