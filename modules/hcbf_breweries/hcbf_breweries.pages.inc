@@ -67,7 +67,7 @@ function hcbf_breweries_manage() {
 function hcbf_breweries() {
 
   drupal_add_css(drupal_get_path('module', 'hcbf_breweries') . '/css/hcbf_breweries.css');
-  drupal_set_title(t('Participating Breweries'));
+  drupal_set_title(t('The breweries'));
 
   // Get all of the published breweries.
   $query = new EntityFieldQuery();
