@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the High Country Beer Fest Blog feature.
+ */
+
+include_once 'hcbf_blog.features.inc';
