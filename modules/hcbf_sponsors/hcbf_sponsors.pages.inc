@@ -22,7 +22,7 @@ function hcbf_sponsors_get_by_level($level, $chunk) {
   foreach ($nids as $top) {
     $sponsor_entity = entity_metadata_wrapper('node', $top);
     $sponsor_logo = '<img src=' . image_style_url('medium', $sponsor_entity->field_hcbf_sponsor_image->value()['uri']) . ' class="img-responsive center-block" />';
-    $sponsor_link = l($sponsor_entity->label(), $sponsor_entity->field_hcbf_sponsor_sponsor_url->value()); 
+    $sponsor_link = l($sponsor_entity->label(), $sponsor_entity->field_hcbf_sponsor_sponsor_url->url->value()); 
     $sponsors[] = array(
       'logo' => array(
         '#type' => 'markup',
@@ -47,10 +47,12 @@ function hcbf_sponsors_get_by_level($level, $chunk) {
  * Page callback for the sponsors page.
  */
 function hcbf_sponsors() {
+  drupal_add_css(drupal_get_path('module', 'hcbf_sponsors') . '/css/hcbf_sponsors.css');
+
   $level_4_sponsors = hcbf_sponsors_get_by_level(4, 2);
-  $level_3_sponsors = hcbf_sponsors_get_by_level(3, 2);
-  $level_2_sponsors = hcbf_sponsors_get_by_level(2, 2);
-  $level_1_sponsors = hcbf_sponsors_get_by_level(1, 2);
+  $level_3_sponsors = hcbf_sponsors_get_by_level(3, 3);
+  $level_2_sponsors = hcbf_sponsors_get_by_level(2, 3);
+  $level_1_sponsors = hcbf_sponsors_get_by_level(1, 3);
 
   return theme('hcbf_sponsors', array(
     'level_4_sponsors' => $level_4_sponsors,
