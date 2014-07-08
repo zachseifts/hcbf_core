@@ -18,7 +18,7 @@ function hcbf_blog_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
@@ -52,6 +52,66 @@ function hcbf_blog_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-hcbf_post-field_hcbf_post_images'
+  $field_instances['node-hcbf_post-field_hcbf_post_images'] = array(
+    'bundle' => 'hcbf_post',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_hcbf_post_images',
+    'label' => 'Images',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 1,
+      'default_image' => 0,
+      'file_directory' => 'posts',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'insert' => 1,
+        'insert_absolute' => 0,
+        'insert_class' => '',
+        'insert_default' => 'auto',
+        'insert_styles' => array(
+          'auto' => 0,
+          'icon_link' => 0,
+          'image' => 0,
+          'image_large' => 'image_large',
+          'image_medium' => 'image_medium',
+          'image_thumbnail' => 'image_thumbnail',
+          'link' => 0,
+        ),
+        'insert_width' => '',
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => -2,
+    ),
+  );
+
   // Exported field_instance: 'node-hcbf_post-field_hcbf_post_tags'
   $field_instances['node-hcbf_post-field_hcbf_post_tags'] = array(
     'bundle' => 'hcbf_post',
@@ -60,7 +120,7 @@ function hcbf_blog_field_default_field_instances() {
     'description' => 'Select the tags for this post.',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'inline',
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
@@ -92,6 +152,7 @@ function hcbf_blog_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
+  t('Images');
   t('Select the tags for this post.');
   t('Tags');
 
