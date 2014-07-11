@@ -13,7 +13,7 @@
     <div class="row">
       <div class="col-xs-12">
         <h1>Join us for the 7<sup>th</sup> annual High Country Beer Fest at the High Country Fairgrounds. Sample craft beers, craft food, music, and seminars in the high country of North Carolina. Our seminars will cover aspects of beer tasting, brewing, and food pairing.</h1>
-        <p class="lead">Our 2014 non-profits include the <a href="http://www.highcountrylocalfirst.org/" title="High Country Local First">High Country Local First</a>, <a href="http://www.highcountrymommies.com/" title="High Country Mommies">High Country Mommies</a>, and Ivory Tower, Inc. All of these organizations will receive a portion of the proceeds of this year's High Country Beer Fest.</p>
+        <p class="lead">This is a 100% non-profit event.  Our primary beneficiary of the event is <a href="http://fermentation.appstate.edu/" title="ASU Fermentation Sciences">ASU Fermentation Sciences</a>, but we also support other local non-profit organizations, including <a href="http://www.highcountrylocalfirst.org/" title="High Country Local First">High Country Local First</a>, <a href="http://www.highcountrymommies.com/" title="High Country Mommies">High Country Mommies</a>, and <a href="http://ivorytowerscience.com/" title="Ivory Tower, Inc">Ivory Tower, Inc</a>.</p>
       </div>
     </div>
   </div>
@@ -51,17 +51,12 @@
 <div class="wrapper" id="exit-wrapper">
   <div class="container" id="exit-container">
     <div class="row">
-      <div class="col-xs-12">
+      <div class="col-xs-12 col-sm-6">
         <div class="page-header">
           <h1>What's your exit strategy?</h1>
         </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12 col-sm-5">
         <p class="lead">The High Country Craft Food and Beverage Festival wants to make sure that you have a great time at the Beer Fest, but we also want to make sure you get home safely.</p>
-      </div>
-      <div class="col-xs-12 col-sm-7">
+
         <ul>
           <li class="lead">Bill's Garage will tow your vehicle and up to 4 passengers within the Boone City Limits, FOR FREE!</li>
           <li class="lead">Tipsy Taxi is providing FREE rides anywhere in Boone.</li>
@@ -69,6 +64,12 @@
         </ul>
 
         <p class="lead">With so many options there's no excuse for getting behind the wheel when you've enjoyed yourself a little too much.</p>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <div class="page-header">
+          <h1>Need a hotel room?</h1>
+        </div>
+          <p class="lead">We've got you covered! Patrons of the High Country Beer Fest will receive a 10% discount to La Quinta, the Sleep Inn, and the Country Inn and Suites.</p>
       </div>
     </div>
   </div>
