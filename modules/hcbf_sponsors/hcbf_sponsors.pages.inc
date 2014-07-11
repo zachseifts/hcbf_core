@@ -21,8 +21,21 @@ function hcbf_sponsors_get_by_level($level, $chunk) {
   $sponsors = array();
   foreach ($nids as $top) {
     $sponsor_entity = entity_metadata_wrapper('node', $top);
-    $sponsor_logo = '<img src=' . image_style_url('medium', $sponsor_entity->field_hcbf_sponsor_image->value()['uri']) . ' class="img-responsive center-block" />';
-    $sponsor_link = l($sponsor_entity->label(), $sponsor_entity->field_hcbf_sponsor_sponsor_url->url->value()); 
+
+    if ($sponsor_entity->field_hcbf_sponsor_image->value()) {
+      $sponsor_logo = '<img src=' . image_style_url('medium', $sponsor_entity->field_hcbf_sponsor_image->value()['uri']) . ' class="img-responsive center-block" />';
+    }
+    else {
+      $sponsor_logo = '<i class="fa fa-leaf no-sponsor-image"></i>';
+    }
+
+    if ($sponsor_entity->field_hcbf_sponsor_sponsor_url->url->value()) {
+      $sponsor_link = l($sponsor_entity->label(), $sponsor_entity->field_hcbf_sponsor_sponsor_url->url->value());
+    }
+    else {
+      $sponsor_link = $sponsor_entity->label();
+    }
+
     $sponsors[] = array(
       'logo' => array(
         '#type' => 'markup',
