@@ -9,7 +9,7 @@
         <div class="page-header">
           <h1 class="text-center">Buy Tickets</h1>
         </div>
-        <p>Tickets are on sale now!</p>
+        <p>Tickets are on sale now! You can also buy paper tickets at <a href="http://peabodyswineandbeer.com/">Peabody's</a> and <a href="https://www.facebook.com/benchmarkprovisions">Benchmark Provisions</a> if you're in town.</p>
         <div class="table-responsive">
           <table class="table ticket-table">
             <tbody>
