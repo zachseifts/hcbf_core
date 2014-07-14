@@ -69,7 +69,7 @@
         <div class="page-header">
           <h1>Need a hotel room?</h1>
         </div>
-          <p class="lead">We've got you covered! Patrons of the High Country Beer Fest will receive a 10% discount to La Quinta, the Sleep Inn, and the Country Inn and Suites.</p>
+          <p class="lead">We've got you covered! Patrons of the High Country Beer Fest will receive a 10% discount to <a href="http://www.laquintaboone.com/">La Quinta</a>, the <a href="http://www.sleepinn.com/hotel-boone-north_carolina-NC514">Sleep Inn</a>, and the <a href="http://www.countryinns.com/boone-hotel-nc-28607/ncboone">Country Inn and Suites</a>.</p>
       </div>
     </div>
   </div>
