@@ -60,6 +60,8 @@ function hcbf_sponsors_get_by_level($level, $chunk) {
  * Page callback for the sponsors page.
  */
 function hcbf_sponsors() {
+  drupal_set_title('');
+
   drupal_add_css(drupal_get_path('module', 'hcbf_sponsors') . '/css/hcbf_sponsors.css');
 
   $level_4_sponsors = hcbf_sponsors_get_by_level(4, 2);

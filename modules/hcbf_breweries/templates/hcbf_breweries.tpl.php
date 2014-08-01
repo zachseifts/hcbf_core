@@ -7,7 +7,7 @@
 <div class="breweries-wrapper">
   <div class="container">
     <div class="row">
-      <div class="col-xs-12 col-md-9">
+      <div class="col-xs-12 col-sm-6 col-lg-8">
         <div class="container-fluid">
 
           <?php foreach ($breweries as $breweries_row) { ?>
@@ -24,9 +24,9 @@
 
         </div>
       </div>
-      <div class="col-xs-12 col-md-3">
-        <?php print render(hcbf_buy_tickets_box(array('well'))); ?>
+      <div class="col-xs-12 col-sm-6 col-lg-4">
         <?php print render(hcbf_register_brewery_box(array(), array('well'), t('Register now'))); ?>
+        <?php print render(hcbf_buy_tickets_box(array('well'))); ?>
       </div>
     </div>
   </div>

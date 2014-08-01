@@ -1,3 +1,10 @@
+<?php
+/**
+ * A page that displays the musical acts at the Beer Fest.
+ */
+?>
+
+
 <?php foreach ($bands as $band) { ?>
 <div class="wrapper">
   <div class="container">

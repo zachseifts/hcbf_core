@@ -19,10 +19,13 @@
  * @param $button_text string
  *   A string with button text if it differs from the default.
  *
+ * @param $description_text string
+ *   A string with description text if it differs from the default.
+ *
  * @return array
  *   A renderable array that contains the content for the "buy tickets" box.
  */
-function hcbf_register_sponsor_box($button_classes, $extra_classes, $button_text) {
+function hcbf_register_sponsor_box($button_classes, $extra_classes, $button_text, $description_text) {
   // Set the classes
   $classes = array('register-sponsor-wrapper');
   if (!empty($extra_classes)) {
@@ -39,6 +42,11 @@ function hcbf_register_sponsor_box($button_classes, $extra_classes, $button_text
   $sponsor_text = t('I\'d like to sponsor the Beer Fest');
   if ($button_text) {
     $sponsor_text = $button_text;
+  }
+
+  $sponsor_description = t('We have plenty of sponsorship opportunities, contact us and we\'ll let you know how you can help out.');
+  if ($description_text) {
+    $sponsor_description = $description_text;
   }
 
   $sponsor_link = l(
@@ -65,7 +73,7 @@ function hcbf_register_sponsor_box($button_classes, $extra_classes, $button_text
       ),
       array(
         '#type' => 'markup',
-        '#markup' => t('We have plenty of sponsorship opportunities, contact us and we\'ll let you know how you can help out.'),
+        '#markup' => $sponsor_description,
         '#prefix' => '<p class="lead text-center">',
         '#suffix' => '</p>'
       ),
