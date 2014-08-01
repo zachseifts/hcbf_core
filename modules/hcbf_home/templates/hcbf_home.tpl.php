@@ -57,9 +57,7 @@
         <?php print render(hcbf_register_brewery_box(array('btn-lg'))); ?>
       </div>
       <div class="col-xs-12 col-md-6">
-        <h1 class="heading text-center">Do you want to be a sponsor?</h1>
-        <p class="lead text-center">We have plenty of sponsorship opportunities, contact us and we'll let you know how you can help out.</p>
-        <p class="text-center"><a class="btn btn-success btn-lg" href="/sponsors/register" role="button">I'd like to sponsor the Beer Fest</a></p>
+        <?php print render(hcbf_register_sponsor_box(array('btn-lg'))); ?>
       </div>
     </div>
   </div>

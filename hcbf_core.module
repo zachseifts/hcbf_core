@@ -5,6 +5,86 @@
  */
 
 /**
+ * Generates the 'Sponsor signup' box.
+ *
+ * Usage:
+ *     $box = hcbf_register_sponsor_box(array('foo', 'bar'));
+ *
+ * @param $button_classes array
+ *   An array of classes that will be added to the box after it's rendered.
+ *
+ * @param $extra_classes array
+ *   An array of classes that will be added to the box after it's rendered.
+ *
+ * @param $button_text string
+ *   A string with button text if it differs from the default.
+ *
+ * @return array
+ *   A renderable array that contains the content for the "buy tickets" box.
+ */
+function hcbf_register_sponsor_box($button_classes, $extra_classes, $button_text) {
+  // Set the classes
+  $classes = array('register-sponsor-wrapper');
+  if (!empty($extra_classes)) {
+    $classes = array_merge($classes, $extra_classes);
+  }
+  $classes = implode(' ', $classes);
+
+  $sponsor_class = array('btn-success', 'btn');
+  if (!empty($button_classes)) {
+    $sponsor_class = array_merge($sponsor_class, $button_classes);
+  }
+  $sponsor_class = implode(' ', $sponsor_class);
+
+  $sponsor_text = t('I\'d like to sponsor the Beer Fest');
+  if ($button_text) {
+    $sponsor_text = $button_text;
+  }
+
+  $sponsor_link = l(
+    $sponsor_text,
+    'sponsors/register',
+    array(
+      'attributes' => array(
+        'class' => $sponsor_class,
+      )
+    )
+  );
+
+  // Generate the dom
+  $dom = array(
+    array(
+      '#type' => 'markup',
+      '#prefix' => '<div class="' . $classes . '">',
+      '#suffix' => '</div>',
+      array(
+        '#type' => 'markup',
+        '#markup' => t('Do you want to be a sponsor?'),
+        '#prefix' => '<h1 class="heading text-center">',
+        '#suffix' => '</h1>',
+      ),
+      array(
+        '#type' => 'markup',
+        '#markup' => t('We have plenty of sponsorship opportunities, contact us and we\'ll let you know how you can help out.'),
+        '#prefix' => '<p class="lead text-center">',
+        '#suffix' => '</p>'
+      ),
+      array(
+        '#type' => 'markup',
+        '#prefix' => '<p class="text-center">',
+        '#suffix' => '</p>',
+        array(
+          '#type' => 'markup',
+          '#markup' => $sponsor_link,
+        ),
+      ),
+    ),
+  );
+
+  return $dom;
+}
+
+/**
  * Generates the 'Register brewery' box.
  *
  * Usage:
@@ -50,7 +130,6 @@ function hcbf_register_brewery_box($button_classes, $extra_classes, $button_text
       )
     )
   );
-
 
   // Generate the dom
   $dom = array(
