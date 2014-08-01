@@ -75,7 +75,7 @@ function hcbf_breweries() {
     ->entityCondition('bundle', 'hcbf_brewery')
     ->propertyCondition('status', 1)
     ->fieldCondition('field_hcbf_brewery_accepted', 'value', 'yes', '=')
-    ->propertyOrderBy('created', 'DESC');
+    ->propertyOrderBy('title', 'ASC');
 
   $result = $query->execute();
   $breweries_nids = array_keys($result['node']);

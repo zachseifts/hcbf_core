@@ -4,3 +4,138 @@
  * The core module for the High Country Craft Food and Beverage Festival's website.
  */
 
+/**
+ * Generates the 'Buy tickets' box.
+ *
+ * Usage:
+ *     $box = hcbf_buy_tickets_box(array('foo', 'bar'));
+ *
+ * @param $extra_classes string
+ *   An array of classes that will be added to the box after it's rendered.
+ *
+ * @return array
+ *   A renderable array that contains the content for the "buy tickets" block.
+ */
+function hcbf_buy_tickets_box($extra_classes) {
+
+  // Set the classes
+  $classes = array('buy-tickets-wrapper');
+  if (!empty($extra_classes)) {
+    $classes = array_merge($classes, $extra_classes);
+  }
+  $classes = implode(', ', $classes);
+
+  // Generate the links for ticket types
+  $general_admission = l(
+    t('$40.00'),
+    'http://www.etix.com/ticket/online/performanceSearch.jsp?performance_id=1820947',
+    array(
+      'attributes' => array(
+        'class' => 'btn btn-success btn-sm'
+      )
+    )
+  );
+
+  $designated_driver = l(
+    t('$10.00'),
+    'http://www.etix.com/ticket/online/performanceSearch.jsp?performance_id=1821065',
+    array(
+      'attributes' => array(
+        'class' => 'btn btn-success btn-sm'
+      )
+    )
+  );
+
+  // Generate the dom
+  $dom = array(
+    array(
+      '#type' => 'markup',
+      '#prefix' => '<div class="' . $classes . '">',
+      '#suffix' => '</div>',
+      array(
+        '#type' => 'markup',
+        '#prefix' => '<div class="text-center">',
+        '#suffix' => '</div>',
+        array(
+          '#type' => 'markup',
+          '#prefix' => '<i class="icon fa fa-ticket fa-5x">',
+          '#suffix' => '</i>',
+        ),
+      ),
+
+      array(
+        '#type' => 'markup',
+        '#prefix' => '<div class="page-header">',
+        '#suffix' => '</div>',
+        array(
+          '#type' => 'markup',
+          '#markup' => t('Buy Tickets'),
+          '#prefix' => '<h2 class="text-center">',
+          '#suffix' => '</h2>',
+        ),
+      ),
+
+      array(
+        '#type' => 'markup',
+        '#markup' => t('Tickets are on sale now!'),
+        '#prefix' => '<p>',
+        '#suffix' => '</p>',
+      ),
+      array(
+        '#type' => 'markup',
+        '#prefix' => '<div class="table-responsive">',
+        '#suffix' => '</div>',
+        array(
+          '#type' => 'markup',
+          '#prefix' => '<table class="table ticket-table">',
+          '#suffix' => '</table>',
+          array(
+            '#type' => 'markup',
+            '#prefix' => '<tbody>',
+            '#suffix' => '</tbody>',
+
+            array(
+              '#type' => 'markup',
+              '#prefix' => '<tr>',
+              '#suffix' => '</tr>',
+              array(
+                '#type' => 'markup',
+                '#markup' => 'General Admission',
+                '#prefix' => '<td>',
+                '#suffix' => '</td>',
+              ),
+              array(
+                '#type' => 'markup',
+                '#markup' => $general_admission,
+                '#prefix' => '<td>',
+                '#suffix' => '</td>',
+              ),
+            ),
+
+            array(
+              '#type' => 'markup',
+              '#prefix' => '<tr>',
+              '#suffix' => '</tr>',
+              array(
+                '#type' => 'markup',
+                '#markup' => 'Designated Driver',
+                '#prefix' => '<td>',
+                '#suffix' => '</td>',
+              ),
+              array(
+                '#type' => 'markup',
+                '#markup' => $designated_driver,
+                '#prefix' => '<td>',
+                '#suffix' => '</td>',
+              ),
+            ),
+
+          ),
+        ),
+      ),
+    ),
+  );
+
+  return $dom;
+}
+
