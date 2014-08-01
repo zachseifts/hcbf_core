@@ -1,5 +1,6 @@
 <?php
 /**
+ * @file
  * A page that displays listings of all products
  */
 ?>
