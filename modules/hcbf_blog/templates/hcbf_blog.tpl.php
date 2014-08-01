@@ -13,30 +13,7 @@
         <?php endif; ?>
       </div>
       <div class="col-xs-12 col-md-3">
-
-        <div class="well">
-          <div class="text-center">
-            <i class="icon fa fa-ticket fa-5x"></i>
-          </div>
-          <div class="page-header">
-            <h2 class="text-center">Buy Tickets</h2>
-          </div>
-          <p>Tickets are on sale now!</p>
-          <div class="table-responsive">
-            <table class="table ticket-table">
-              <tbody>
-                <tr>
-                  <td>General Admission</td>
-                  <td><a class="btn btn-success btn-sm" href="http://www.etix.com/ticket/online/performanceSearch.jsp?performance_id=1820947">$40.00</a></td>
-                </tr>
-                <tr>
-                  <td>Designated Driver</td>
-                  <td><a class="btn btn-success btn-sm" href="http://www.etix.com/ticket/online/performanceSearch.jsp?performance_id=1821065">$10.00</a></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
+        <?php print render(hcbf_buy_tickets_box(array('well'))); ?>
 
         <div class="well">
           <div class="page-header">

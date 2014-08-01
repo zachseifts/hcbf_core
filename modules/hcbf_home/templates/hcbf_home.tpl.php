@@ -3,27 +3,7 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-4">
-        <div class="text-center">
-          <i class="icon fa fa-ticket fa-5x"></i>
-        </div>
-        <div class="page-header">
-          <h1 class="text-center">Buy Tickets</h1>
-        </div>
-        <p>Tickets are on sale now! You can also buy paper tickets at <a href="http://peabodyswineandbeer.com/">Peabody's</a> and <a href="https://www.facebook.com/benchmarkprovisions">Benchmark Provisions</a> if you're in town.</p>
-        <div class="table-responsive">
-          <table class="table ticket-table">
-            <tbody>
-              <tr>
-                <td>General Admission</td>
-                <td><a class="btn btn-success btn-sm" href="http://www.etix.com/ticket/online/performanceSearch.jsp?performance_id=1820947">$40.00</a></td>
-              </tr>
-              <tr>
-                <td>Designated Driver</td>
-                <td><a class="btn btn-success btn-sm" href="http://www.etix.com/ticket/online/performanceSearch.jsp?performance_id=1821065">$10.00</a></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <?php print render(hcbf_buy_tickets_box()); ?>
       </div>
       <div class="col-xs-12 col-sm-4">
         <div class="text-center">
