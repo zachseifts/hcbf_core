@@ -5,16 +5,97 @@
  */
 
 /**
+ * Generates the 'Register brewery' box.
+ *
+ * Usage:
+ *     $box = hcbf_register_brewery_box(array('foo', 'bar'));
+ *
+ * @param $button_classes array
+ *   An array of classes that will be added to the box after it's rendered.
+ *
+ * @param $extra_classes array
+ *   An array of classes that will be added to the box after it's rendered.
+ *
+ * @param $button_text string
+ *   A string with button text if it differs from the default.
+ *
+ * @return array
+ *   A renderable array that contains the content for the "buy tickets" box.
+ */
+function hcbf_register_brewery_box($button_classes, $extra_classes, $button_text) {
+  // Set the classes
+  $classes = array('register-brewery-wrapper');
+  if (!empty($extra_classes)) {
+    $classes = array_merge($classes, $extra_classes);
+  }
+  $classes = implode(' ', $classes);
+
+  $register_class = array('btn-success', 'btn');
+  if (!empty($button_classes)) {
+    $register_class = array_merge($register_class, $button_classes);
+  }
+  $register_class = implode(' ', $register_class);
+
+  $register_text = t('I\'d like to register my brewery');
+  if ($button_text) {
+    $register_text = $button_text;
+  }
+
+  $register_link = l(
+    $register_text,
+    'breweries/register',
+    array(
+      'attributes' => array(
+        'class' => $register_class,
+      )
+    )
+  );
+
+
+  // Generate the dom
+  $dom = array(
+    array(
+      '#type' => 'markup',
+      '#prefix' => '<div class="' . $classes . '">',
+      '#suffix' => '</div>',
+      array(
+        '#type' => 'markup',
+        '#markup' => t('Want to serve your beer?'),
+        '#prefix' => '<h1 class="heading text-center">',
+        '#suffix' => '</h1>',
+      ),
+      array(
+        '#type' => 'markup',
+        '#markup' => t('We\'d love to have your beer! We\'re looking for craft breweries who want to participate in this year\'s High Country Beer Fest.'),
+        '#prefix' => '<p class="lead text-center">',
+        '#suffix' => '</p>'
+      ),
+      array(
+        '#type' => 'markup',
+        '#prefix' => '<p class="text-center">',
+        '#suffix' => '</p>',
+        array(
+          '#type' => 'markup',
+          '#markup' => $register_link,
+        ),
+      ),
+    ),
+  );
+
+  return $dom;
+}
+
+/**
  * Generates the 'Buy tickets' box.
  *
  * Usage:
  *     $box = hcbf_buy_tickets_box(array('foo', 'bar'));
  *
- * @param $extra_classes string
+ * @param $extra_classes array
  *   An array of classes that will be added to the box after it's rendered.
  *
  * @return array
- *   A renderable array that contains the content for the "buy tickets" block.
+ *   A renderable array that contains the content for the "buy tickets" box.
  */
 function hcbf_buy_tickets_box($extra_classes) {
 

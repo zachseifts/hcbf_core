@@ -54,9 +54,7 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-md-6">
-        <h1 class="heading text-center">Want to serve your beer?</h1>
-        <p class="lead text-center">We'd love to have your beer! We're looking for craft breweries who want to participate in this year's High Country Beer Fest.</p>
-        <p class="text-center"><a class="btn btn-success btn-lg" href="/breweries/register" role="button">I'd like to register my brewery</a></p>
+        <?php print render(hcbf_register_brewery_box(array('btn-lg'))); ?>
       </div>
       <div class="col-xs-12 col-md-6">
         <h1 class="heading text-center">Do you want to be a sponsor?</h1>
