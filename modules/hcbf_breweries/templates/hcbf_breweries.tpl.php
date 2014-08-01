@@ -25,8 +25,8 @@
         </div>
       </div>
       <div class="col-xs-12 col-md-3">
-        <?php print render(hcbf_register_brewery_box(array(), array('well'), t('Register now'))); ?>
         <?php print render(hcbf_buy_tickets_box(array('well'))); ?>
+        <?php print render(hcbf_register_brewery_box(array(), array('well'), t('Register now'))); ?>
       </div>
     </div>
   </div>
