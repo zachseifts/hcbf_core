@@ -55,7 +55,7 @@
         <div class="page-header">
           <h1>What's your exit strategy?</h1>
         </div>
-        <p class="lead">The High Country Craft Food and Beverage Festival wants to make sure that you have a great time at the Beer Fest, but we also want to make sure you get home safely.</p>
+        <p class="lead">The High Country Beer Fest wants to make sure that you have a great time at the Beer Fest, but we also want to make sure you get home safely.</p>
 
         <ul>
           <li class="lead">Bill's Garage will tow your vehicle and up to 4 passengers within the Boone City Limits, FOR FREE!</li>
