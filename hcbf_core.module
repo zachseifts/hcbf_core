@@ -5,6 +5,21 @@
  */
 
 /**
+ * Gets a count of the currently published breweries.
+ */
+function hcbf_get_brewery_count() {
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'hcbf_brewery')
+    ->propertyCondition('status', 1)
+    ->fieldCondition('field_hcbf_brewery_accepted', 'value', 'yes', '=')
+    ->propertyOrderBy('title', 'ASC');
+
+  $result = $query->execute();
+  return count(array_keys($result['node']));
+}
+
+/**
  * Generates a box.
  *
  * @param $box array
@@ -277,7 +292,9 @@ function hcbf_register_brewery_box($button_classes, $extra_classes, $button_text
  * Generates the 'Buy tickets' box.
  *
  * Usage:
- *     $box = hcbf_buy_tickets_box(array('foo', 'bar'));
+ *     $box = hcbf_buy_tickets_box(array(
+ *       'wrapper-classes', array('well'),
+ *     ));
  *
  * @param $extra_classes array
  *   An array of classes that will be added to the box after it's rendered.
@@ -420,9 +437,10 @@ function hcbf_buy_tickets_box($extra_classes) {
  *   A renderable array that contains the content for the The Festivities page
  */
 function hcbf_the_festivities_box() {
+  $brewery_count = hcbf_get_brewery_count();
   return hcbf_link_box_generator(
     array(
-      'name' => 'the0festivities',
+      'name' => 'the-festivities',
       'icon' => 'fa-beer',
       'title' => t('The Festivities'),
       'content' => array(
@@ -431,7 +449,7 @@ function hcbf_the_festivities_box() {
         '#suffix' => '</div>',
         array(
           '#type' => 'markup',
-          '#markup' => 'Join us at the High Country Fairgrounds in Boone, North Carolina on Saturday, August 30, 2014 from 3:00 pm to 7:00 pm to sample a variety of craft beer, craft food, educational seminars, and live music.',
+          '#markup' => 'Join us and ' . $brewery_count . ' breweries from around the world at the High Country Fairgrounds in Boone, North Carolina on Saturday, August 30, 2014 from 3:00 pm to 7:00 pm to sample a variety of craft beer, craft food, educational seminars, and live music.',
           '#prefix' => '<p class="text-center">',
           '#suffix' => '</p>',
         ),
