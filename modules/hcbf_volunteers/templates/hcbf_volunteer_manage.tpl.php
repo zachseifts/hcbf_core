@@ -6,6 +6,7 @@
           <table class="table">
             <thead>
               <tr>
+                <th></th>
                 <th>Name</th>
                 <th>Phone</th>
                 <th>Accepted</th>
@@ -20,6 +21,7 @@
             <tbody>
               <?php foreach ($volunteers as $volunteer) { ?>
                 <tr class="<?php print $volunteer['row_class']; ?>">
+                  <td><?php print render($volunteer['count']); ?></td>
                   <td><?php print render($volunteer['name']); ?></td>
                   <td><?php print render($volunteer['phone']); ?></td>
                   <td><?php print render($volunteer['approved']); ?></td>
