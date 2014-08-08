@@ -335,7 +335,7 @@ function hcbf_buy_tickets_box($extra_classes) {
   // Set the description text
   $peabodys_link = l(t("Peabody's"), 'http://peabodyswineandbeer.com/');
   $benchmark_link = l(t('Benchmark Provisions'), 'https://www.facebook.com/benchmarkprovisions');
-  $descrption = 'Tickets are on sale now! You can also buy paper tickets at ' . $peabodys_link . ' and ' . $benchmark_link . 'if you\'re in town.';
+  $descrption = 'Tickets are on sale now! You can also buy paper tickets at ' . $peabodys_link . ' and ' . $benchmark_link . ' if you\'re in town.';
 
   // Generate the dom
   $dom = array(
