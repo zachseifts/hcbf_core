@@ -14,7 +14,7 @@
           <div class="row">
             <div class="col-xs-12">
               <div class="page-header">
-                <h2>Our $2500+ sponsors</h2>
+                <h2>Our Imperial Stout level sponsors</h2>
               </div>
             </div>
           </div>
@@ -32,7 +32,7 @@
           <div class="row">
             <div class="col-xs-12">
               <div class="page-header">
-                <h2>Our $1000+ sponsors</h2>
+                <h2>Our Double IPA level sponsors</h2>
               </div>
             </div>
           </div>
@@ -50,7 +50,7 @@
           <div class="row">
             <div class="col-xs-12">
               <div class="page-header">
-                <h2>Our $500+ sponsors</h2>
+                <h2>Our Pale Ale level sponsors</h2>
               </div>
             </div>
           </div>
@@ -68,7 +68,7 @@
           <div class="row">
             <div class="col-xs-12">
               <div class="page-header">
-                <h2>Our $250+ sponsors</h2>
+                <h2>Our Session Ale level sponsors</h2>
               </div>
             </div>
           </div>
