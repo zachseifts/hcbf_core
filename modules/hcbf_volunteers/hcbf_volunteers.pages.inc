@@ -62,6 +62,10 @@ function hcbf_volunteer_manage() {
         '#markup' => l(t('Email'), 'mailto:' . $volunteer_entity->field_hcbf_volunteer_email->value(), array('absolute' => TRUE)),
         '#prefix' => '<i class="fa fa-inbox"></i> ',
       ),
+      'shirt_size' => array(
+        '#type' => 'markup',
+        '#markup' => $volunteer_entity->field_hcbf_volunteer_shirt->value(),
+      ),
       'view' => array(
         '#type' => 'markup',
         '#markup' => l(t('View'), 'node/' . $volunteer_entity->nid->value()),
