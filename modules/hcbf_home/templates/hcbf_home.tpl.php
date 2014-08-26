@@ -32,7 +32,7 @@
 
             <div class="col-xs-12 col-sm-4">
               <div class="text-center">
-                <i class="icon fa fa-check-square fa-5x"></i>
+                <i class="icon fa fa-money fa-5x"></i>
               </div>
               <div class="text-center">
                 <h2>Cash</h2>
@@ -42,7 +42,7 @@
 
             <div class="col-xs-12 col-sm-4">
               <div class="text-center">
-                <i class="icon fa fa-check-square fa-5x"></i>
+                <i class="icon fa fa-thumbs-up fa-5x"></i>
               </div>
               <div class="text-center">
                 <h2>A good attitude</h2>
