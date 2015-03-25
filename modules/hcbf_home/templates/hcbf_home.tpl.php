@@ -1,11 +1,24 @@
-<div id="getting-there-wrapper" class="wrapper">
+<div id="next-year-wrapper" class="wrapper jumbotron">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-xs-12">
+          <h1>Join us for the 2015 High Country Beer Fest</h1>
+          <p class="lead">Check back later for more information.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div id="getting-there-wrapper" class="wrapper" style="display:none">
   <div class="container">
 
     <div class="row">
       <div class="col-xs-12">
         <div class="jumbotron">
-          <h1>There will be tickets available at the gate!</h1>
-          <p class="lead">We'll have tickets available for purchase at the gate, we will not be taking cards so bring cash.</p>
+          <h1>Join us for the 2015 High Country Beer Fest</h1>
+          <p class="lead">Check back later for more information.</p>
         </div>
       </div>
     </div>

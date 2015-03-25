@@ -313,21 +313,25 @@ function hcbf_buy_tickets_box($extra_classes) {
 
   // Generate the links for ticket types
   $general_admission = l(
-    t('$40.00'),
-    'http://www.etix.com/ticket/online/performanceSearch.jsp?performance_id=1820947',
+    '<del>' . t('$40.00') . '</del>',
+    '#',
     array(
+      'html' => TRUE,
       'attributes' => array(
-        'class' => 'btn btn-success btn-sm'
+        'class' => 'btn btn-danger btn-sm',
+        'disabled' => 'disabled',
       )
     )
   );
 
   $designated_driver = l(
-    t('$10.00'),
-    'http://www.etix.com/ticket/online/performanceSearch.jsp?performance_id=1821065',
+    '<del>' . t('$10.00') . '</del>',
+    '#',
     array(
+      'html' => TRUE,
       'attributes' => array(
-        'class' => 'btn btn-success btn-sm'
+        'class' => 'btn btn-danger btn-sm',
+        'disabled' => 'disabled',
       )
     )
   );
