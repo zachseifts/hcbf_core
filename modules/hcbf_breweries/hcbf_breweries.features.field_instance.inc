@@ -452,6 +452,49 @@ function hcbf_breweries_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-hcbf_brewery-field_hcbf_brewery_festival'
+  $field_instances['node-hcbf_brewery-field_hcbf_brewery_festival'] = array(
+    'bundle' => 'hcbf_brewery',
+    'default_value' => array(
+      0 => array(
+        'target_id' => 299,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 32,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_hcbf_brewery_festival',
+    'label' => 'Festival',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 31,
+    ),
+  );
+
   // Exported field_instance: 'node-hcbf_brewery-field_hcbf_brewery_hotel'
   $field_instances['node-hcbf_brewery-field_hcbf_brewery_hotel'] = array(
     'bundle' => 'hcbf_brewery',
@@ -1011,6 +1054,7 @@ function hcbf_breweries_field_default_field_instances() {
   t('Brewery address line 2');
   t('Brewery website');
   t('Do you need a hotel room?');
+  t('Festival');
   t('Full name of the brewery');
   t('Hotel Bed');
   t('Hotel night');

@@ -129,6 +129,49 @@ function hcbf_sponsors_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-hcbf_sponsor-field_hcbf_sponsor_festival'
+  $field_instances['node-hcbf_sponsor-field_hcbf_sponsor_festival'] = array(
+    'bundle' => 'hcbf_sponsor',
+    'default_value' => array(
+      0 => array(
+        'target_id' => 299,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 8,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_hcbf_sponsor_festival',
+    'label' => 'Festival',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 31,
+    ),
+  );
+
   // Exported field_instance: 'node-hcbf_sponsor-field_hcbf_sponsor_image'
   $field_instances['node-hcbf_sponsor-field_hcbf_sponsor_image'] = array(
     'bundle' => 'hcbf_sponsor',
@@ -343,6 +386,7 @@ function hcbf_sponsors_field_default_field_instances() {
   t('Contact name');
   t('Contact phone');
   t('Enter a business name for this sponsor.');
+  t('Festival');
   t('Sponsor Image');
   t('Sponsor level');
   t('Sponsor website');
