@@ -25,9 +25,9 @@
 
     <div class="row">
       <div class="col-xs-12 col-sm-3">
-        <?php print render(hcbf_the_festivities_box()); ?>
+        <?php //print render(hcbf_the_festivities_box()); ?>
         <hr />
-        <?php print render(hcbf_buy_tickets_box()); ?>
+        <?php //print render(hcbf_buy_tickets_box()); ?>
       </div>
 
       <div class="col-xs-12 col-sm-9">
