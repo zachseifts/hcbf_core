@@ -97,7 +97,7 @@ function hcbf_breweries_theme() {
 
   $themes['hcbf_breweries_on_sale'] = array(
     'variables' => array(
-      'classes' => NULL,
+      'wrapper_classes' => NULL,
     ),
     'template' => 'templates/hcbf_breweries_on_sale',
   );

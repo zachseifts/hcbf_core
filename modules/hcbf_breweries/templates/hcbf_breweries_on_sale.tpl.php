@@ -5,7 +5,7 @@
  */
 ?>
 
-<div class="buy-tickets-wrapper <?php print $classes; ?>">
+<div class="buy-tickets-wrapper <?php print $wrapper_classes; ?>">
   <div class="text-center">
     <i class="icon fa fa-ticket fa-5x"></i>
   </div>
