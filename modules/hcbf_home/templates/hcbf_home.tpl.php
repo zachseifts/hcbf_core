@@ -140,10 +140,10 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-md-6">
-        <?php print render(hcbf_register_brewery_box(array('btn-lg'))); ?>
+        <?php print theme('hcbf_breweries_registration'); ?>
       </div>
       <div class="col-xs-12 col-md-6">
-        <?php print render(hcbf_register_sponsor_box(array('btn-lg'))); ?>
+        <?php print theme('hcbf_sponsor_registration'); ?>
       </div>
     </div>
   </div>

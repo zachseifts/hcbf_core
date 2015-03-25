@@ -90,6 +90,11 @@ function hcbf_breweries_theme() {
     'template' => 'templates/hcbf_breweries_manage',
   );
 
+  $themes['hcbf_breweries_registration'] = array(
+    'variables' => array(),
+    'template' => 'templates/hcbf_breweries_registration',
+  );
+
   return $themes;
 }
 
