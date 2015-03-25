@@ -5,6 +5,25 @@
  */
 
 /**
+ * Implements hook_menu();
+ */
+function hcbf_core_menu() {
+  $items = array();
+
+  $items['admin/config/hcbf'] = array(
+    'title' => 'High Country Beer Fest Admin',
+    'description' => 'Configuration for the High Country Beer Fest site.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('hcbf_core_admin'),
+    'access arguments' => array('access administration pages'),
+    'type' => MENU_NORMAL_ITEM,
+    'file' => 'hcbf_core.admin.inc',
+  );
+
+  return $items;
+}
+
+/**
  * Gets a count of the currently published breweries.
  */
 function hcbf_get_brewery_count() {
