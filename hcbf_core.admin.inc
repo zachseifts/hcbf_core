@@ -9,7 +9,7 @@ function hcbf_core_admin() {
 
   $form['core'] = array(
     '#type' => 'fieldset',
-    '#title' => 'Core Options',
+    '#title' => 'HCBF core options',
   );
 
   $form['core']['hcbf_core_on_sale'] = array(

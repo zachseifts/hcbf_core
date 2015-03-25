@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the HCBF Festival feature.
+ */
+
+include_once 'hcbf_festival.features.inc';
