@@ -6,7 +6,7 @@
 ?>
 
 <div class="register-brewery-wrapper">
-  <h1 class="heading text-center">Want to server your beer?</h1>
+  <h1 class="heading text-center">Want to serve your beer?</h1>
   <?php if (variable_get('hcbf_breweries_active', 0) == 1): ?>
     <p class="lead text-center">
       We'd love to have your beer! We're looking for craft breweries who want to participate in this year's High Country Beer Fest.
