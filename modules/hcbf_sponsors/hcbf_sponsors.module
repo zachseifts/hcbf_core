@@ -69,7 +69,9 @@ function hcbf_sponsors_theme() {
   );
 
   $themes['hcbf_sponsor_registration'] = array(
-    'variables' => array(),
+    'variables' => array(
+      'classes' => NULL,
+    ),
     'template' => 'templates/hcbf_sponsor_registration',
   );
 

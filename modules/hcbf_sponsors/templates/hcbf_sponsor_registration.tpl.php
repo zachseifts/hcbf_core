@@ -5,7 +5,7 @@
  */
 ?>
 
-<div class="register-sponsor-wrapper">
+<div class="register-sponsor-wrapper <?php print $classes; ?>">
   <h1 class="heading text-center">Do you want to be a sponsor?</h1>
   <p class="lead text-center">
     We have plenty of sponsorship opportunities, contact us and we'll let you know how you can help out.
