@@ -26,7 +26,12 @@ function hcbf_core_dashboard() {
 
   $festival = hcbf_festival_current();
   if ($festival) {
-    $theme_args['current_date'] = $festival['date'];
+    $theme_args['festival'] = $festival;
+
+    // Let users know that ticket are on sale.
+    if ($festival['tickets_on_sale']) {
+      drupal_set_message(t('Tickets are on sale'));
+    };
   }
 
   return theme('hcbf_core_dashboard', $theme_args);

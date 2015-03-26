@@ -1,34 +1,28 @@
-<div class="brewery-manage-wrapper">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="table-responsive">
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>City</th>
-                <th>State</th>
-                <th>&nbsp;</th>
-                <th>&nbsp;</th>
-                <th>&nbsp;</th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php foreach ($breweries as $brewery) { ?>
-                <tr class="<?php print $brewery['row_class']; ?>">
-                  <td><?php print render($brewery['name']); ?></td>
-                  <td><?php print render($brewery['city']); ?></td>
-                  <td><?php print render($brewery['state']); ?></td>
-                  <td><?php print render($brewery['view']); ?></td>
-                  <td><?php print render($brewery['edit']); ?></td>
-                  <td><?php print render($brewery['delete']); ?></td>
-                </tr>
-              <?php }; ?>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="breweries">
+  <h2>Current breweries</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Accepted</th>
+        <th colspan="3">&nbsp;</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <?php foreach ($breweries as $brewery): ?>
+      <tr>
+        <tr>
+          <td><?php print $brewery['name']; ?></td>
+          <td><?php print $brewery['location']; ?></td>
+          <td>Foo</td>
+          <td>View</td>
+          <td>Edit</td>
+          <td>Delete</td>
+        </tr>
+      </tr>
+      <?php endforeach; ?>
+
+  </table>
 </div>

@@ -78,3 +78,40 @@ function hcbf_sponsors_theme() {
   return $themes;
 }
 
+/**
+ * Gets the current festival sponsors.
+ */
+function hcbf_sponsors_current() {
+  $key = __FUNCTION__;
+  $sponsor_data = &drupal_static($key);
+
+  $sponsors = array();
+  if (!isset($sponsor_data)) {
+    if ($cache = cache_get($key)) {
+      $sponsors = $cache->data;
+    }
+    else {
+      $current_festival = variable_get('hcbf_current_festival', 0);
+      if ($current_festival != 0) {
+        $sponsor_query = new EntityFieldQuery();
+        $sponsor_query->entityCondition('entity_type', 'node')
+          ->entityCondition('bundle', 'hcbf_sponsor')
+          ->propertyCondition('status', 1)
+          ->fieldCondition('field_hcbf_sponsor_festival', 'target_id', $current_festival, '=')
+          ->propertyOrderBy('created', 'DESC');
+
+        $sponsor_result = $sponsor_query->execute();
+        $sponsor_nids = array_keys($sponsor_result['node']);
+
+        foreach ($sponsor_nids as $sponsor_nid) {
+          $sponsor_entity = entity_metadata_wrapper('node', $sponsor_nid);
+          $sponsors[] = array(
+            'name' => $sponsor_entity->label(),
+          );
+        }
+      }
+      cache_set($key, $sponsors);
+    }
+  }
+  return $sponsors;
+}

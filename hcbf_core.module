@@ -50,7 +50,7 @@ function hcbf_core_theme() {
 
   $themes['hcbf_core_dashboard'] = array(
     'variables' => array(
-      'current_date' => NULL,
+      'festival' => NULL,
     ),
     'template' => 'templates/hcbf_core_dashboard',
   );
