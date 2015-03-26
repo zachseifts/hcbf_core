@@ -13,9 +13,9 @@
       <tr>
         <tr>
           <td><?php print $sponsor['name']; ?></td>
-          <td><?php print $sponsor['view']; ?></td>
-          <td><?php print $sponsor['edit']; ?></td>
-          <td><?php print $sponsor['delete']; ?></td>
+          <td><?php //print $sponsor['view']; ?></td>
+          <td><?php //print $sponsor['edit']; ?></td>
+          <td><?php //print $sponsor['delete']; ?></td>
         </tr>
       </tr>
       <?php endforeach; ?>
