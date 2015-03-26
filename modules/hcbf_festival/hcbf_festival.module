@@ -12,16 +12,17 @@ include_once 'hcbf_festival.features.inc';
  * Note: The results are cached in the default drupal cache.
  */
 function hcbf_festival_current() {
+  $key = 'hcbf_festival_current';
+
   $festival_data = &drupal_static(__FUNCTION__);
 
   $event = array();
   if (!isset($festival_data)) {
-    if ($cache = cache_get('hcbf_festival_current')) {
+    if ($cache = cache_get($key)) {
       $event = $cache->data;
     }
     else {
       $current_festival = variable_get('hcbf_current_festival', 0);
-      $event = array();
       if ($current_festival != 0) {
         // Get the festival entity and add it to the event array.
         $festival = entity_metadata_wrapper('node', $current_festival);
@@ -32,12 +33,12 @@ function hcbf_festival_current() {
 
         // Format the date of the event.
         $start = $festival->field_hcbf_festival_date->value->value();
-        $start_date = format_date($start, 'custom', 'F j Y g:ia');
+        $start_date = format_date($start, 'custom', 'F j, Y g:ia');
         $end = $festival->field_hcbf_festival_date->value2->value();
         $end_time = format_date($end, 'custom', 'g:ia');
         $event['date'] = $start_date . ' - ' . $end_time;
 
-        cache_set('hcbf_current_festival', $event, 'cache');
+        cache_set($key, $event);
       }
     }
   }
