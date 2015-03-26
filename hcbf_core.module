@@ -5,6 +5,19 @@
  */
 
 /**
+ * Implements hook_permission();
+ */
+function hcbf_core_permission() {
+  $permissions = array();
+
+  $permissions['manage hcbf core'] = array(
+    'title' => t('Manage the HCBF Core module'),
+  );
+
+  return $permissions;
+}
+
+/**
  * Implements hook_menu();
  */
 function hcbf_core_menu() {
@@ -25,7 +38,7 @@ function hcbf_core_menu() {
     'description' => 'Configuration for the High Country Beer Fest site.',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('hcbf_core_admin'),
-    'access arguments' => array('access administration pages'),
+    'access arguments' => array('manage hcbf core'),
     'type' => MENU_NORMAL_ITEM,
     'file' => 'hcbf_core.admin.inc',
   );

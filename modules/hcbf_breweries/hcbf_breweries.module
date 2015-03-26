@@ -37,7 +37,7 @@ function hcbf_breweries_menu() {
     'title' => 'Breweries',
     'description' => 'Configuration for the High Country Beer Fest breweries functionality.',
     'page callback' => 'hcbf_breweries_manage',
-    'access arguments' => array('access administration pages'),
+    'access arguments' => array('manage breweries'),
     'type' => MENU_NORMAL_ITEM,
     'file' => 'hcbf_breweries.admin.inc',
   );

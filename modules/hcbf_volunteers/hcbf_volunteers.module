@@ -34,7 +34,7 @@ function hcbf_volunteers_menu() {
     'description' => 'Configuration for the High Country Beer Fest volunteer functionality.',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('hcbf_volunteers_admin'),
-    'access arguments' => array('access administration pages'),
+    'access arguments' => array('manage volunteers'),
     'type' => MENU_NORMAL_ITEM,
     'file' => 'hcbf_volunteers.admin.inc',
   );
