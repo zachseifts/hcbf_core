@@ -4,6 +4,23 @@
  * The admin pages and forms for the High Country Beer Fest site's admin pages.
  */
 
+/**
+ * Callback for the admin dashboard page.
+ */
+function hcbf_core_dashboard() {
+  $theme_args = array();
+
+  $festival = hcbf_festival_current();
+  if ($festival) {
+    $theme_args['current_date'] = $festival['date'];
+  }
+
+  return theme('hcbf_core_dashboard', $theme_args);
+}
+
+/**
+ * Callback for the HCBF Core admin page.
+ */
 function hcbf_core_admin() {
   $form = array();
 

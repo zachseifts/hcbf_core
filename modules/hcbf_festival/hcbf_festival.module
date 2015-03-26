@@ -5,3 +5,30 @@
  */
 
 include_once 'hcbf_festival.features.inc';
+
+/**
+ * Gets current festival entity.
+ */
+function hcbf_festival_current() {
+  $current_festival = variable_get('hcbf_current_festival', 0);
+
+  $event = array();
+  if ($current_festival != 0) {
+    // Get the festival entity and add it to the event array.
+    $festival = entity_metadata_wrapper('node', $current_festival);
+    $event['entity'] = $festival;
+
+    // Add the year to the event array.
+    $event['year'] = $festival->label();
+
+    // Format the date of the event.
+    $start = $festival->field_hcbf_festival_date->value->value();
+    $start_date = format_date($start, 'custom', 'F j Y g:ia');
+    $end = $festival->field_hcbf_festival_date->value2->value();
+    $end_time = format_date($end, 'custom', 'g:ia');
+    $event['date'] = $start_date . ' - ' . $end_time;
+
+    return $event;
+  }
+  return array();
+}

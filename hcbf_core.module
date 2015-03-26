@@ -11,7 +11,16 @@ function hcbf_core_menu() {
   $items = array();
 
   $items['admin/config/hcbf'] = array(
-    'title' => 'High Country Beer Fest Admin',
+    'title' => 'High Country Beer Fest',
+    'description' => 'Configuration for the High Country Beer Fest site.',
+    'page callback' => 'hcbf_core_dashboard',
+    'access arguments' => array('access administration pages'),
+    'type' => MENU_NORMAL_ITEM,
+    'file' => 'hcbf_core.admin.inc',
+  );
+
+  $items['admin/config/hcbf/core'] = array(
+    'title' => 'Core config',
     'description' => 'Configuration for the High Country Beer Fest site.',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('hcbf_core_admin'),
@@ -21,6 +30,22 @@ function hcbf_core_menu() {
   );
 
   return $items;
+}
+
+/**
+ * Implements hook_theme();
+ */
+function hcbf_core_theme() {
+  $themes = array();
+
+  $themes['hcbf_core_dashboard'] = array(
+    'variables' => array(
+      'current_date' => NULL,
+    ),
+    'template' => 'templates/hcbf_core_dashboard',
+  );
+
+  return $themes;
 }
 
 /**
