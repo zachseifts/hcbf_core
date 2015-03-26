@@ -188,19 +188,21 @@ function hcbf_breweries_current($festival_nid=NULL) {
           ->propertyCondition('status', 1)
           ->fieldCondition('field_hcbf_brewery_festival', 'target_id', $current_festival, '=')
           ->propertyOrderBy('title', 'ASC');
-
         $brewery_result = $brewery_query->execute();
-        $brewery_nids = array_keys($brewery_result['node']);
 
-        foreach ($brewery_nids as $brewery_nid) {
-          $brewery_entity = entity_metadata_wrapper('node', $brewery_nid);
-          $breweries[] = array(
-            'name' => $brewery_entity->label(),
-            'nid' => $brewery_entity->nid->value(),
-            'location' => $brewery_entity->field_hcbf_brewery_brewery_city->value() . ', ' . $brewery_entity->field_hcbf_brewery_brewery_state->value(),
-            'link' => l($brewery_entity->label(), $brewery_entity->field_hcbf_brewery_brewery_url->value()),
-            'logo' => '<img src=' . image_style_url('medium', $brewery_entity->field_hcbf_brewery_logo->value()['uri']) . ' class="img-responsive center-block" />',
-          );
+        if (!empty($brewery_result)) {
+          $brewery_nids = array_keys($brewery_result['node']);
+
+          foreach ($brewery_nids as $brewery_nid) {
+            $brewery_entity = entity_metadata_wrapper('node', $brewery_nid);
+            $breweries[] = array(
+              'name' => $brewery_entity->label(),
+              'nid' => $brewery_entity->nid->value(),
+              'location' => $brewery_entity->field_hcbf_brewery_brewery_city->value() . ', ' . $brewery_entity->field_hcbf_brewery_brewery_state->value(),
+              'link' => l($brewery_entity->label(), $brewery_entity->field_hcbf_brewery_brewery_url->value()),
+              'logo' => '<img src=' . image_style_url('medium', $brewery_entity->field_hcbf_brewery_logo->value()['uri']) . ' class="img-responsive center-block" />',
+            );
+          }
         }
       }
       cache_set($key, $breweries);
