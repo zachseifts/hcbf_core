@@ -87,39 +87,26 @@ function hcbf_breweries() {
   drupal_add_css(drupal_get_path('module', 'hcbf_breweries') . '/css/hcbf_breweries.css');
   drupal_set_title(t('The breweries'));
 
-  // Get all of the published breweries.
-  $query = new EntityFieldQuery();
-  $query->entityCondition('entity_type', 'node')
-    ->entityCondition('bundle', 'hcbf_brewery')
-    ->propertyCondition('status', 1)
-    ->fieldCondition('field_hcbf_brewery_accepted', 'value', 'yes', '=')
-    ->propertyOrderBy('title', 'ASC');
-
-  $result = $query->execute();
-  $breweries_nids = array_keys($result['node']);
+  $brewery_entities = hcbf_breweries_current();
 
   $breweries = array();
-  foreach ($breweries_nids as $brewery) {
-    $brewery_entity = entity_metadata_wrapper('node', $brewery);
-    $brewery_logo = '<img src=' . image_style_url('medium', $brewery_entity->field_hcbf_brewery_logo->value()['uri']) . ' class="img-responsive center-block" />';
-    $brewery_link = l($brewery_entity->label(), $brewery_entity->field_hcbf_brewery_brewery_url->value()); 
-
+  foreach ($brewery_entities as $brewery) {
     $breweries[] = array(
       'logo' => array(
         '#type' => 'markup',
-        '#markup' => $brewery_logo,
+        '#markup' => $brewery['logo'],
         '#prefix' => '<div class="text-center">',
         '#suffix' => '</div>'
       ),
       'title' => array(
         '#type' => 'markup',
-        '#markup' => $brewery_link,
+        '#markup' => $brewery['link'],
         '#prefix' => '<h2 class="text-center">',
         '#suffix' => '</h2>',
       ),
       'location' => array(
         '#type' => 'markup',
-        '#markup' => $brewery_entity->field_hcbf_brewery_brewery_city->value() . ', ' . $brewery_entity->field_hcbf_brewery_brewery_state->value(),
+        '#markup' => $brewery['location'],
         '#prefix' => '<p class="text-center">',
         '#suffix' => '</p>',
       ),
@@ -129,4 +116,3 @@ function hcbf_breweries() {
   $breweries = array_chunk($breweries, 3);
   return theme('hcbf_breweries', array('breweries' => $breweries));
 }
-

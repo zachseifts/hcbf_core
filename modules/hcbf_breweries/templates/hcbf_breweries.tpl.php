@@ -11,6 +11,10 @@
       <div class="col-xs-12 col-sm-6 col-lg-8">
         <div class="container-fluid">
 
+          <?php if (empty($breweries)): ?>
+            <h1>We're announcing participating breweries soon!</h1>
+          <?php endif; ?>
+
           <?php foreach ($breweries as $breweries_row) { ?>
             <div class="row brewery-row">
               <?php foreach ($breweries_row as $brewery) { ?>
