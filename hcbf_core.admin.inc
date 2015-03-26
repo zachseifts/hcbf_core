@@ -19,25 +19,6 @@ function hcbf_core_menu_block_page() {
 }
 
 /**
- * Callback for the admin dashboard page.
- */
-function hcbf_core_dashboard() {
-  $theme_args = array();
-
-  $festival = hcbf_festival_current();
-  if ($festival) {
-    $theme_args['festival'] = $festival;
-
-    // Let users know that ticket are on sale.
-    if ($festival['tickets_on_sale']) {
-      drupal_set_message(t('Tickets are on sale'));
-    };
-  }
-
-  return theme('hcbf_core_dashboard', $theme_args);
-}
-
-/**
  * Callback for the HCBF Core admin page.
  */
 function hcbf_core_admin() {
