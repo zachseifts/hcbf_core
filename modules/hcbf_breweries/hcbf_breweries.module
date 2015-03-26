@@ -151,9 +151,19 @@ function hcbf_breweries_send_mail($form_values) {
 /**
  * Gets the current festival breweries.
  */
-function hcbf_breweries_current() {
+function hcbf_breweries_current($festival_nid=NULL) {
   $key = __FUNCTION__;
-  $brewery_data = &drupal_static($key);
+
+  $current_festival = variable_get('hcbf_current_festival', 0);
+
+  // If a $festival_nid is passed, it should use that as the current year
+  // and set the cache_key accordingly.
+  if (!is_null($festival_nid) && is_int($festival_nid)) {
+    $key .= '_' . $festival_nid;
+    $current_festival = $festival_nid;
+  }
+
+  $brewery_data = &drupal_static(__FUNCTION__);
 
   $breweries = array();
   if (!isset($brewery_data)) {
@@ -161,7 +171,6 @@ function hcbf_breweries_current() {
       $breweries = $cache->data;
     }
     else {
-      $current_festival = variable_get('hcbf_current_festival', 0);
       if ($current_festival != 0) {
         $brewery_query = new EntityFieldQuery();
         $brewery_query->entityCondition('entity_type', 'node')
