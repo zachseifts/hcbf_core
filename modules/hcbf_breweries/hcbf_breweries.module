@@ -177,11 +177,8 @@ function hcbf_breweries_current() {
           $brewery_entity = entity_metadata_wrapper('node', $brewery_nid);
           $breweries[] = array(
             'name' => $brewery_entity->label(),
+            'nid' => $brewery_entity->nid->value(),
             'location' => $brewery_entity->field_hcbf_brewery_brewery_city->value() . ', ' . $brewery_entity->field_hcbf_brewery_brewery_state->value(),
-            'accepted' => $brewery_entity->field_hcbf_brewery_accepted->value(),
-            'view' => l(t('View'), 'node/' . $brewery_entity->nid->value()),
-            'edit' => l(t('Edit'), 'node/' . $brewery_entity->nid->value() . '/edit', array('query' => array('destination' => 'admin/config/hcbf/breweries'))),
-            'delete' => l(t('Delete'), 'node/' . $brewery_entity->nid->value() . '/delete', array('query' => array('destination' => 'admin/config/hcbf/breweries'))),
           );
         }
       }
