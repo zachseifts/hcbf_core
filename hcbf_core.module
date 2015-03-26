@@ -12,7 +12,17 @@ function hcbf_core_menu() {
 
   $items['admin/config/hcbf'] = array(
     'title' => 'High Country Beer Fest',
-    'description' => 'Configuration for the High Country Beer Fest site.',
+    'description' => 'High Country Beer Fest configuration.',
+    'position' => 'right',
+    'weight' => -20,
+    'page callback' => 'hcbf_core_menu_block_page',
+    'access arguments' => array('access administration pages'),
+    'file' => 'hcbf_core.admin.inc',
+  );
+
+  $items['admin/config/hcbf/dashboard'] = array(
+    'title' => 'Dashboard',
+    'description' => 'A dashboard for the High Country Beer Fest website.',
     'page callback' => 'hcbf_core_dashboard',
     'access arguments' => array('access administration pages'),
     'type' => MENU_NORMAL_ITEM,

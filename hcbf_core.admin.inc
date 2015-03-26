@@ -5,6 +5,20 @@
  */
 
 /**
+ * Provides a listing page for items.
+ */
+function hcbf_core_menu_block_page() {
+  $item = menu_get_item();
+  if ($content = system_admin_menu_block($item)) {
+    $output = theme('admin_block_content', array('content' => $content));
+  }
+  else {
+    $output = t('You do not have any administrative items.');
+  }
+  return $output;
+}
+
+/**
  * Callback for the admin dashboard page.
  */
 function hcbf_core_dashboard() {
