@@ -149,6 +149,16 @@ function hcbf_breweries_send_mail($form_values) {
 }
 
 /**
+ * Implements hook_entity_update()
+ */
+function hcbf_breweries_entity_update($entity, $type) {
+  if ($entity->type == 'hcbf_brewery') {
+    cache_clear_all('hcbf_breweries_current', 'cache', TRUE);
+    drupal_set_message(t('Cleared brewery cache.'));
+  }
+}
+
+/**
  * Gets the current festival breweries.
  */
 function hcbf_breweries_current($festival_nid=NULL) {
