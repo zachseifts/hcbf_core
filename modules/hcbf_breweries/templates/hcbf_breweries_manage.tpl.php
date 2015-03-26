@@ -16,10 +16,10 @@
         <tr>
           <td><?php print $brewery['name']; ?></td>
           <td><?php print $brewery['location']; ?></td>
-          <td>Foo</td>
-          <td>View</td>
-          <td>Edit</td>
-          <td>Delete</td>
+          <td><?php print $brewery['accepted']; ?></td>
+          <td><?php print $brewery['view']; ?></td>
+          <td><?php print $brewery['edit']; ?></td>
+          <td><?php print $brewery['delete']; ?></td>
         </tr>
       </tr>
       <?php endforeach; ?>
