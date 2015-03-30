@@ -24,4 +24,9 @@
         <?php endforeach; ?>
     </table>
   <?php endif; ?>
+
+  <ul class="action-links">
+    <li><?php print l(t('Add a brewery'), 'node/add/hcbf-brewery'); ?></li>
+  </ul>
+
 </div>

@@ -49,30 +49,6 @@ function hcbf_breweries_menu() {
     'file' => 'hcbf_breweries.pages.inc'
   );
 
-  $items['breweries/register'] = array(
-    'title' => 'Register as a brewery',
-    'page callback' => 'drupal_get_form',
-    'page arguments' => array('hcbf_brewery_registration_form'),
-    'access arguments' => array('access breweries registration'),
-    'file' => 'hcbf_breweries.forms.inc'
-  );
-
-  $items['breweries/export/hcbf_breweries.csv'] = array(
-    'title' => 'Export breweries',
-    'page callback' => 'hcbf_breweries_export',
-    'access arguments' => array('manage breweries'),
-    'file' => 'hcbf_breweries.pages.inc'
-  );
-
-  $items['breweries/settings'] = array(
-    'title' => 'Breweries settings',
-    'descrption' => t('Settings for the breweries section of the site.'),
-    'page callback' => 'drupal_get_form',
-    'page arguments' => array('hcbf_breweries_settings_form'),
-    'access arguments' => array('manage breweries'),
-    'file' => 'hcbf_breweries.forms.inc'
-  );
-
   return $items;
 }
 
