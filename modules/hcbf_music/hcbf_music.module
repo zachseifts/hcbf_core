@@ -7,10 +7,36 @@
 include_once 'hcbf_music.features.inc';
 
 /**
+ * Implements hook_permission()
+ */
+function hcbf_music_permission() {
+  $permissions = array();
+
+  $permissions['manage music'] = array(
+    'title' => t('Manage music')
+  );
+
+  $permissions['access music'] = array(
+    'title' => t('Access music')
+  );
+
+  return $permissions;
+}
+
+/**
  * Implements hook_menu()
  */
 function hcbf_music_menu() {
   $items = array();
+
+  $items['admin/config/hcbf/music'] = array(
+    'title' => 'Music',
+    'description' => 'Configuration for the High Country Beer Fest music functionality.',
+    'page callback' => 'hcbf_music_manage',
+    'access arguments' => array('manage music'),
+    'type' => MENU_NORMAL_ITEM,
+    'file' => 'hcbf_music.admin.inc',
+  );
 
   $items['music'] = array(
     'title' => t('Music'),
@@ -36,6 +62,15 @@ function hcbf_music_theme() {
     'template' => 'templates/hcbf_music',
   );
 
+  $themes['hcbf_music_manage'] = array(
+    'variables' => array(
+      'all_music' => NULL,
+      'music' => NULL,
+    ),
+    'template' => 'templates/hcbf_music_manage',
+  );
+
+
   return $themes;
 }
 
@@ -49,6 +84,47 @@ function hcbf_music_entity_update($entity, $type) {
       drupal_set_message(t('Cleared music cache.'));
     }
   }
+}
+
+/**
+ * Gets all of the musical acts.
+ */
+function hcbf_music_all() {
+  $key = __FUNCTION__;
+  $band_data = &drupal_static(__FUNCTION__);
+
+  $bands = array();
+  if (!isset($band_data)) {
+    if ($cache = cache_get($key)) {
+      $bands = $cache->data;
+    }
+    else {
+      $band_query = new EntityFieldQuery();
+      $band_query->entityCondition('entity_type', 'node')
+        ->entityCondition('bundle', 'hcbf_band')
+        ->propertyCondition('status', 1)
+        ->propertyOrderBy('title', 'ASC');
+      $band_result = $band_query->execute();
+
+      if (!empty($band_result)) {
+        $band_nids = array_keys($band_result['node']);
+
+        foreach ($band_nids as $band_nid) {
+          $band_entity = entity_metadata_wrapper('node', $band_nid);
+
+          $bands[] = array(
+            'nid' => $band_entity->nid->value(),
+            'title' => $band_entity->label(),
+            'image' => '<img src=' . image_style_url('medium', $band_entity->field_hcbf_band_image->value()['uri']) . ' class="img-responsive center-block" />',
+            'description' => $band_entity->field_hcbf_band_description->value(),
+            'website' => $band_entity->field_hcbf_band_website->url->value(),
+          );
+        }
+      }
+      cache_set($key, $bands);
+    }
+  }
+  return $bands;
 }
 
 /**
@@ -90,6 +166,7 @@ function hcbf_music_current($festival_nid=NULL) {
             $band_entity = entity_metadata_wrapper('node', $band_nid);
 
             $bands[] = array(
+              'nid' => $band_entity->nid->value(),
               'title' => $band_entity->label(),
               'image' => '<img src=' . image_style_url('medium', $band_entity->field_hcbf_band_image->value()['uri']) . ' class="img-responsive center-block" />',
               'description' => $band_entity->field_hcbf_band_description->value(),
