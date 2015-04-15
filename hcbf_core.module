@@ -28,7 +28,7 @@ function hcbf_core_menu() {
     'description' => 'High Country Beer Fest configuration.',
     'position' => 'right',
     'weight' => -20,
-    'page callback' => 'hcbf_core_menu_block_page',
+    'page callback' => 'system_admin_menu_block_page',
     'access arguments' => array('access administration pages'),
     'file' => 'hcbf_core.admin.inc',
   );
