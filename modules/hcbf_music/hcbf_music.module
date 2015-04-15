@@ -39,3 +39,68 @@ function hcbf_music_theme() {
   return $themes;
 }
 
+/**
+ * Implements hook_entity_update()
+ */
+function hcbf_music_entity_update($entity, $type) {
+  if (isset($entity->type)) {
+    if ($entity->type == 'hcbf_band') {
+      cache_clear_all('hcbf_music_current', 'cache', TRUE);
+      drupal_set_message(t('Cleared music cache.'));
+    }
+  }
+}
+
+/**
+ * Gets the current festival bands.
+ */
+function hcbf_music_current($festival_nid=NULL) {
+  $key = __FUNCTION__;
+
+  $current_festival = variable_get('hcbf_current_festival', 0);
+
+  // If a $festival_nid is passed, it should use that as the current year
+  // and set the cache_key accordingly.
+  if (!is_null($festival_nid) && is_int($festival_nid)) {
+    $key .= '_' . $festival_nid;
+    $current_festival = $festival_nid;
+  }
+
+  $band_data = &drupal_static(__FUNCTION__);
+
+  $bands = array();
+  if (!isset($band_data)) {
+    if ($cache = cache_get($key)) {
+      $bands = $cache->data;
+    }
+    else {
+      if ($current_festival != 0) {
+        $band_query = new EntityFieldQuery();
+        $band_query->entityCondition('entity_type', 'node')
+          ->entityCondition('bundle', 'hcbf_band')
+          ->propertyCondition('status', 1)
+          ->fieldCondition('field_hcbf_band_festival', 'target_id', $current_festival, '=')
+          ->propertyOrderBy('title', 'ASC');
+        $band_result = $band_query->execute();
+
+        if (!empty($band_result)) {
+          $band_nids = array_keys($band_result['node']);
+
+          foreach ($band_nids as $band_nid) {
+            $band_entity = entity_metadata_wrapper('node', $band_nid);
+
+            $bands[] = array(
+              'title' => $band_entity->label(),
+              'image' => '<img src=' . image_style_url('medium', $band_entity->field_hcbf_band_image->value()['uri']) . ' class="img-responsive center-block" />',
+              'description' => $band_entity->field_hcbf_band_description->value(),
+              'website' => $band_entity->field_hcbf_band_website->url->value(),
+            );
+          }
+        }
+      }
+      cache_set($key, $bands);
+    }
+  }
+
+  return $bands;
+}
