@@ -41,7 +41,7 @@ function hcbf_music_menu() {
   $items['music'] = array(
     'title' => t('Music'),
     'page callback' => 'hcbf_music',
-    'access arguments' => array('access content'),
+    'access arguments' => array('access music'),
     'type' => MENU_CALLBACK,
     'file' => 'hcbf_music.pages.inc'
   );
