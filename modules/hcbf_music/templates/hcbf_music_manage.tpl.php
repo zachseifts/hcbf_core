@@ -44,6 +44,7 @@
           </tr>
         </tr>
         <?php endforeach; ?>
+      </tbody>
     </table>
   <?php endif; ?>
   <ul class="action-links">

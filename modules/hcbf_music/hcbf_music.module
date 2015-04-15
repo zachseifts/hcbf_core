@@ -70,7 +70,6 @@ function hcbf_music_theme() {
     'template' => 'templates/hcbf_music_manage',
   );
 
-
   return $themes;
 }
 
