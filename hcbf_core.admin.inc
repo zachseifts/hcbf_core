@@ -54,6 +54,17 @@ function hcbf_core_admin() {
     '#description' => t('Select the current festival.'),
   );
 
+  $form['core']['hcbf_breweries_active'] = array(
+    '#type' => 'select',
+    '#title' => t('Brewery registration active'),
+    '#default_value' => variable_get('hcbf_breweries_active', 0),
+    '#options' => array(
+      0 => 'No',
+      1 => 'Yes',
+    ),
+    '#required' => TRUE,
+  );
+
   $form['tickets'] = array(
     '#type' => 'fieldset',
     '#title' => t('Ticket info'),
