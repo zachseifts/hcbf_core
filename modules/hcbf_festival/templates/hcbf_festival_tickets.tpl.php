@@ -5,7 +5,7 @@
  */
 ?>
 
-<div class="buy-tickets-wrapper <?php print $wrapper_classes; ?>">
+<div class="buy-tickets-wrapper">
   <div class="text-center">
     <i class="icon fa fa-ticket fa-5x"></i>
   </div>
@@ -25,16 +25,16 @@
         <tr>
           <td>General Admission</td>
           <td>
-            <a href="/%23" class="btn btn-danger btn-sm" disabled="disabled">
-              <del>$40.00</del>
+            <a href="<?php print variable_get('hcbf_core_regular_ticket_link', '#'); ?>" class="btn btn-danger btn-sm">
+              $<?php print variable_get('hcbf_core_regular_ticket_price', '40.00'); ?>
             </a>
           </td>
         </tr>
         <tr>
           <td>Designated Driver</td>
           <td>
-            <a href="/%23" class="btn btn-danger btn-sm" disabled="disabled">
-              <del>$10.00</del>
+            <a href="<?php print variable_get('hcbf_core_dd_ticket_link', '#'); ?>" class="btn btn-danger btn-sm">
+              $<?php print variable_get('hcbf_core_dd_ticket_price', '10.00'); ?>
             </a>
           </td>
         </tr>
