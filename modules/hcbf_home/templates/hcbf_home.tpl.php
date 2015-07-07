@@ -13,7 +13,7 @@
         <div class="page-header">
           <h1 class="text-center">The Festivities</h1>
         </div>
-        <p class="text-center">Join us at the High Country Fairgrounds in Boone, North Carolina on Saturday, August 29, 2014 from 3:00 pm to 8:00 pm to sample a variety of craft beer, craft food, educational seminars, and live music.</p>
+        <p class="text-center">Join us at the High Country Fairgrounds in Boone, North Carolina on Saturday, August 29, 2015 from 3:00 pm to 8:00 pm to sample a variety of craft beer, craft food, educational seminars, and live music.</p>
       </div>
 
     </div>
