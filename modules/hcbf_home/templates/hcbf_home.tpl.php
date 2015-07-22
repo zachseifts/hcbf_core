@@ -2,11 +2,83 @@
   <div class="container">
 
     <div class="row">
-      <div class="col-xs-12 col-sm-6">
-        <?php print theme('hcbf_festival_tickets'); ?>
+      <div class="col-xs-12 col-sm-8">
+        <div class="container-fluid">
+          <div class="row">
+
+            <div class="col-xs-12 col-sm-4">
+
+              <div class="text-center">
+                <i class="icon fa fa-ticket fa-4x"></i>
+              </div>
+              <div class="page-header">
+                <h3 class="text-center">VIP Tickets</h3>
+              </div>
+
+              <ul>
+                <li>Priority entry to the event</li>
+                <li>An extra hour of tasting</li>
+                <li>1 Free T-shirt</li>
+                <li>Free food voucher to one our food vendors</li>
+              </ul>
+
+              <div class="text-center">
+                <a href="<?php print variable_get('hcbf_core_vip_ticket_link', '#'); ?>" class="btn btn-success btn-lg">
+                  $<?php print variable_get('hcbf_core_vip_ticket_price', '80.00'); ?>
+                </a>
+              </div>
+
+            </div>
+
+            <div class="col-xs-12 col-sm-4">
+              <div class="text-center">
+                <i class="icon fa fa-ticket fa-4x"></i>
+              </div>
+              <div class="page-header">
+                <h3 class="text-center">General Admission</h3>
+              </div>
+
+              <ul>
+                <li>Access to 50 craft breweries</li>
+                <li>9 local food vendors</li>
+                <li>4 hours of live music</li>
+                <li>Access to seminars</li>
+              </ul>
+
+              <div class="text-center">
+                <a href="<?php print variable_get('hcbf_core_regular_ticket_link', '#'); ?>" class="btn btn-success btn-lg">
+                  $<?php print variable_get('hcbf_core_regular_ticket_price', '40.00'); ?>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-4">
+              <div class="text-center">
+                <i class="icon fa fa-ticket fa-4x"></i>
+              </div>
+              <div class="page-header">
+                <h3 class="text-center">Designated Driver</h3>
+              </div>
+
+              <ul>
+                <li>9 local food vendors</li>
+                <li>4 hours of live music</li>
+                <li>Ability to enjoy the beautiful mountain setting</li>
+                <li>Privilege to get your friends home safe</li>
+              </ul>
+
+              <div class="text-center">
+                <a href="<?php print variable_get('hcbf_core_dd_ticket_link', '#'); ?>" class="btn btn-success btn-lg">
+                  $<?php print variable_get('hcbf_core_dd_ticket_price', '10.00'); ?>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
       </div>
 
-      <div class="col-xs-12 col-sm-6">
+      <div class="col-xs-12 col-sm-4">
         <div class="text-center">
           <i class="icon fa fa-beer fa-5x"></i>
         </div>
