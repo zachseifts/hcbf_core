@@ -17,7 +17,10 @@
 
               <div class="text-center">
                 <a href="<?php print variable_get('hcbf_core_vip_ticket_link', '#'); ?>" 
-                   class="btn btn-success btn-lg">
+                   class="btn btn-success btn-lg"
+                   data-ga-event
+                   data-ga-label="homepage-ticket"
+                   data-ga-action="vip">
                   $<?php print variable_get('hcbf_core_vip_ticket_price', '80.00'); ?>
                 </a>
               </div>
@@ -33,7 +36,11 @@
               <p class="lead">General Admission ticket holders get to enjoyaaccess to over 50 craft breweries, local food vendors, seminars and live music.</p>
 
               <div class="text-center">
-                <a href="<?php print variable_get('hcbf_core_regular_ticket_link', '#'); ?>" class="btn btn-success btn-lg">
+                <a href="<?php print variable_get('hcbf_core_regular_ticket_link', '#'); ?>"
+                   class="btn btn-success btn-lg"
+                   data-ga-event
+                   data-ga-label="homepage-ticket"
+                   data-ga-action="general_admission">
                   $<?php print variable_get('hcbf_core_regular_ticket_price', '40.00'); ?>
                 </a>
               </div>
@@ -48,7 +55,11 @@
               <p class="lead">Designated Driver ticket holders have access to local food vendors, live music and the privilege to get your friends home safe.</p>
 
               <div class="text-center">
-                <a href="<?php print variable_get('hcbf_core_dd_ticket_link', '#'); ?>" class="btn btn-success btn-lg">
+                <a href="<?php print variable_get('hcbf_core_dd_ticket_link', '#'); ?>"
+                   class="btn btn-success btn-lg"
+                   data-ga-event
+                   data-ga-label="homepage-ticket"
+                   data-ga-action="designated_driver">
                   $<?php print variable_get('hcbf_core_dd_ticket_price', '10.00'); ?>
                 </a>
               </div>
