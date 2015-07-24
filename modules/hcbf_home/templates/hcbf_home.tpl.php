@@ -3,7 +3,7 @@
 
     <div class="row">
       <div class="col-xs-12 col-sm-8">
-        <div class="container-fluid">
+        <div class="container-fluid tickets-block">
           <div class="row">
 
             <div class="col-xs-12 col-sm-4">
@@ -23,7 +23,8 @@
               </ul>
 
               <div class="text-center">
-                <a href="<?php print variable_get('hcbf_core_vip_ticket_link', '#'); ?>" class="btn btn-success btn-lg">
+                <a href="<?php print variable_get('hcbf_core_vip_ticket_link', '#'); ?>" 
+                   class="btn btn-success btn-lg">
                   $<?php print variable_get('hcbf_core_vip_ticket_price', '80.00'); ?>
                 </a>
               </div>

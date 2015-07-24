@@ -11,6 +11,8 @@ function hcbf_home() {
   $wheat_image = '/' . drupal_get_path('module', 'hcbf_home') . '/images/wheat.png';
   drupal_add_css(drupal_get_path('module', 'hcbf_home') . '/css/hcbf_home.css');
 
+  drupal_add_js(drupal_get_path('module', 'hcbf_home') . '/js/hcbf_home.js');
+
   return theme('hcbf_home', array('wheat_image' => $wheat_image));
 }
 
