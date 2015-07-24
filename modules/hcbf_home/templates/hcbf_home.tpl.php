@@ -19,7 +19,8 @@
                 <a href="<?php print variable_get('hcbf_core_vip_ticket_link', '#'); ?>" 
                    class="btn btn-success btn-lg"
                    data-ga-event
-                   data-ga-label="homepage-ticket"
+                   data-ga-category="ticket_link_click"
+                   data-ga-label="homepage"
                    data-ga-action="vip">
                   $<?php print variable_get('hcbf_core_vip_ticket_price', '80.00'); ?>
                 </a>
@@ -39,7 +40,8 @@
                 <a href="<?php print variable_get('hcbf_core_regular_ticket_link', '#'); ?>"
                    class="btn btn-success btn-lg"
                    data-ga-event
-                   data-ga-label="homepage-ticket"
+                   data-ga-category="ticket_link_click"
+                   data-ga-label="homepage"
                    data-ga-action="general_admission">
                   $<?php print variable_get('hcbf_core_regular_ticket_price', '40.00'); ?>
                 </a>
@@ -58,7 +60,8 @@
                 <a href="<?php print variable_get('hcbf_core_dd_ticket_link', '#'); ?>"
                    class="btn btn-success btn-lg"
                    data-ga-event
-                   data-ga-label="homepage-ticket"
+                   data-ga-category="ticket_link_click"
+                   data-ga-label="homepage"
                    data-ga-action="designated_driver">
                   $<?php print variable_get('hcbf_core_dd_ticket_price', '10.00'); ?>
                 </a>
