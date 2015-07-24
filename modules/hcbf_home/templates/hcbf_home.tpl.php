@@ -9,18 +9,11 @@
             <div class="col-xs-12 col-sm-4">
 
               <div class="text-center">
-                <i class="icon fa fa-ticket fa-4x"></i>
+                <i class="icon fa fa-ticket fa-5x"></i>
               </div>
-              <div class="page-header">
-                <h3 class="text-center">VIP Tickets</h3>
-              </div>
+              <h2 class="text-center">VIP Tickets</h2>
 
-              <ul>
-                <li>Priority entry to the event</li>
-                <li>An extra hour of tasting</li>
-                <li>1 Free T-shirt</li>
-                <li>Free food voucher to one our food vendors</li>
-              </ul>
+              <p class="lead">VIP Ticket holders get early entry to the festival, a special High Country Beer Fest t-shirt and a free food voucher.</p>
 
               <div class="text-center">
                 <a href="<?php print variable_get('hcbf_core_vip_ticket_link', '#'); ?>" 
@@ -33,18 +26,11 @@
 
             <div class="col-xs-12 col-sm-4">
               <div class="text-center">
-                <i class="icon fa fa-ticket fa-4x"></i>
+                <i class="icon fa fa-ticket fa-5x"></i>
               </div>
-              <div class="page-header">
-                <h3 class="text-center">General Admission</h3>
-              </div>
+              <h2 class="text-center">General Admission</h2>
 
-              <ul>
-                <li>Access to 50 craft breweries</li>
-                <li>9 local food vendors</li>
-                <li>4 hours of live music</li>
-                <li>Access to seminars</li>
-              </ul>
+              <p class="lead">General Admission ticket holders get to enjoyaaccess to over 50 craft breweries, local food vendors, seminars and live music.</p>
 
               <div class="text-center">
                 <a href="<?php print variable_get('hcbf_core_regular_ticket_link', '#'); ?>" class="btn btn-success btn-lg">
@@ -55,18 +41,11 @@
 
             <div class="col-xs-12 col-sm-4">
               <div class="text-center">
-                <i class="icon fa fa-ticket fa-4x"></i>
+                <i class="icon fa fa-ticket fa-5x"></i>
               </div>
-              <div class="page-header">
-                <h3 class="text-center">Designated Driver</h3>
-              </div>
+              <h2 class="text-center">Designated Driver</h2>
 
-              <ul>
-                <li>9 local food vendors</li>
-                <li>4 hours of live music</li>
-                <li>Ability to enjoy the beautiful mountain setting</li>
-                <li>Privilege to get your friends home safe</li>
-              </ul>
+              <p class="lead">Designated Driver ticket holders have access to local food vendors, live music and the privilege to get your friends home safe.</p>
 
               <div class="text-center">
                 <a href="<?php print variable_get('hcbf_core_dd_ticket_link', '#'); ?>" class="btn btn-success btn-lg">
