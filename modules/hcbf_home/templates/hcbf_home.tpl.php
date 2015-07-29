@@ -34,7 +34,7 @@
               </div>
               <h2 class="text-center">General Admission</h2>
 
-              <p class="lead">General Admission ticket holders get to enjoyaaccess to over 50 craft breweries, local food vendors, seminars and live music.</p>
+              <p class="lead">General Admission ticket holders get to enjoy access to over 50 craft breweries, local food vendors, seminars and live music.</p>
 
               <div class="text-center">
                 <a href="<?php print variable_get('hcbf_core_regular_ticket_link', '#'); ?>"
