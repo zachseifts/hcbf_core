@@ -45,7 +45,7 @@ function hcbf_breweries_menu() {
   $items['breweries'] = array(
     'title' => 'Breweries',
     'page callback' => 'hcbf_breweries',
-    'access arguments' => array('access breweries'),
+    'access arguments' => array('access content'),
     'file' => 'hcbf_breweries.pages.inc'
   );
 

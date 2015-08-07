@@ -13,7 +13,7 @@
               </div>
               <h2 class="text-center">VIP Tickets</h2>
 
-              <p class="lead">VIP Ticket holders get early entry to the festival, a special High Country Beer Fest t-shirt and a free food voucher.</p>
+              <p class="lead">VIP Ticket holders get 2:00pm entry to the festival, a special High Country Beer Fest t-shirt and a free food voucher.</p>
 
               <div class="text-center">
                 <a href="<?php print variable_get('hcbf_core_vip_ticket_link', '#'); ?>" 
@@ -79,7 +79,7 @@
         <div class="page-header">
           <h1 class="text-center">The Festivities</h1>
         </div>
-        <p class="text-center">Join us at the High Country Fairgrounds in Boone, North Carolina on Saturday, August 29, 2015 from 3:00 pm to 8:00 pm to sample a variety of craft beer, craft food, educational seminars, and live music.</p>
+        <p class="text-center">Join us at the High Country Fairgrounds in Boone, North Carolina on Saturday, August 29, 2015 from 3:00pm to 7:00pm to sample a variety of craft beer, craft food, educational seminars, and live music.</p>
       </div>
 
     </div>

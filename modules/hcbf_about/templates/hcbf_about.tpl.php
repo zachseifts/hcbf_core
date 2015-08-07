@@ -72,7 +72,7 @@
         <div class="page-header">
           <h1>Need a hotel room?</h1>
         </div>
-          <p class="lead">We've got you covered! Patrons of the High Country Beer Fest will receive a 10% discount to <a href="http://www.laquintaboone.com/">La Quinta</a>, the <a href="http://www.sleepinn.com/hotel-boone-north_carolina-NC514">Sleep Inn</a>, and the <a href="http://www.countryinns.com/boone-hotel-nc-28607/ncboone">Country Inn and Suites</a>.</p>
+          <p class="lead">We've got you covered! Patrons of the High Country Beer Fest are encouraged to stay at <a href="http://www.laquintaboone.com/">La Quinta</a>, the <a href="http://www.sleepinn.com/hotel-boone-north_carolina-NC514">Sleep Inn</a>, or the <a href="http://www.countryinns.com/boone-hotel-nc-28607/ncboone">Country Inn and Suites</a>.</p>
       </div>
       <div class="col-xs-12 col-sm-6">
       </div>
@@ -87,7 +87,7 @@
         <div class="page-header">
           <h1>We have a history...</h1>
         </div>
-        <p class="lead">This is our 7<sup>th</sup> year putting the High Country Beer Festival on, so yeah, we've got a bit of history going on. Checkout what some folks have said about the High Country Beer Fest of the past.</p>
+        <p class="lead">This is our 8<sup>th</sup> year putting the High Country Beer Festival on, so yeah, we've got a bit of history going on. Checkout what some folks have said about the High Country Beer Fest of the past.</p>
       </div>
     </div>
     <div class="row">
