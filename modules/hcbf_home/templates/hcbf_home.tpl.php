@@ -1,3 +1,4 @@
+<?php if (variable_get('hcbf_breweries_week_of_message', 0) == 1): ?>
 <div id="week-of-wrapper" class="wrapper">
   <div class="container">
     <div class="row">
@@ -44,6 +45,7 @@
 </div>
 
 <hr />
+<?php endif; ?>
 
 <div id="getting-there-wrapper" class="wrapper">
   <div class="container">
@@ -139,6 +141,7 @@
   </div>
 </div>
 
+<?php if (variable_get('hcbf_breweries_week_of_message', 0) == 1): ?>
 <hr />
 
 <div class="get-there-wrapper" class="wrapper">
@@ -154,7 +157,7 @@
    <div class="row">
      <div class="col-xs-12 col-sm-6">
        <h3>Take the shuttle from campus</h3>
-       <p>The folks at River and Earth Adventures will have shuttle service going from the Raley Parking lot on Appalachian State University's campus to the Fairgrounds.</p>
+       <p>The folks at <a href="http://mountainalliance.org/">Mountain Alliance</a> and <a href="http://www.raftcavehike.com/">River and Earth Adventures</a> will be provided a bus service from Raley Lot on the Appalachian State University's campus to and from the event. Buses will run from 2pm until 9pm and only stop at those two locations.</p>
        <p>We have a limited amount of seating on the buses.</p>
        <iframe
          width="100%"
@@ -165,10 +168,6 @@
        </iframe>
      </div>
      <div class="col-xs-12 col-sm-6">
-       <h3>Take the shuttle from your hotel</h3>
-       <p>If you're staying at the Country Inn or La Quinta our friends at the Mountain Alliance will come and pick you up.</p>
-       <p>Please do not park here if you are not staying at the hotels.</p>
-
        <h3>Get a designated driver</h3>
        <p>This is your best bet, designated driver tickets are only $10 and can make getting to and from the festival a lot safer.</p>
 
@@ -181,6 +180,7 @@
    </div>
   </div>
 </div>
+<?php endif; ?>
 
 <div id="video-wrapper" class="wrapper inverse-wrapper">
   <div class="container">

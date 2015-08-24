@@ -65,6 +65,17 @@ function hcbf_core_admin() {
     '#required' => TRUE,
   );
 
+  $form['core']['hcbf_breweries_week_of_message'] = array(
+    '#type' => 'select',
+    '#title' => t('Display the "week of" message?'),
+    '#default_value' => variable_get('hcbf_breweries_week_of_message', 0),
+    '#options' => array(
+      0 => 'No',
+      1 => 'Yes',
+    ),
+    '#required' => TRUE,
+  );
+
   $form['tickets'] = array(
     '#type' => 'fieldset',
     '#title' => t('Ticket info'),
