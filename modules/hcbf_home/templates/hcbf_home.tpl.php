@@ -69,6 +69,12 @@
             </div>
 
           </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <p>&nbsp;</p>
+              <p class="lead">Tickets are also available at <a href="http://appalachianmountainbrewery.com/">Appalachian Mountain Brewery</a>, <a href="http://lostprovince.com/">Lost Province</a>, <a href="http://peabodyswineandbeer.com/">Peabody's Beer and Wine</a> and <a href="http://benchmarkprovisions.com/">Benchmark Provisions</a>.</p>
+            </div>
+          </div>
         </div>
       </div>
 

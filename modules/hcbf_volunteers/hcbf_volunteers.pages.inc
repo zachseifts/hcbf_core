@@ -37,18 +37,23 @@ function hcbf_volunteer_export() {
   foreach ($volunteer_nids as $volunteer) {
     $volunteer_entity = entity_metadata_wrapper('node', $volunteer);
 
-    $line = array(
-      $volunteer_entity->field_hcbf_volunteer_name->value(),
-      $volunteer_entity->field_hcbf_volunteer_dob->value(),
-      $volunteer_entity->field_hcbf_volunteer_phone->value(),
-      $volunteer_entity->field_hcbf_volunteer_email->value(),
-      $volunteer_entity->field_hcbf_volunteer_shirt->value(),
-      $volunteer_entity->field_hcbf_volunteer_shift->value(),
-      $volunteer_entity->field_hcbf_volunteer_job->value(),
-      $volunteer_entity->field_hcbf_volunteer_comments->value(),
-    );
+    // This is a huge hack. This should be done in the query, but who cares?
+    $volunteer_year = format_date($volunteer_entity->created->value(), 'custom', 'Y');
+    if ($volunteer_year == '2015') {
 
-    fputcsv($fp, $line);
+      $line = array(
+        $volunteer_entity->field_hcbf_volunteer_name->value(),
+        $volunteer_entity->field_hcbf_volunteer_dob->value(),
+        $volunteer_entity->field_hcbf_volunteer_phone->value(),
+        $volunteer_entity->field_hcbf_volunteer_email->value(),
+        $volunteer_entity->field_hcbf_volunteer_shirt->value(),
+        $volunteer_entity->field_hcbf_volunteer_shift->value(),
+        $volunteer_entity->field_hcbf_volunteer_job->value(),
+        $volunteer_entity->field_hcbf_volunteer_comments->value(),
+      );
+
+      fputcsv($fp, $line);
+    }
   }
 
   fclose($fp);
