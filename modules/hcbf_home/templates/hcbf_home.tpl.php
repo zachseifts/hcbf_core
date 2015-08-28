@@ -83,16 +83,26 @@
               </div>
               <h2 class="text-center">General Admission</h2>
 
-              <p class="lead">General Admission ticket holders get to enjoy access to over 50 craft breweries, local food vendors, seminars and live music.</p>
+              <p class="lead">Enjoy access to over 50 craft breweries, local food vendors, seminars and live music.</p>
 
               <div class="text-center">
+                <?php if (variable_get('hcbf_core_regular_ticket_sold_out', 0) == 0): ?>
                 <a href="<?php print variable_get('hcbf_core_regular_ticket_link', '#'); ?>"
                    class="btn btn-success btn-lg"
+                <?php else: ?>
+                <a href="#"
+                   class="btn btn-danger btn-lg"
+                   disabled="disabled"
+                <?php endif; ?>
                    data-ga-event
                    data-ga-category="ticket_link_click"
                    data-ga-label="homepage"
                    data-ga-action="general_admission">
+                 <?php if (variable_get('hcbf_core_regular_ticket_sold_out', 0) == 0): ?>
                   $<?php print variable_get('hcbf_core_regular_ticket_price', '40.00'); ?>
+                 <?php else: ?>
+                  SOLD OUT
+                 <?php endif; ?>
                 </a>
               </div>
             </div>
@@ -103,7 +113,7 @@
               </div>
               <h2 class="text-center">Designated Driver</h2>
 
-              <p class="lead">Designated Driver ticket holders have access to local food vendors, live music and the privilege to get your friends home safe.</p>
+              <p class="lead">Access to local food vendors, live music and the privilege to get your friends home safe.</p>
 
               <div class="text-center">
                 <a href="<?php print variable_get('hcbf_core_dd_ticket_link', '#'); ?>"
@@ -118,16 +128,17 @@
             </div>
 
           </div>
-          <div class="row">
-            <div class="col-xs-12">
-              <p>&nbsp;</p>
-              <p class="lead">Tickets are also available at <a href="http://appalachianmountainbrewery.com/">Appalachian Mountain Brewery</a>, <a href="http://lostprovince.com/">Lost Province</a>, <a href="http://peabodyswineandbeer.com/">Peabody's Beer and Wine</a> and <a href="http://benchmarkprovisions.com/">Benchmark Provisions</a>.</p>
-            </div>
-          </div>
         </div>
       </div>
 
       <div class="col-xs-12 col-sm-4">
+          <div class="text-center">
+            <i class="icon fa fa-ticket fa-5x"></i>
+          </div>
+          <h2 class="text-center">Tickets will also be available at the gate for $50</h2>
+          <p class="text-center">General Admission tickets are still available at <a href="http://appalachianmountainbrewery.com/">Appalachian Mountain Brewery</a>, <a href="http://lostprovince.com/">Lost Province</a>, <a href="http://peabodyswineandbeer.com/">Peabody's Beer and Wine</a> and <a href="http://benchmarkprovisions.com/">Benchmark Provisions</a>.</p>
+          <p>&nbsp;</p>
+
         <div class="text-center">
           <i class="icon fa fa-beer fa-5x"></i>
         </div>

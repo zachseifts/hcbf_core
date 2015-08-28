@@ -98,6 +98,18 @@ function hcbf_core_admin() {
     '#title' => t('Regular tickets'),
   );
 
+  $form['tickets']['regular']['hcbf_core_regular_ticket_sold_out'] = array(
+    '#type' => 'select',
+    '#title' => t('Are regular tickets sold out?'),
+    '#default_value' => variable_get('hcbf_core_regular_ticket_sold_out', 0),
+    '#maxlength' => 512,
+    '#options' => array(
+      0 => 'No',
+      1 => 'Yes',
+    ),
+    '#required' => TRUE,
+  );
+
   $form['tickets']['regular']['hcbf_core_regular_ticket_link'] = array(
     '#type' => 'textfield',
     '#title' => t('Regular ticket link'),

@@ -72,7 +72,7 @@
         <div class="page-header">
           <h1>Need a hotel room?</h1>
         </div>
-          <p class="lead">We've got you covered! Patrons of the High Country Beer Fest are encouraged to stay at <a href="http://www.laquintaboone.com/">La Quinta</a>, the <a href="http://www.sleepinn.com/hotel-boone-north_carolina-NC514">Sleep Inn</a>, or the <a href="http://www.countryinns.com/boone-hotel-nc-28607/ncboone">Country Inn and Suites</a>.</p>
+          <p class="lead">We've got you covered! Patrons of the High Country Beer Fest are encouraged to stay at <a href="http://www.laquintaboone.com/">La Quinta</a>, the <a href="http://www.sleepinn.com/hotel-boone-north_carolina-NC514">Sleep Inn</a>, the Quality Inn, or the <a href="http://www.countryinns.com/boone-hotel-nc-28607/ncboone">Country Inn and Suites</a>.</p>
       </div>
       <div class="col-xs-12 col-sm-6">
       </div>
