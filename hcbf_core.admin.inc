@@ -65,6 +65,17 @@ function hcbf_core_admin() {
     '#required' => TRUE,
   );
 
+  $form['core']['hcbf_sponsors_active'] = array(
+    '#type' => 'select',
+    '#title' => t('Sponsor registration active'),
+    '#default_value' => variable_get('hcbf_sponsors_active', 0),
+    '#options' => array(
+      0 => 'No',
+      1 => 'Yes',
+    ),
+    '#required' => TRUE,
+  );
+
   $form['core']['hcbf_breweries_week_of_message'] = array(
     '#type' => 'select',
     '#title' => t('Display the "week of" message?'),
