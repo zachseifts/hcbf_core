@@ -29,9 +29,9 @@
 
           <ul class="nav nav-pills nav-stacked">
             <?php if (!empty($recent_posts)): ?>
-              <?php foreach ($recent_posts as $post) { ?>
+              <?php foreach ($recent_posts as $post): ?>
                 <?php print render($post['link']); ?>
-              <? }; ?>
+              <?php endforeach; ?>
             <?php else: ?>
               <li><a href="#">No recent posts</a></li>
             <?php endif; ?>

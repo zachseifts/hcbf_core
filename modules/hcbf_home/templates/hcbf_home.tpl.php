@@ -49,107 +49,118 @@
 
 <div id="getting-there-wrapper" class="wrapper">
   <div class="container">
-
     <div class="row">
-      <div class="col-xs-12 col-sm-8">
-        <div class="container-fluid tickets-block">
-          <div class="row">
-
-            <div class="col-xs-12 col-sm-4">
-
-              <div class="text-center">
-                <i class="icon fa fa-ticket fa-5x"></i>
-              </div>
-              <h2 class="text-center">VIP Tickets</h2>
-
-              <p class="lead">VIP Ticket holders get 2:00pm entry to the festival, a special High Country Beer Fest t-shirt and a free food voucher.</p>
-
-              <div class="text-center">
-                <a href="<?php print variable_get('hcbf_core_vip_ticket_link', '#'); ?>" 
-                   class="btn btn-success btn-lg"
-                   data-ga-event
-                   data-ga-category="ticket_link_click"
-                   data-ga-label="homepage"
-                   data-ga-action="vip">
-                  $<?php print variable_get('hcbf_core_vip_ticket_price', '80.00'); ?>
-                </a>
-              </div>
-
-            </div>
-
-            <div class="col-xs-12 col-sm-4">
-              <div class="text-center">
-                <i class="icon fa fa-ticket fa-5x"></i>
-              </div>
-              <h2 class="text-center">General Admission</h2>
-
-              <p class="lead">Enjoy access to over 50 craft breweries, local food vendors, seminars and live music.</p>
-
-              <div class="text-center">
-                <?php if (variable_get('hcbf_core_regular_ticket_sold_out', 0) == 0): ?>
-                <a href="<?php print variable_get('hcbf_core_regular_ticket_link', '#'); ?>"
-                   class="btn btn-success btn-lg"
-                <?php else: ?>
-                <a href="#"
-                   class="btn btn-danger btn-lg"
-                   disabled="disabled"
-                <?php endif; ?>
-                   data-ga-event
-                   data-ga-category="ticket_link_click"
-                   data-ga-label="homepage"
-                   data-ga-action="general_admission">
-                 <?php if (variable_get('hcbf_core_regular_ticket_sold_out', 0) == 0): ?>
-                  $<?php print variable_get('hcbf_core_regular_ticket_price', '40.00'); ?>
-                 <?php else: ?>
-                  SOLD OUT
-                 <?php endif; ?>
-                </a>
-              </div>
-            </div>
-
-            <div class="col-xs-12 col-sm-4">
-              <div class="text-center">
-                <i class="icon fa fa-ticket fa-5x"></i>
-              </div>
-              <h2 class="text-center">Designated Driver</h2>
-
-              <p class="lead">Access to local food vendors, live music and the privilege to get your friends home safe.</p>
-
-              <div class="text-center">
-                <a href="<?php print variable_get('hcbf_core_dd_ticket_link', '#'); ?>"
-                   class="btn btn-success btn-lg"
-                   data-ga-event
-                   data-ga-category="ticket_link_click"
-                   data-ga-label="homepage"
-                   data-ga-action="designated_driver">
-                  $<?php print variable_get('hcbf_core_dd_ticket_price', '10.00'); ?>
-                </a>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-      <div class="col-xs-12 col-sm-4">
-          <div class="text-center">
-            <i class="icon fa fa-ticket fa-5x"></i>
-          </div>
-          <h2 class="text-center">Tickets will also be available at the gate for $50</h2>
-          <p class="text-center">General Admission tickets are still available at <a href="http://appalachianmountainbrewery.com/">Appalachian Mountain Brewery</a>, <a href="http://lostprovince.com/">Lost Province</a>, <a href="http://peabodyswineandbeer.com/">Peabody's Beer and Wine</a> and <a href="http://benchmarkprovisions.com/">Benchmark Provisions</a>.</p>
-          <p>&nbsp;</p>
-
-        <div class="text-center">
-          <i class="icon fa fa-beer fa-5x"></i>
-        </div>
-        <div class="page-header">
-          <h1 class="text-center">The Festivities</h1>
-        </div>
-        <p class="text-center">Join us at the High Country Fairgrounds in Boone, North Carolina on Saturday, August 29, 2015 from 3:00pm to 7:00pm to sample a variety of craft beer, craft food, educational seminars, and live music.</p>
-      </div>
-
+      <h1>We're getting ready for 2016!</h1>
+      <p class="lead">Check back later for more information.</p>
     </div>
   </div>
+  <?php
+/**
+* <div class="container">
+
+*   <div class="row">
+*     <div class="col-xs-12 col-sm-8">
+*       <div class="container-fluid tickets-block">
+*         <div class="row">
+*
+*           <div class="col-xs-12 col-sm-4">
+*
+*             <div class="text-center">
+*               <i class="icon fa fa-ticket fa-5x"></i>
+*             </div>
+*             <h2 class="text-center">VIP Tickets</h2>
+*
+*             <p class="lead">VIP Ticket holders get 2:00pm entry to the festival, a special High Country Beer Fest t-shirt and a free food voucher.</p>
+*
+*             <div class="text-center">
+*               <a href="#" 
+*                  class="btn btn-danger btn-lg"
+*                  disabled="disabled"
+*                  data-ga-event
+*                  data-ga-category="ticket_link_click"
+*                  data-ga-label="homepage"
+*                  data-ga-action="vip">
+*                 SOLD OUT
+*               </a>
+*             </div>
+*
+*           </div>
+*
+*           <div class="col-xs-12 col-sm-4">
+*             <div class="text-center">
+*               <i class="icon fa fa-ticket fa-5x"></i>
+*             </div>
+*             <h2 class="text-center">General Admission</h2>
+*
+*             <p class="lead">Enjoy access to over 50 craft breweries, local food vendors, seminars and live music.</p>
+*
+*             <div class="text-center">
+*               <?php if (variable_get('hcbf_core_regular_ticket_sold_out', 0) == 0): ?>
+*               <a href="<?php print variable_get('hcbf_core_regular_ticket_link', '#'); ?>"
+*                  class="btn btn-success btn-lg"
+*               <?php else: ?>
+*               <a href="#"
+*                  class="btn btn-danger btn-lg"
+*                  disabled="disabled"
+*               <?php endif; ?>
+*                  data-ga-event
+*                  data-ga-category="ticket_link_click"
+*                  data-ga-label="homepage"
+*                  data-ga-action="general_admission">
+*                <?php if (variable_get('hcbf_core_regular_ticket_sold_out', 0) == 0): ?>
+*                 $<?php print variable_get('hcbf_core_regular_ticket_price', '40.00'); ?>
+*                <?php else: ?>
+*                 SOLD OUT
+*                <?php endif; ?>
+*               </a>
+*             </div>
+*           </div>
+*
+*           <div class="col-xs-12 col-sm-4">
+*             <div class="text-center">
+*               <i class="icon fa fa-ticket fa-5x"></i>
+*             </div>
+*             <h2 class="text-center">Designated Driver</h2>
+*
+*             <p class="lead">Access to local food vendors, live music and the privilege to get your friends home safe.</p>
+*
+*             <div class="text-center">
+*               <a href="#" 
+*                  class="btn btn-danger btn-lg"
+*                  disabled="disabled"
+*                  data-ga-event
+*                  data-ga-category="ticket_link_click"
+*                  data-ga-label="homepage"
+*                  data-ga-action="designated_driver">
+*                  SOLD OUT
+*               </a>
+*             </div>
+*           </div>
+*
+*         </div>
+*       </div>
+*     </div>
+*
+*     <div class="col-xs-12 col-sm-4">
+*         <div class="text-center">
+*           <i class="icon fa fa-ticket fa-5x"></i>
+*         </div>
+*         <h2 class="text-center">Tickets will also be available at the gate for $50</h2>
+*         <p class="text-center">General Admission tickets are still available at <a href="http://appalachianmountainbrewery.com/">Appalachian Mountain Brewery</a>, <a href="http://lostprovince.com/">Lost Province</a>, <a href="http://peabodyswineandbeer.com/">Peabody's Beer and Wine</a> and <a href="http://benchmarkprovisions.com/">Benchmark Provisions</a>.</p>
+*         <p>&nbsp;</p>
+*
+*       <div class="text-center">
+*         <i class="icon fa fa-beer fa-5x"></i>
+*       </div>
+*       <div class="page-header">
+*         <h1 class="text-center">The Festivities</h1>
+*       </div>
+*       <p class="text-center">Join us at the High Country Fairgrounds in Boone, North Carolina on Saturday, August 29, 2015 from 3:00pm to 7:00pm to sample a variety of craft beer, craft food, educational seminars, and live music.</p>
+*     </div>
+*
+*   </div>
+* </div>
+*/ ?>
 </div>
 
 <?php if (variable_get('hcbf_breweries_week_of_message', 0) == 1): ?>
