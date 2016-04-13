@@ -49,6 +49,14 @@ function hcbf_breweries_menu() {
     'file' => 'hcbf_breweries.pages.inc'
   );
 
+  $items['archive/%/breweries'] = array(
+    'title' => 'Breweries archive',
+    'page callback' => 'hcbf_breweries_archive',
+    'page arguments' => array(1),
+    'access arguments' => array('access content'),
+    'file' => 'hcbf_breweries.pages.inc'
+  );
+
   return $items;
 }
 

@@ -50,8 +50,14 @@
 <div id="getting-there-wrapper" class="wrapper">
   <div class="container">
     <div class="row">
-      <h1>We're getting ready for 2016!</h1>
-      <p class="lead">Check back later for more information.</p>
+      <div class="col-xs-12 col-sm-4">
+        <a href="http://www.center45.com/">
+          <img src="/sites/all/modules/custom/hcbf_core/modules/hcbf_home/images/center45.png" class="img-responsive" />
+        </a>
+      </div>
+      <div class="col-xs-12 col-sm-8">
+        <h1>Join us on April 30th at <a href="http://www.center45.com/">Center 45</a> for our ticket release party!</h1>
+      </div>
     </div>
   </div>
   <?php

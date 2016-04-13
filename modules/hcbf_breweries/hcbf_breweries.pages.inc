@@ -80,15 +80,11 @@ function hcbf_breweries_export() {
 }
 
 /**
- * Page callback for the breweries page.
+ * Page builder for brewery listing pages.
  */
-function hcbf_breweries() {
+function hcbf_brewery_listing($festival_nid=NULL) {
 
-  drupal_add_css(drupal_get_path('module', 'hcbf_breweries') . '/css/hcbf_breweries.css');
-  drupal_set_title(t('The breweries'));
-
-  $brewery_entities = hcbf_breweries_current();
-
+  $brewery_entities = hcbf_breweries_current($festival_nid);
   $breweries = array();
   foreach ($brewery_entities as $brewery) {
     $breweries[] = array(
@@ -116,5 +112,31 @@ function hcbf_breweries() {
   if (!empty($breweries)) {
     $breweries = array_chunk($breweries, 3);
   }
+
+  return $breweries;
+}
+
+/**
+ * Page callback for the breweries page.
+ */
+function hcbf_breweries() {
+  drupal_add_css(drupal_get_path('module', 'hcbf_breweries') . '/css/hcbf_breweries.css');
+  drupal_set_title(t('The breweries'));
+
+  $breweries = hcbf_brewery_listing();
   return theme('hcbf_breweries', array('breweries' => $breweries));
 }
+
+/**
+ * Page callback for the breweries archive page.
+ */
+function hcbf_breweries_archive($year) {
+  $year = intval($year);
+
+  $festival = entity_metadata_wrapper('node', $year);
+  drupal_set_title(t('@year\'s Breweries', array('@year' => $festival->label())));
+
+  $breweries = hcbf_brewery_listing($year);
+  return theme('hcbf_breweries', array('breweries' => $breweries));
+}
+
