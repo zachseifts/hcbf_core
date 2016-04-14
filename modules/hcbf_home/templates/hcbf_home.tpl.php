@@ -56,7 +56,8 @@
         </a>
       </div>
       <div class="col-xs-12 col-sm-8">
-        <h1>Join us on April 30th at <a href="http://www.center45.com/">Center 45</a> for our ticket release party!</h1>
+        <h1>Join us on Saturday, April 30th 5:00pm to 8:00pm at <a href="http://www.center45.com/">Center 45</a> for the Hoppin Off ticket release party!</h1>
+        <p class="lead">Free music and a mini tasting of High Country centered breweries at Boone's newest mountain sport business.</p>
       </div>
     </div>
   </div>

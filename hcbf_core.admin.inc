@@ -87,6 +87,18 @@ function hcbf_core_admin() {
     '#required' => TRUE,
   );
 
+  $form['core']['hcbf_volunteer_registration'] = array(
+    '#type' => 'select',
+    '#title' => t('Is volunteer registration open?'),
+    '#default_value' => variable_get('hcbf_volunteer_registration', 0),
+    '#options' => array(
+      0 => 'No',
+      1 => 'Yes',
+    ),
+    '#description' => t('Should users be able to register to become volunteers?'),
+    '#required' => TRUE,
+  );
+
   $form['tickets'] = array(
     '#type' => 'fieldset',
     '#title' => t('Ticket info'),

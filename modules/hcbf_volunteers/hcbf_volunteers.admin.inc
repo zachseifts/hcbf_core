@@ -4,26 +4,32 @@
  * The admin pages and forms for the High Country Beer Fest site's volunteer admin pages.
  */
 
-function hcbf_volunteers_admin() {
-  $form = array();
+/**
+ * Callback for the volunteers listing page.
+ */
+function hcbf_volunteers_listing() {
 
-  $form['core'] = array(
-    '#type' => 'fieldset',
-    '#title' => 'HCBF volunteer options',
-  );
+  $current_festival = variable_get('hcbf_current_festival', 0);
+  $volunteer_role = user_role_load_by_name('Volunteer');
 
-  $form['core']['hcbf_volunteer_registration'] = array(
-    '#type' => 'select',
-    '#title' => t('Is volunteer registration open?'),
-    '#default_value' => variable_get('hcbf_volunteer_registration', 0),
-    '#options' => array(
-      0 => 'No',
-      1 => 'Yes',
-    ),
-    '#description' => t('Should users be able to register to become volunteers?'),
-    '#required' => TRUE,
-  );
+  $user_query = new EntityFieldQuery();
+  $user_query->entityCondition('entity_type', 'user')
+    ->fieldCondition('field_hcbf_account_festival', 'target_id', $current_festival);
+  $user_result = $user_query->execute();
 
-  return system_settings_form($form);
+  $volunteers = array();
+  if (!empty($user_result)) {
+    $user_uids = array_keys($user_result['user']);
+    $users = user_load_multiple($user_uids);
+
+    foreach ($user_uids as $user_id) {
+      $user = entity_metadata_wrapper('user', $user_id);
+      if ($user) {
+        dpm($user->getPropertyInfo());
+        $volunteers[] = $user;
+      }
+    }
+  }
+
+  return theme('hcbf_volunteers_listing', array('volunteers' => $volunteers));
 }
-

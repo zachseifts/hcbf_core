@@ -32,8 +32,7 @@ function hcbf_volunteers_menu() {
   $items['admin/config/hcbf/volunteers'] = array(
     'title' => 'Volunteers',
     'description' => 'Configuration for the High Country Beer Fest volunteer functionality.',
-    'page callback' => 'drupal_get_form',
-    'page arguments' => array('hcbf_volunteers_admin'),
+    'page callback' => 'hcbf_volunteers_listing',
     'access arguments' => array('manage volunteers'),
     'type' => MENU_NORMAL_ITEM,
     'file' => 'hcbf_volunteers.admin.inc',
@@ -73,6 +72,11 @@ function hcbf_volunteers_theme() {
   $themes['hcbf_volunteer_manage'] = array(
     'variables' => array('volunteers' => NULL),
     'template' => 'templates/hcbf_volunteer_manage',
+  );
+
+  $themes['hcbf_volunteers_listing'] = array(
+    'variables' => array('volunteers' => NULL),
+    'template' => 'templates/hcbf_volunteers_listing',
   );
 
   return $themes;
