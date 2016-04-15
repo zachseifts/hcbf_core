@@ -24,8 +24,8 @@
             (<?php print l($volunteer->mail->value(), 'maito:' . $volunteer->mail->value(), array('external' => TRUE)); ?>)
           </td>
           <td><?php print l($volunteer->field_hcbf_account_phone->value(), 'tel:' . $volunteer->field_hcbf_account_phone->value(), array('external' => TRUE)); ?></td>
-          <td><?php print format_date($volunteer->field_hcbf_account_dob->value(), 'custom', 'm/d/Y'); ?></td>
-          <td><?php print ($volunteer->field_hcbf_account_previous->value() ? t('Yes') : t('No')); ?></td>
+          <td><?php print $volunteer->field_hcbf_account_dob->value(); ?></td>
+          <td><?php print $volunteer->field_hcbf_account_previous->value(); ?></td>
           <td><?php print ($volunteer->field_hcbf_account_accepted->value() ? t('Yes') : l('Accept volunteer', '#')); ?></td>
         </tr>
       <?php endforeach; ?>

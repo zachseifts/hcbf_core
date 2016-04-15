@@ -5,7 +5,15 @@
  */
 
 /**
+ * Page callback for /volunteer/finished
+ */
+function hcbf_volunteer_finished() {
+  return theme('hcbf_volunteers_finshed', array());
+}
+
+/**
  * Page callback for the volunteers export page
+ * TODO: Remove this
  */
 function hcbf_volunteer_export() {
   drupal_add_http_header('Content-Type', 'text/csv');
@@ -62,6 +70,7 @@ function hcbf_volunteer_export() {
 
 /**
  * Page callback for the breweries page.
+ * TODO: Remove this
  */
 function hcbf_volunteer_manage() {
 

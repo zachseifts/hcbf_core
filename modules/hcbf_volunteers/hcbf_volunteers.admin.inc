@@ -25,7 +25,6 @@ function hcbf_volunteers_listing() {
     foreach ($user_uids as $user_id) {
       $user = entity_metadata_wrapper('user', $user_id);
       if ($user) {
-        dpm($user->getPropertyInfo());
         $volunteers[] = $user;
       }
     }

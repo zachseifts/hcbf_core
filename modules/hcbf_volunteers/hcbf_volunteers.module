@@ -46,19 +46,26 @@ function hcbf_volunteers_menu() {
     'file' => 'hcbf_volunteers.forms.inc'
   );
 
-  $items['volunteer/manage'] = array(
-    'title' => t('Manage volunteers'),
-    'page callback' => 'hcbf_volunteer_manage',
-    'access arguments' => array('manage volunteers'),
+  $items['volunteer/finished'] = array(
+    'title' => t('Thank you for volunteering'),
+    'page callback' => 'hcbf_volunteer_finished',
+    'access arguments' => array('access volunteer registration'),
     'file' => 'hcbf_volunteers.pages.inc'
   );
 
-  $items['volunteer/export/hcbf_volunteer.csv'] = array(
-    'title' => 'Export volunteer',
-    'page callback' => 'hcbf_volunteer_export',
-    'access arguments' => array('manage volunteers'),
-    'file' => 'hcbf_volunteers.pages.inc'
-  );
+//$items['volunteer/manage'] = array(
+//  'title' => t('Manage volunteers'),
+//  'page callback' => 'hcbf_volunteer_manage',
+//  'access arguments' => array('manage volunteers'),
+//  'file' => 'hcbf_volunteers.pages.inc'
+//);
+
+//$items['volunteer/export/hcbf_volunteer.csv'] = array(
+//  'title' => 'Export volunteer',
+//  'page callback' => 'hcbf_volunteer_export',
+//  'access arguments' => array('manage volunteers'),
+//  'file' => 'hcbf_volunteers.pages.inc'
+//);
 
   return $items;
 }
@@ -69,6 +76,7 @@ function hcbf_volunteers_menu() {
 function hcbf_volunteers_theme() {
   $themes = array();
 
+  // TODO: Remove this
   $themes['hcbf_volunteer_manage'] = array(
     'variables' => array('volunteers' => NULL),
     'template' => 'templates/hcbf_volunteer_manage',
@@ -77,6 +85,11 @@ function hcbf_volunteers_theme() {
   $themes['hcbf_volunteers_listing'] = array(
     'variables' => array('volunteers' => NULL),
     'template' => 'templates/hcbf_volunteers_listing',
+  );
+
+  $themes['hcbf_volunteers_finshed'] = array(
+    'variables' => array(),
+    'template' => 'templates/hcbf_volunteers_finished',
   );
 
   return $themes;
