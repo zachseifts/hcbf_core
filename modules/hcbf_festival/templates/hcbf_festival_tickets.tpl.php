@@ -17,8 +17,12 @@
   <?php if (variable_get('hcbf_core_on_sale', 0) != 1): ?>
     <p class="lead text-center">Tickets will be on sale soon!</p>
   <?php else: ?>
+    <?php 
+    /**
     <p class="lead">Tickets will also be available at the gate for $50.</p>
     <p>General Admission tickets are still available at <a href="http://appalachianmountainbrewery.com/">Appalachian Mountain Brewery</a>, <a href="http://lostprovince.com/">Lost Province</a>, <a href="http://peabodyswineandbeer.com/">Peabody's Beer and Wine</a> and <a href="http://benchmarkprovisions.com/">Benchmark Provisions</a>.</p>
+    */
+    ?>
     <div class="table-responsive">
       <table class="table ticket-table">
         <tbody>

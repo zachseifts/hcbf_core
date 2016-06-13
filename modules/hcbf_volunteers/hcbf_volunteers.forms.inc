@@ -60,7 +60,7 @@ function hcbf_volunteer_form($form, &$form_state) {
       '#required' => TRUE,
       '#attributes' => array('placeholder' => array('Your Name')),
     );
-    if ($user_wrapper) {
+    if (isset($user_wrapper)) {
       if ($name = $user_wrapper->field_hcbf_account_name->value()) {
         $form['account_info']['name']['#default_value'] = $name;
       }
@@ -75,7 +75,7 @@ function hcbf_volunteer_form($form, &$form_state) {
       '#attributes' => array('placeholder' => array('you@domain.com')),
     );
 
-    if ($user_wrapper) {
+    if (isset($user_wrapper)) {
       $form['account_info']['email']['#default_value'] = $user_wrapper->mail->value();
       $form['account_info']['email']['#disabled'] = TRUE;
     }
@@ -87,7 +87,7 @@ function hcbf_volunteer_form($form, &$form_state) {
       '#required' => TRUE,
       '#attributes' => array('placeholder' => array('(555) 555-5555')),
     );
-    if ($user_wrapper) {
+    if (isset($user_wrapper)) {
       if ($phone = $user_wrapper->field_hcbf_account_phone->value()) {
         $form['account_info']['phone']['#default_value'] = $phone;
       }
@@ -100,7 +100,7 @@ function hcbf_volunteer_form($form, &$form_state) {
       '#required' => TRUE,
       '#attributes' => array('placeholder' => array('6/19/1985')),
     );
-    if ($user_wrapper) {
+    if (isset($user_wrapper)) {
       if ($dob = $user_wrapper->field_hcbf_account_dob->value()) {
         $form['account_info']['dob']['#default_value'] = $dob;
       }
