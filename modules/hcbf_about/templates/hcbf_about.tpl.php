@@ -19,7 +19,7 @@
   <div class="container" id="join-container">
     <div class="row">
       <div class="col-xs-12">
-        <h1>Join us for the 8<sup>th</sup> annual High Country Beer Fest at the High Country Fairgrounds. Sample craft beers, craft food, music, and seminars in the high country of North Carolina. Our seminars will cover aspects of beer tasting, brewing, and food pairing.</h1>
+        <h1>Join us for the 9<sup>th</sup> annual High Country Beer Fest at the High Country Fairgrounds. Sample craft beers, craft food, music, and seminars in the high country of North Carolina. Our seminars will cover aspects of beer tasting, brewing, and food pairing.</h1>
         <p class="lead">This is a 100% non-profit event. Our primary beneficiary of the event is <a href="http://fermentation.appstate.edu/" title="ASU Fermentation Sciences">ASU Fermentation Sciences</a>, but we also support other local non-profit organizations, including <a href="http://www.highcountrylocalfirst.org/" title="High Country Local First">High Country Local First</a>, <a href="http://www.highcountrymommies.com/" title="High Country Mommies">High Country Mommies</a>, <a href="http://www.middleforkgreenway.org/">Blue Ridge Conservancy-Middle Fork Greenway Association</a>, <a href="http://mountainalliance.org/">The Mountain Alliance</a>, and <a href="http://ivorytowerscience.com/" title="Ivory Tower, Inc">Ivory Tower, Inc</a>.</p>
       </div>
     </div>
