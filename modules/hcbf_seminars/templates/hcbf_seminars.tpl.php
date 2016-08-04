@@ -12,13 +12,6 @@
 
         <p class="lead">Seminars located in seminar tent, please take seats as they are available and we ask that you assist us in clearing out of the tent between seminars to make room for the next event and give others an opportunity to participate.</p>
 
-
-        <h2>Beer and Cheese Pairing <!--<small>3:30pm - 4:30pm</small>--></h2>
-        <p>Learn more about how beer and cheese can be paired together to create some amazing dishes with Ericks Chese and Wine.</p>
-        <p>Sponsored by: <a href="http://www.erickscheeseandwine.com/">Ericks Chese and Wine</a></p>
-
-        <hr />
-
         <h2>Beer and Pizza Pairing <!--<small>4:30pm - 5:30pm</small>--></h2>
         <p>Hang out with the folks from Mellow Mushroom and enjoy craft beer paired with craft pizza.</p>
         <p>Sponsored by: <a href="http://mellowmushroom.com/">Mellow Mushroom</a></p>

@@ -19,6 +19,13 @@ function hcbf_festival_theme() {
     'template' => 'templates/hcbf_festival_tickets',
   );
 
+  $themes['hcbf_festival_volunteer'] = array(
+    'variables' => array(
+      'wrapper_classes' => NULL,
+    ),
+    'template' => 'templates/hcbf_festival_volunteer',
+  );
+
   return $themes;
 }
 

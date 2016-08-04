@@ -169,14 +169,12 @@
     </div>
 
     <div class="col-xs-12 col-sm-4">
-        <?php /**
-       *<div class="text-center">
-       *  <i class="icon fa fa-ticket fa-5x"></i>
-       *</div>
-       *<h2 class="text-center">Tickets will also be available at the gate for $50</h2>
-       *<p class="text-center">General Admission tickets are still available at <a href="http://appalachianmountainbrewery.com/">Appalachian Mountain Brewery</a>, <a href="http://lostprovince.com/">Lost Province</a>, <a href="http://peabodyswineandbeer.com/">Peabody's Beer and Wine</a> and <a href="http://benchmarkprovisions.com/">Benchmark Provisions</a>.</p>
-       *<p>&nbsp;</p>
-        **/?>
+        <div class="text-center">
+          <i class="icon fa fa-ticket fa-5x"></i>
+        </div>
+        <h2 class="text-center">Buy tickets in person</h2>
+        <p class="text-center">General Admission tickets are still available at <a href="http://peabodyswineandbeer.com/">Peabody's Beer and Wine</a> and <a href="http://benchmarkprovisions.com/">Benchmark Provisions</a>.</p>
+        <p>&nbsp;</p>
 
       <div class="text-center">
         <i class="icon fa fa-beer fa-5x"></i>
@@ -185,6 +183,7 @@
         <h1 class="text-center">The Festivities</h1>
       </div>
       <p class="text-center">Join us at the High Country Fairgrounds in Boone, North Carolina on Saturday, August 27, 2016 from 3:00pm to 7:00pm to sample a variety of craft beer, craft food, educational seminars, and live music.</p>
+      <p>&nbsp;</p>
     </div>
 
   </div>
@@ -250,11 +249,14 @@
 <div id="about-wrapper" class="wrapper">
   <div class="container">
     <div class="row">
-      <div class="col-xs-12 col-md-6">
+      <div class="col-xs-12 col-md-4">
         <?php print theme('hcbf_breweries_registration'); ?>
       </div>
-      <div class="col-xs-12 col-md-6">
+      <div class="col-xs-12 col-md-4">
         <?php print theme('hcbf_sponsor_registration'); ?>
+      </div>
+      <div class="col-xs-12 col-md-4">
+        <?php print theme('hcbf_festival_volunteer'); ?>
       </div>
     </div>
   </div>
